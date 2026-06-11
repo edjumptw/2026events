@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 兩岸交流培訓活動總覽 — 陳執董的商業洞察</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0E0E0E;
+    color: #E8E0D0;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 18px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    padding: 48px 0 32px;
+    text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .brand-eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #C9A84C;
+    margin-bottom: 14px;
+  }
+
+  .brand-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(24px, 6vw, 34px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .brand-name span { color: #C9A84C; }
+
+  .header-sub {
+    font-size: 13px;
+    color: #9A9080;
+    letter-spacing: 1px;
+  }
+
+  .year-badge {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 22px;
+    border: 1px solid #C9A84C;
+    color: #C9A84C;
+    font-size: 13px;
+    letter-spacing: 2px;
+    border-radius: 2px;
+  }
+
+  /* ── LINE CTA ── */
+  .line-banner {
+    background: #1a1a1a;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 28px 0;
+    text-align: center;
+  }
+
+  .line-banner p {
+    font-size: 15px;
+    color: #9A9080;
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  .line-banner strong { color: #E8E0D0; }
+
+  .line-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #06C755;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+
+  .wecom-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #1677FF;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+  .cta-divider {
+    font-size: 12px;
+    color: #555;
+    margin: 12px 0 2px;
+    letter-spacing: 1px;
+  }
+
+  /* ── STATS ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 28px 0;
+  }
+
+  .stat-box {
+    background: #1a1a1a;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 16px 10px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-size: 20px;
+    font-weight: 700;
+    color: #C9A84C;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: #9A9080;
+  }
+
+  /* ── NOTICES ── */
+  .notice {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 0 0 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .notice.age {
+    background: #1a1510;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .notice.fan {
+    background: #0e1318;
+    border: 1px solid rgba(100,160,220,0.25);
+  }
+
+  .notice .icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+
+  .notice-text { font-size: 15px; line-height: 1.6; }
+  .notice.age .notice-text { color: #E8C97A; }
+  .notice.fan .notice-text { color: #9fc8e8; }
+
+  .notice-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 32px 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: #1a1a1a;
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+
+  .card-body { padding: 18px 18px 14px; }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .card-date { font-size: 13px; color: #C9A84C; font-weight: 500; }
+  .card-location { font-size: 13px; color: #9A9080; }
+
+  .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 2px;
+  }
+
+  .tag {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    color: #9A9080;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .tag.hot { background: rgba(232,112,58,0.15); color: #f0a070; border-color: rgba(232,112,58,0.3); }
+  .tag.alert { background: rgba(201,168,76,0.12); color: #E8C97A; border-color: rgba(201,168,76,0.3); }
+  .tag.new { background: rgba(39,174,96,0.12); color: #7dcea0; border-color: rgba(39,174,96,0.3); }
+
+  .card-fee {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #E8C97A;
+  }
+
+  .card-fee .fee-amount { font-weight: 700; font-size: 14px; }
+  .card-fee .fee-note { color: #9A9080; margin-left: 4px; }
+
+  /* ── BUTTONS ── */
+  .cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 12px 12px;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #C9A84C 0%, #a8832a 100%);
+    color: #1a1000;
+    border: none;
+    cursor: pointer;
+  }
+
+
+  /* ── 按鈕顏色區分 ── */
+  .btn-green { background: linear-gradient(135deg, #06C755 0%, #04a847 100%); color: #fff; }
+  .btn-teal  { background: linear-gradient(135deg, #2ABFA3 0%, #1f9982 100%); color: #fff; }
+  .btn-orange{ background: linear-gradient(135deg, #E8703A 0%, #c95820 100%); color: #fff; }
+  .btn-purple{ background: linear-gradient(135deg, #7B8FE8 0%, #5a6fd4 100%); color: #fff; }
+
+  .cta-btn.tba {
+    background: rgba(255,255,255,0.04);
+    color: #9A9080;
+    font-weight: 400;
+    font-size: 14px;
+    cursor: default;
+  }
+
+  .cta-btn.full {
+    background: rgba(180,40,40,0.12);
+    color: #c07070;
+    font-size: 14px;
+    cursor: default;
+    letter-spacing: 2px;
+  }
+
+  .card.is-full { opacity: 0.65; }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer-wrap {
+    margin: 36px 0 48px;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .disclaimer-toggle {
+    width: 100%;
+    background: #1a1a1a;
+    border: none;
+    padding: 18px 20px;
+    text-align: left;
+    color: #9A9080;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+
+  .disclaimer-toggle .arrow { transition: transform 0.2s; font-size: 12px; }
+  .disclaimer-toggle.open .arrow { transform: rotate(180deg); }
+
+  .disclaimer-body {
+    display: none;
+    padding: 20px;
+    background: #111;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    font-size: 14px;
+    color: #9A9080;
+    line-height: 1.8;
+  }
+
+  .disclaimer-body.show { display: block; }
+
+  .disclaimer-body h4 {
+    color: #E8E0D0;
+    font-size: 15px;
+    margin: 18px 0 6px;
+    font-weight: 600;
+  }
+
+  .disclaimer-body h4:first-child { margin-top: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 28px 0 40px;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    color: #9A9080;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="brand-eyebrow">Taiwan Youth · Business · Cross-Strait Exchange</div>
+    <div class="brand-name">陳執董的商業洞察<br><span>× 青年培訓計畫</span></div>
+    <div class="header-sub">2026 商業探索　海峽兩岸交流培訓</div>
+    <div class="year-badge">2026 全年活動總覽</div>
+  </header>
+
+  <div class="line-banner">
+    <p>💬 <strong>一鍵諮詢全年考察場次</strong><br>對場次有疑問？想確認剩餘名額？直接聯繫官方客服</p>
+    <a class="line-cta-btn" href="https://lin.ee/rvijZ5H" target="_blank" rel="noopener">LINE 官方諮詢（台灣）</a>
+    <div class="cta-divider">── 大陸地區請使用 ──</div>
+    <a class="wecom-cta-btn" href="https://work.weixin.qq.com/u/vc0ce5c4c392d91822?v=5.0.8.218278&bb=874ea79641" target="_blank" rel="noopener">企業微信諮詢（大陸）</a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box"><span class="stat-num">9</span><span class="stat-label">場次活動</span></div>
+    <div class="stat-box"><span class="stat-num">10</span><span class="stat-label">城市據點</span></div>
+    <div class="stat-box"><span class="stat-num">5—12月</span><span class="stat-label">活動期間</span></div>
+    <div class="stat-box"><span class="stat-num">台灣青年</span><span class="stat-label">招募對象</span></div>
+  </div>
+
+  <div class="notice age">
+    <div class="icon">🎯</div>
+    <div class="notice-text">
+      <strong>參與對象說明</strong>
+      本系列活動以 45 歲以下青年學員優先。歡迎對兩岸商業實務、自媒體經營、跨境電商有興趣的台灣青年報名參與。
+    </div>
+  </div>
+
+  <div class="notice fan">
+    <div class="icon">⭐</div>
+    <div class="notice-text">
+      <strong>優先開放陳執董粉絲團成員報名</strong>
+      本系列活動優先開放「陳執董的商業洞察」粉絲團成員報名。非粉絲團成員歡迎先加入粉絲團，再透過 LINE 官方帳號諮詢。
+    </div>
+  </div>
+
+  <div class="section-title">✈️ 活動場次</div>
+
+  <!-- 成都 06.24 -->
+  <div class="card">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">06.24 — 07.03</span>
+        <span class="card-location">📍 四川・成都</span>
+      </div>
+      <div class="card-title">成都台灣青年暑期體育文化交流行</div>
+      <div class="card-tags">
+        <span class="tag hot">🔥 強力招募中</span>
+        <span class="tag alert">⚡ 即將出發</span>
+        <span class="tag">#暑期活動</span>
+        <span class="tag">#體育文化</span>
+      </div>
+      <div class="card-fee">
+        <span class="fee-amount">NT$3,000</span>
+        <span class="fee-note">研習報名行政服務費｜機票護照自理</span>
+      </div>
+    </div>
+    <a href="https://forms.gle/vPsPFfPqLiU3K2dt7" class="cta-btn btn-green" target="_blank" rel="noopener">立即報名</a>
+  </div>
+
+  <!-- 廣東研學 06.25 -->
+  <div class="card">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">06.25 — 06.29</span>
+        <span class="card-location">📍 廣東・廣州・中山・澳門</span>
+      </div>
+      <div class="card-title">【廣東】粵向山海・承先生志<br><span style="font-size:14px;font-weight:400;color:#9A9080;">兩岸青年研學交流團</span></div>
+      <div class="card-tags">
+        <span class="tag">#研學交流</span>
+        <span class="tag">#高校參訪</span>
+        <span class="tag">#中山論壇</span>
+        <span class="tag">5天4夜</span>
+      </div>
+      <div class="card-fee">
+        <span class="fee-amount">NT$3,000</span>
+        <span class="fee-note">研習報名行政服務費｜機票護照自理</span>
+      </div>
+    </div>
+    <a href="https://forms.gle/QoNFCr4ViCSScXXq5" class="cta-btn btn-teal" target="_blank" rel="noopener">立即報名</a>
+  </div>
+
+  <!-- 看房 07.12 -->
+  <div class="card">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">07.12 — 07.15</span>
+        <span class="card-location">📍 廣東・珠海・中山</span>
+      </div>
+      <div class="card-title">2026 自費看房系列 — 珠海・中山</div>
+      <div class="card-tags">
+        <span class="tag hot">🏠 主力推廣</span>
+        <span class="tag alert">✨ 特別企劃</span>
+        <span class="tag">#置產考察</span>
+        <span class="tag">#珠海</span>
+        <span class="tag">#中山</span>
+      </div>
+      <div class="card-fee">
+        <span class="fee-amount">自費 AA 制</span>
+        <span class="fee-note">｜詳見場次說明頁</span>
+      </div>
+    </div>
+    <a href="https://edjumptw.github.io/house712/" class="cta-btn btn-teal" target="_blank" rel="noopener">了解詳情</a>
+  </div>
+
+  <!-- 武漢 07.15 -->
+  <div class="card">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">07.15 — 07.21</span>
+        <span class="card-location">📍 湖北・武漢</span>
+      </div>
+      <div class="card-title">2026【湖北武漢】兩岸直播電商節暨線上兩岸良品優選館發佈會</div>
+      <div class="card-tags">
+        <span class="tag new">大型活動</span>
+        <span class="tag">#直播電商</span>
+        <span class="tag">#良品優選</span>
+      </div>
+      <div class="card-fee">
+        <span class="fee-amount">NT$3,000</span>
+        <span class="fee-note">研習報名行政服務費｜機票護照自理</span>
+      </div>
+    </div>
+    <a href="https://forms.gle/gLi1STwRTvj9LKHC7" class="cta-btn btn-orange" target="_blank" rel="noopener">立即報名</a>
+  </div>
+
+  <!-- 院長論壇 08.13 -->
+  <div class="card">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">08.13 — 08.15</span>
+        <span class="card-location">📍 浙江・杭州</span>
+      </div>
+      <div class="card-title">海峽兩岸醫院院長論壇</div>
+      <div class="card-tags">
+        <span class="tag">#醫療論壇</span>
+        <span class="tag">#高峰會議</span>
+      </div>
+      <div class="card-fee">
+        <span class="fee-amount">NT$3,000</span>
+        <span class="fee-note">研習報名行政服務費｜機票護照自理</span>
+      </div>
+    </div>
+    <a href="https://forms.gle/DJyWgQqWtWPamCdVA" class="cta-btn btn-purple" target="_blank" rel="noopener">立即報名</a>
+  </div>
+
+  <!-- 恩施 08.14 -->
+  <div class="card">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">08.14 — 08.23</span>
+        <span class="card-location">📍 湖北・恩施</span>
+      </div>
+      <div class="card-title">【湖北】兩岸青年恩施女兒節 10 日實習團</div>
+      <div class="card-tags">
+        <span class="tag new">特色活動</span>
+        <span class="tag">#女兒節</span>
+        <span class="tag">#實習</span>
+        <span class="tag">10天9夜</span>
+      </div>
+      <div class="card-fee">
+        <span class="fee-amount">NT$3,000</span>
+        <span class="fee-note">研習報名行政服務費｜機票護照自理</span>
+      </div>
+    </div>
+    <a href="https://forms.gle/Y2cfR3Xsw31BbbZn9" class="cta-btn btn-orange" target="_blank" rel="noopener">立即報名</a>
+  </div>
+
+  <!-- 溫州 8月中下旬 -->
+  <div class="card">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">8月中下旬（時間暫定）</span>
+        <span class="card-location">📍 浙江・溫州</span>
+      </div>
+      <div class="card-title">「星光閃耀・潮起兩岸」電商培訓營（第四期）</div>
+      <div class="card-tags">
+        <span class="tag">#電商培訓</span>
+        <span class="tag">#第四期</span>
+      </div>
+    </div>
+    <div class="cta-btn tba">時間確認中</div>
+  </div>
+
+  <!-- 魯台科創 9月初 -->
+  <div class="card">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">9月初（時間暫定）</span>
+        <span class="card-location">📍 山東・濰坊</span>
+      </div>
+      <div class="card-title">魯台會暨第五屆魯台青年科創營</div>
+      <div class="card-tags">
+        <span class="tag new">科創</span>
+        <span class="tag">#魯台交流</span>
+      </div>
+    </div>
+    <div class="cta-btn tba">時間確認中</div>
+  </div>
+
+  <!-- 醫科探訪 9月中旬 -->
+  <div class="card">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">9月中旬（時間暫定）</span>
+        <span class="card-location">📍 北京</span>
+      </div>
+      <div class="card-title">「潮起兩岸・醫科探訪團」</div>
+      <div class="card-tags">
+        <span class="tag">#醫科探訪</span>
+        <span class="tag">#北京</span>
+      </div>
+    </div>
+    <div class="cta-btn tba">時間確認中</div>
+  </div>
+
+  <!-- 更多場次 -->
+  <div class="card" style="border-style:dashed;opacity:0.6;">
+    <div class="card-body">
+      <div class="card-top">
+        <span class="card-date">10 — 12 月場次陸續公布</span>
+        <span class="card-location">📍 更多城市</span>
+      </div>
+      <div class="card-title">更多場次籌備中</div>
+      <div class="card-tags">
+        <span class="tag">#敬請期待</span>
+      </div>
+    </div>
+    <div class="cta-btn tba">即將公布</div>
+  </div>
+
+  <!-- 免責聲明 -->
+  <div class="disclaimer-wrap">
+    <button class="disclaimer-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('show')">
+      <span>📋 參與須知與免責聲明</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="disclaimer-body">
+      <h4>1. 活動性質定位</h4>
+      本網頁所列之「2026 海峽兩岸交流培訓」系列活動，旨在推動兩岸青年之商業實務培訓、自媒體技術交流、跨境電商實習與企業調研，性質屬於商務考察、學術研習與職業技能深化，非一般觀光旅遊行程。
+
+      <h4>2. 臺灣主辦角色</h4>
+      本系列活動之臺灣地區宣傳推廣、學員資格甄選與商務諮詢，全權由「台灣行銷人協會」及相關合作單位共同協助提供，旨在促進人才培育與對接。
+
+      <h4>3. 特許旅遊業務劃清</h4>
+      本單位不經手、亦不經營任何特許旅行業業務。所有錄取學員之往返機票，均須由學員自行向航空公司官網或合規旅行社個別訂購，本單位不進行任何團體機票代收代付。
+
+      <h4>4. 在地研習與臺灣端收費說明</h4>
+      各場次研習期間之在地交通、食宿及課程地接服務，均由大陸各主辦城市之法定青創基地、育成中心或承辦文旅企業專案獎助資助。本單位僅於臺灣地區酌收定額之【研習報名行政服務費 NT$3,000】，用以補貼行政審查成本，絕不向學員收取任何特許旅遊費用。
+
+      <h4>5. 退費規範</h4>
+      研習報名行政服務費繳交後恕不退還；特殊情由須於活動前 7 天提出申請，審核同意後可延後折抵後續場次，不得折現。
+
+      <h4>6. 活動調整權利</h4>
+      各場次行程內容、師資與參訪企業，主辦方保留依當地實際法規、天候或不可抗力因素進行適度調整之權利。填寫報名表視同理解並同意上述所有規範。
+    </div>
+  </div>
+
+  <footer>
+    <strong>陳執董的商業洞察</strong> ・ 2026 兩岸青年培訓計畫
+  </footer>
+
+</div>
+</body>
+</html>
