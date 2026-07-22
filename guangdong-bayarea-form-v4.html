@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【廣東】大灣區產業創新與科技人文考察團｜報名表</title>
+<meta name="description" content="2026 海峽兩岸交流培訓系列・廣東大灣區產業創新與科技人文考察團報名表（08/10–08/19）">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bay:#0E5A6D;        /* 灣區深藍綠 */
+    --bay-dark:#093F4D;
+    --ink:#20262B;
+    --muted:#68707A;
+    --paper:#F4F6F5;
+    --card:#FFFFFF;
+    --line:#DCE2E0;
+    --gold:#B9862F;
+    --ok:#2E7D52;
+    --err:#B3402E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Noto Sans TC',"PingFang TC","Microsoft JhengHei",sans-serif;
+    font-size:16px;line-height:1.75;color:var(--ink);
+    background:var(--paper);
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 18px 64px}
+
+  /* ── 頁首 ── */
+  header{
+    background:linear-gradient(165deg,var(--bay) 0%,var(--bay-dark) 100%);
+    color:#F2F7F6;
+    padding:44px 18px 40px;
+  }
+  header .inner{max-width:640px;margin:0 auto}
+  .eyebrow{
+    font-size:13px;letter-spacing:.35em;color:#9FD3C7;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Noto Serif TC',serif;font-weight:900;
+    font-size:clamp(26px,6.4vw,34px);line-height:1.4;
+    margin-bottom:16px;
+  }
+  .hero-meta{display:flex;flex-wrap:wrap;gap:8px}
+  .hero-meta span{
+    font-size:14px;font-weight:500;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:999px;padding:4px 14px;
+  }
+
+  /* ── 卡片 ── */
+  .card{
+    background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:24px 20px;margin-top:22px;
+  }
+  .card h2{
+    font-family:'Noto Serif TC',serif;font-weight:700;
+    font-size:20px;color:var(--bay);
+    padding-bottom:10px;margin-bottom:16px;
+    border-bottom:2px solid var(--bay);
+  }
+  .card p{margin-bottom:10px}
+  .card p:last-child{margin-bottom:0}
+  .card ul{list-style:none}
+  .card li{
+    padding-left:22px;position:relative;margin-bottom:10px;
+  }
+  .card li::before{
+    content:"✦";position:absolute;left:0;color:var(--gold);
+  }
+  .hl{font-weight:700;color:var(--bay)}
+  .notice{font-size:14.5px;color:var(--muted)}
+
+  /* ── 行程 ── */
+  .phase{
+    font-family:'Noto Serif TC',serif;font-weight:700;
+    font-size:16.5px;color:var(--gold);
+    margin:22px 0 6px;letter-spacing:.05em;
+  }
+  .phase:first-of-type{margin-top:4px}
+  .day{
+    display:flex;gap:12px;
+    padding:12px 0;border-bottom:1px solid var(--line);
+  }
+  .day:last-child{border-bottom:none}
+  .day-n{
+    flex:none;width:58px;font-weight:700;color:var(--bay);
+    font-size:15px;padding-top:1px;
+  }
+  .day-c{font-size:15px;line-height:1.7}
+  .day-c small{display:block;color:var(--muted);font-size:13.5px}
+
+  /* ── 表單 ── */
+  label{
+    display:block;font-weight:700;font-size:15.5px;
+    margin:20px 0 6px;
+  }
+  label .req{color:var(--err);margin-left:4px}
+  label .hint{display:block;font-weight:400;font-size:13.5px;color:var(--muted)}
+  input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{
+    width:100%;font-size:16px;font-family:inherit;color:var(--ink);
+    padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;
+    background:#fff;outline:none;
+  }
+  input:focus,select:focus,textarea:focus{border-color:var(--bay)}
+  textarea{min-height:96px;resize:vertical}
+  .radio-group{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+  .radio-group label{
+    display:flex;align-items:center;gap:10px;
+    font-weight:400;margin:0;padding:11px 14px;
+    border:1.5px solid var(--line);border-radius:10px;cursor:pointer;
+  }
+  .radio-group input{accent-color:var(--bay);width:18px;height:18px;flex:none}
+
+  button.submit{
+    display:block;width:100%;margin-top:28px;
+    background:var(--bay);color:#fff;border:none;border-radius:12px;
+    font-size:17px;font-weight:700;font-family:inherit;
+    padding:16px;cursor:pointer;
+  }
+  button.submit:active{background:var(--bay-dark)}
+  button.submit[disabled]{opacity:.6}
+
+  .form-msg{display:none;margin-top:18px;border-radius:10px;padding:14px 16px;font-size:15px}
+  .form-msg.ok{display:block;background:#EAF5EE;color:var(--ok);border:1px solid #BFE0CC}
+  .form-msg.err{display:block;background:#FBEDEA;color:var(--err);border:1px solid #EBC5BD}
+
+  /* ── 聯絡按鈕 ── */
+  .cta{
+    display:block;width:100%;text-align:center;
+    border:none;color:#fff;
+    border-radius:12px;padding:14px;margin-top:12px;
+    font-size:16px;font-weight:700;text-decoration:none;
+  }
+  .cta.line{background:#06C755}
+  .cta.wecom{background:#0082EF}
+
+  footer{
+    max-width:640px;margin:40px auto 0;padding:0 18px;
+    font-size:13px;color:var(--muted);text-align:center;line-height:1.9;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="eyebrow">2026 海峽兩岸交流培訓系列</div>
+    <h1>【廣東】大灣區產業創新<br>與科技人文考察團</h1>
+    <div class="hero-meta">
+      <span>📅 2026/08/10 – 08/19</span>
+      <span>共 10 天 9 夜</span>
+      <span>📍 廣東・大灣區</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 招募對象 -->
+  <section class="card">
+    <h2>招募對象</h2>
+    <p class="hl">▍年齡與背景</p>
+    <ul>
+      <li><span class="hl">45 歲以下</span>之台灣青年（以 1981 年 1 月 1 日後出生者為原則）。</li>
+      <li>對<span class="hl">產業創新、AI 科技、創業發展、兩岸交流</span>有興趣者。</li>
+      <li>創業者、企業經營者、企業主管、專業人士及相關從業人員優先。</li>
+    </ul>
+    <p class="hl" style="margin-top:16px">▍報名資格</p>
+    <ul>
+      <li>持有效台胞證者，或可於出發前完成申辦。</li>
+      <li>報名須經本會行政審查，本會保留錄取與否之最終決定權；完成報名不代表確定錄取，審查結果將另行通知。</li>
+      <li>往返機票、護照及簽注等相關費用請自行處理；本會不經營旅行業務，亦不負責任何旅遊相關業務。</li>
+    </ul>
+  </section>
+
+  <!-- 行程重點 -->
+  <section class="card">
+    <h2>十天行程重點</h2>
+
+    <div class="phase">第一階段｜產業考察</div>
+    <div class="day"><div class="day-n">第一天</div><div class="day-c">台灣飛抵香港，經深圳蓮塘口岸抵達深圳，乘車前往東莞石排・歡迎晚宴</div></div>
+    <div class="day"><div class="day-n">第二天</div><div class="day-c">上午：參訪廣東旭柏彩印工藝製品有限公司・實務研習<br>下午：參訪潮玩企業——潮玩中心與漫博中心</div></div>
+
+    <div class="phase">第二階段｜千年商都與嶺南文化</div>
+    <div class="day"><div class="day-n">第三天</div><div class="day-c">上午：東莞南社明清古村落<br>下午：廣州「最美 7 公里」有軌電車・花城廣場・外觀廣州塔<br>晚上：乘船夜遊珠江</div></div>
+    <div class="day"><div class="day-n">第四天</div><div class="day-c">上午：廣州永慶坊・李小龍故居<br>下午：番禺廈滘 OMG 網紅直播基地——賽博朋克銀翼隧道・霓虹港風街區・巨型道具與潮玩公仔・「上河里」國潮街・永續舊物雜貨鋪</div></div>
+    <div class="day"><div class="day-n">第五天</div><div class="day-c">上午：佛山祖廟・醒獅表演・黃飛鴻故居<br>下午：清暉園・逢簡水鄉</div></div>
+
+    <div class="phase">第三階段｜海灣風光與科技前沿</div>
+    <div class="day"><div class="day-n">第六天</div><div class="day-c">上午：前往珠海，途經參訪孫中山故居<br>下午：珠海北山大院・情侶路・珠海漁女・日月貝大劇院</div></div>
+    <div class="day"><div class="day-n">第七天</div><div class="day-c">上午：珠海灣仔碼頭・乘船環澳門半島<br>下午：深圳華強北博物館・華強北電子城</div></div>
+    <div class="day"><div class="day-n">第八天</div><div class="day-c">上午：參訪深圳科學技術館（新館）<br>下午：深圳灣萬象城高端商業生態考察・蓮花山俯瞰深圳</div></div>
+    <div class="day"><div class="day-n">第九天</div><div class="day-c">上午：INNO100 全球創新旗艦店（高新科技・機器人）・體驗「蘿蔔快跑」無人駕駛車輛<br>下午—晚上：深圳錦繡中華民俗村</div></div>
+    <div class="day"><div class="day-n">第十天</div><div class="day-c">深圳經蓮塘口岸前往香港機場，返程台灣</div></div>
+
+    <p class="notice" style="margin-top:14px">＊行程如遇天候、交通或現場狀況，得彈性調整順序與內容。</p>
+  </section>
+
+  <!-- 報名表 -->
+  <section class="card">
+    <h2>報名資料</h2>
+    <form id="regForm" action="https://formspree.io/f/xdaqlnbl" method="POST">
+      <input type="hidden" name="_subject" value="【廣東大灣區考察團】新報名表">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="活動場次" value="廣東大灣區產業創新與科技人文考察團 2026/08/10–08/19">
+
+      <label>姓名<span class="req">＊</span></label>
+      <input type="text" name="姓名" required>
+
+      <label>公司名稱／職務<span class="req">＊</span></label>
+      <input type="text" name="公司名稱職務" required>
+
+      <label>手機聯繫方式<span class="req">＊</span></label>
+      <input type="tel" name="手機聯繫方式" required>
+
+      <label>Email<span class="req">＊</span></label>
+      <input type="email" name="Email" required>
+
+      <label>微信 ID<span class="req">＊</span></label>
+      <input type="text" name="微信ID" required>
+
+      <label>性別<span class="req">＊</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="性別" value="生理男" required> 生理男</label>
+        <label><input type="radio" name="性別" value="生理女"> 生理女</label>
+      </div>
+
+      <label>臺胞證證件號碼<span class="req">＊</span></label>
+      <input type="text" name="臺胞證證件號碼" required>
+
+      <label>護照證件號碼<span class="req">＊</span>
+        <span class="hint">若無臺胞證證號請務必填寫</span>
+      </label>
+      <input type="text" name="護照證件號碼" required>
+
+      <label>出生 年／月／日<span class="req">＊</span></label>
+      <input type="date" name="出生年月日" required>
+
+      <label>是否首次去大陸<span class="req">＊</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="是否首次去大陸" value="是" required> 是</label>
+        <label><input type="radio" name="是否首次去大陸" value="否"> 否</label>
+      </div>
+
+      <label>是否首次去廣東<span class="req">＊</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="是否首次去廣東" value="是" required> 是</label>
+        <label><input type="radio" name="是否首次去廣東" value="否"> 否</label>
+      </div>
+
+      <label>飲食是否素食<span class="req">＊</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="飲食是否素食" value="素食" required> 素食</label>
+        <label><input type="radio" name="飲食是否素食" value="否"> 否</label>
+      </div>
+
+      <label>常住城市<span class="req">＊</span></label>
+      <input type="text" name="常住城市" required>
+
+      <label>出發地<span class="req">＊</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="出發地" value="高雄" required> 高雄</label>
+        <label><input type="radio" name="出發地" value="台中"> 台中</label>
+        <label><input type="radio" name="出發地" value="台北"> 台北</label>
+      </div>
+
+      <label>行業別<span class="req">＊</span></label>
+      <input type="text" name="行業別" required>
+
+      <label>想對接的資源<span class="req">＊</span></label>
+      <textarea name="想對接的資源" required></textarea>
+
+      <label>推薦人<span class="req">＊</span>
+        <span class="hint">若無請填「無」</span>
+      </label>
+      <input type="text" name="推薦人" required>
+
+      <button type="submit" class="submit" id="submitBtn">送出報名</button>
+      <div class="form-msg" id="msgOk">報名資料已送出，將由本會進行審查，審查結果與後續事宜將另行通知。</div>
+      <div class="form-msg" id="msgErr">送出失敗，請稍後再試，或直接透過下方聯絡方式與我們聯繫。</div>
+    </form>
+  </section>
+
+  <!-- 聯絡方式 -->
+  <section class="card">
+    <h2>聯絡方式</h2>
+    <p class="notice">報名或研習相關問題，歡迎透過以下任一管道聯繫：</p>
+    <a class="cta line" href="https://lin.ee/aEaysh6l" target="_blank" rel="noopener">台灣行銷人協會官方 LINE（ID：@tma77）</a>
+    <a class="cta wecom" href="https://edjumptw.github.io/2026events/wecom.html" target="_blank" rel="noopener">辦公室主任企業微信（掃碼加入）</a>
+  </section>
+
+</div>
+
+<footer>
+  ✪ 報名審查單位：台灣行銷人協會 Taiwan Marketing Association<br>
+  社團法人高雄市行銷人協會 Kaohsiung City Marketing Association<br>
+  本協會立案證號：台內團字第1060000211號｜高市社人團字第11333577500號<br>
+  勞動部勞動力發展署 TTQS 訓練機構：通過 發能字第1130332918A號
+</footer>
+
+<script>
+  var form = document.getElementById('regForm');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    var ok = document.getElementById('msgOk');
+    var err = document.getElementById('msgErr');
+    ok.classList.remove('ok'); err.classList.remove('err');
+    btn.disabled = true; btn.textContent = '送出中⋯';
+    fetch(form.action, {
+      method:'POST',
+      body:new FormData(form),
+      headers:{'Accept':'application/json'}
+    }).then(function(r){
+      if(r.ok){
+        form.reset();
+        ok.classList.add('ok');
+        btn.textContent='已送出';
+      }else{
+        err.classList.add('err');
+        btn.disabled=false; btn.textContent='送出報名';
+      }
+    }).catch(function(){
+      err.classList.add('err');
+      btn.disabled=false; btn.textContent='送出報名';
+    });
+  });
+</script>
+
+</body>
+</html>
