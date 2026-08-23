@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 內容創作者訓練營｜從帳號定位到成片，做出真正屬於你的內容</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0C0B09; color: #F5F0E6; font-family: "Noto Sans TC", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #FFC24B; text-decoration: none; }
+  a:hover { color: #FFD98A; }
+  ::selection { background: #FFC24B; color: #0C0B09; }
+  input, textarea, select, button { font-family: inherit; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 1120px) {
+    .r-hero { grid-template-columns: 1fr !important; gap: 48px !important; }
+  }
+  @media (max-width: 1100px) {
+    .r-cols-4 { grid-template-columns: repeat(2, 1fr) !important; }
+    .r-cols-3 { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (max-width: 900px) {
+    .r-stack { grid-template-columns: 1fr !important; gap: 44px !important; }
+    .r-cols-4, .r-cols-3, .r-cols-2 { grid-template-columns: 1fr !important; }
+    .r-day { grid-template-columns: 1fr !important; gap: 22px !important; }
+    .r-pad { padding-left: 22px !important; padding-right: 22px !important; }
+    .r-nav { display: none !important; }
+    .r-sticky { position: static !important; }
+    .r-row { flex-direction: column !important; align-items: flex-start !important; }
+    .r-panel { padding: 34px 24px !important; }
+  }
+</style>
+</helmet>
+
+<div style="position:relative;overflow:hidden;background:#0C0B09">
+
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:60;opacity:0.05;mix-blend-mode:overlay;background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/></filter><rect width='120' height='120' filter='url(%23n)'/></svg>&quot;)"></div>
+
+  <header style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(12,11,9,0.82);border-bottom:1px solid rgba(245,240,230,0.1)">
+    <div class="r-pad" style="max-width:1240px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <div style="display:flex;align-items:baseline;gap:12px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.18em;color:#FFC24B">20 SEATS</span>
+        <span style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:19px;letter-spacing:0.02em">AI 內容創作者訓練營</span>
+      </div>
+      <nav class="r-nav" style="display:flex;align-items:center;gap:30px">
+        <a href="#about" style="color:#A39C8E;font-size:15px">課程規格</a>
+        <a href="#days" style="color:#A39C8E;font-size:15px">七堂課綱</a>
+        <a href="#schedule" style="color:#A39C8E;font-size:15px">時間表</a>
+        <a href="#output" style="color:#A39C8E;font-size:15px">帶走什麼</a>
+        <a href="#enroll" style="display:inline-block;padding:11px 22px;background:#FFC24B;color:#0C0B09;font-weight:700;font-size:15px;border-radius:2px">立即報名</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="r-hero r-pad" style="max-width:1240px;margin:0 auto;padding:104px 40px 88px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);gap:60px;align-items:center">
+    <div style="animation:rise 0.7s ease both">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:28px">
+        <span style="width:38px;height:1px;background:#FFC24B"></span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">七堂直播 ・ 14 小時 ・ 限額 20 人</span>
+      </div>
+      <h1 style="font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(38px,6vw,70px);line-height:1.18;letter-spacing:-0.01em;margin:0 0 26px;text-wrap:pretty">從帳號定位到成片，<br>做出<span style="color:#FFC24B">真正屬於你</span>的內容</h1>
+      <p style="font-size:20px;line-height:1.85;color:#C9C2B4;max-width:620px;margin:0 0 22px;text-wrap:pretty">大部分人學 AI 做影片，最後都停在同一個地方：工具都會用了，但帳號還是沒有定位，題目還是想不出來，片子還是沒做出來。</p>
+      <p style="font-size:20px;line-height:1.85;color:#F5F0E6;max-width:620px;margin:0 0 36px;text-wrap:pretty">缺的從來不是工具教學。缺的是有人盯著你，把整套流程走完一次。</p>
+      <div style="display:flex;align-items:center;gap:18px;margin-bottom:40px;flex-wrap:wrap">
+        <a href="#enroll" style="display:inline-block;padding:19px 40px;background:#FFC24B;color:#0C0B09;font-weight:700;font-size:18px;border-radius:2px;white-space:nowrap;flex-shrink:0;box-shadow:0 18px 40px -18px rgba(255,194,75,0.7)">我要報名（早鳥 NT$4,800）</a>
+        <a href="#days" style="display:inline-block;padding:19px 32px;border:1px solid rgba(245,240,230,0.28);color:#F5F0E6;font-size:18px;border-radius:2px;white-space:nowrap;flex-shrink:0">先看七堂課綱</a>
+      </div>
+      <div class="r-cols-4" style="display:grid;grid-template-columns:repeat(4,auto);gap:36px;justify-content:start;border-top:1px solid rgba(245,240,230,0.12);padding-top:28px">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:#F5F0E6">7<span style="font-size:16px;color:#A39C8E"> 堂直播</span></div>
+          <div style="font-size:14px;color:#A39C8E;margin-top:6px">每堂 120 分鐘</div>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:#F5F0E6">14<span style="font-size:16px;color:#A39C8E"> 小時</span></div>
+          <div style="font-size:14px;color:#A39C8E;margin-top:6px">每小時 343 元</div>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:#F5F0E6">20<span style="font-size:16px;color:#A39C8E"> 人小班</span></div>
+          <div style="font-size:14px;color:#A39C8E;margin-top:6px">真實限額</div>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:#F5F0E6">12<span style="font-size:16px;color:#A39C8E"> 天完課</span></div>
+          <div style="font-size:14px;color:#A39C8E;margin-top:6px">每週三個平日晚上</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="animation:rise 0.9s ease both;background:#14120F;border:1px solid rgba(245,240,230,0.12);padding:34px 32px;min-width:0">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#FFC24B">十二天怎麼上</span>
+        <span style="font-size:14px;color:#7C766A">20:00–22:00</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:10px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#7C766A;text-align:center;padding-bottom:6px">一</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#7C766A;text-align:center;padding-bottom:6px">二</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#7C766A;text-align:center;padding-bottom:6px">三</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#7C766A;text-align:center;padding-bottom:6px">四</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#7C766A;text-align:center;padding-bottom:6px">五</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#7C766A;text-align:center;padding-bottom:6px">六</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#7C766A;text-align:center;padding-bottom:6px">日</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px">
+        <div style="aspect-ratio:1;border:1px solid rgba(245,240,230,0.08)"></div>
+        <div style="aspect-ratio:1;background:#FFC24B;color:#0C0B09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">D1</span><span style="font-size:12px">定位</span></div>
+        <div style="aspect-ratio:1;background:#FFC24B;color:#0C0B09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">D2</span><span style="font-size:12px">選題</span></div>
+        <div style="aspect-ratio:1;background:#FFC24B;color:#0C0B09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">D3</span><span style="font-size:12px">腳本</span></div>
+        <div style="aspect-ratio:1;background:rgba(255,194,75,0.14);border:1px solid rgba(255,194,75,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;color:#FFC24B;text-align:center;line-height:1.3">作業</div>
+        <div style="aspect-ratio:1;background:rgba(255,194,75,0.14);border:1px solid rgba(255,194,75,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;color:#FFC24B;text-align:center;line-height:1.3">作業</div>
+        <div style="aspect-ratio:1;background:rgba(255,194,75,0.14);border:1px solid rgba(255,194,75,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;color:#FFC24B;text-align:center;line-height:1.3">作業</div>
+        <div style="aspect-ratio:1;border:1px solid rgba(245,240,230,0.08)"></div>
+        <div style="aspect-ratio:1;background:#FFC24B;color:#0C0B09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">D4</span><span style="font-size:12px">分鏡</span></div>
+        <div style="aspect-ratio:1;background:#FFC24B;color:#0C0B09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">D5</span><span style="font-size:12px">素材</span></div>
+        <div style="aspect-ratio:1;background:#FFC24B;color:#0C0B09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">D6</span><span style="font-size:12px">成片</span></div>
+        <div style="aspect-ratio:1;border:1px solid rgba(245,240,230,0.08)"></div>
+        <div style="aspect-ratio:1;background:#F5F0E6;color:#0C0B09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><span style="font-family:'JetBrains Mono',monospace;font-size:11px">D7</span><span style="font-size:12px">發表</span></div>
+        <div style="aspect-ratio:1;border:1px solid rgba(245,240,230,0.08)"></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(245,240,230,0.12);font-size:13px;color:#A39C8E">
+        <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:#FFC24B"></span>直播課</span>
+        <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:rgba(255,194,75,0.2);border:1px solid rgba(255,194,75,0.4)"></span>週末實作</span>
+        <span style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:#F5F0E6"></span>成果發表</span>
+      </div>
+      <p style="font-size:14px;line-height:1.75;color:#7C766A;margin:18px 0 0">實際梯次日期【待填】。第二週週六上 Day 7，讓你有週五一整天完成成片。</p>
+    </div>
+  </section>
+
+  <div style="border-top:1px solid rgba(245,240,230,0.1);border-bottom:1px solid rgba(245,240,230,0.1);background:#100E0B;overflow:hidden;padding:20px 0">
+    <div style="display:flex;width:max-content;animation:marquee 38s linear infinite;font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:0.2em;color:rgba(245,240,230,0.42)">
+      <span style="padding-right:40px">1 份帳號定位方案</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">3 份對標帳號分析報告</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">30 天選題庫</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">3 個月行銷日曆</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">8 條完整腳本</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">3 份分鏡表</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">1 支完整成片</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">1 套個人 SOP</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">1 份帳號定位方案</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">3 份對標帳號分析報告</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">30 天選題庫</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">3 個月行銷日曆</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">8 條完整腳本</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">3 份分鏡表</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">1 支完整成片</span><span style="padding-right:40px;color:#FFC24B">・</span>
+      <span style="padding-right:40px">1 套個人 SOP</span><span style="padding-right:40px;color:#FFC24B">・</span>
+    </div>
+  </div>
+
+  <section id="about" class="r-pad" style="max-width:1240px;margin:0 auto;padding:104px 40px">
+    <div class="r-stack" style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:76px">
+      <div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">01 / 這門課賣的是什麼</span>
+        <h2 style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.32;margin:22px 0 24px">這門課賣的不是工具教學，<br>是「做完」。</h2>
+        <p style="font-size:17px;line-height:1.9;color:#A39C8E;margin:0">定位方案、選題庫、行銷日曆、腳本、分鏡表、成片、SOP —— 這些東西只有你真的動手做完才會存在。所以每一堂都留了四十分鐘給現場實操，你必須在課堂上就把當天的東西做出來，講師會一個一個看你的畫面。</p>
+      </div>
+      <div>
+        <div style="border-top:1px solid rgba(245,240,230,0.14);padding:28px 0;display:grid;grid-template-columns:64px 1fr;gap:22px;align-items:start">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:15px;color:#7C766A">01</span>
+          <div>
+            <h3 style="font-size:23px;font-weight:700;margin:0 0 10px">為什麼是直播，不是錄播</h3>
+            <p style="font-size:17px;line-height:1.85;color:#A39C8E;margin:0">AI 影片工具更新得太快。錄播錄好三個月，介面就跟你看到的對不上了。直播每一期都是當下的版本。</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.14);padding:28px 0;display:grid;grid-template-columns:64px 1fr;gap:22px;align-items:start">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:15px;color:#7C766A">02</span>
+          <div>
+            <h3 style="font-size:23px;font-weight:700;margin:0 0 10px">這門課必然卡關</h3>
+            <p style="font-size:17px;line-height:1.85;color:#A39C8E;margin:0">畫面崩壞、主體變形、動作怪異、風格不統一 —— 同一組提示詞別人跑得出來你跑不出來，這時候需要有人當場看著你的畫面告訴你問題在哪。</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.14);border-bottom:1px solid rgba(245,240,230,0.14);padding:28px 0;display:grid;grid-template-columns:64px 1fr;gap:22px;align-items:start">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:15px;color:#7C766A">03</span>
+          <div>
+            <h3 style="font-size:23px;font-weight:700;margin:0 0 10px">所以只能收 20 人</h3>
+            <p style="font-size:17px;line-height:1.85;color:#A39C8E;margin:0">現場實操需要講師巡看每一位學員的畫面，超過二十人做不到。這是真實的人數限制，不是行銷話術。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:80px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#7C766A;margin-bottom:24px">課程規格</div>
+      <div class="r-cols-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(245,240,230,0.14)">
+        <div style="background:#14120F;padding:28px 26px">
+          <div style="font-size:14px;color:#7C766A;margin-bottom:10px">形式</div>
+          <div style="font-size:19px;font-weight:700;line-height:1.5">線上直播，共七堂</div>
+        </div>
+        <div style="background:#14120F;padding:28px 26px">
+          <div style="font-size:14px;color:#7C766A;margin-bottom:10px">時長</div>
+          <div style="font-size:19px;font-weight:700;line-height:1.5">每堂 120 分鐘，共 14 小時</div>
+        </div>
+        <div style="background:#14120F;padding:28px 26px">
+          <div style="font-size:14px;color:#7C766A;margin-bottom:10px">節奏</div>
+          <div style="font-size:19px;font-weight:700;line-height:1.5">分段式，跨度十二天</div>
+        </div>
+        <div style="background:#14120F;padding:28px 26px">
+          <div style="font-size:14px;color:#7C766A;margin-bottom:10px">人數</div>
+          <div style="font-size:19px;font-weight:700;line-height:1.5">20 人小班（最低 15 人開班）</div>
+        </div>
+        <div style="background:#14120F;padding:28px 26px">
+          <div style="font-size:14px;color:#7C766A;margin-bottom:10px">平台</div>
+          <div style="font-size:19px;font-weight:700;line-height:1.5">騰訊會議（台灣可正常連線）</div>
+        </div>
+        <div style="background:#14120F;padding:28px 26px">
+          <div style="font-size:14px;color:#7C766A;margin-bottom:10px">回放</div>
+          <div style="font-size:19px;font-weight:700;line-height:1.5">全程錄影，觀看期限 14 天</div>
+        </div>
+        <div style="background:#14120F;padding:28px 26px">
+          <div style="font-size:14px;color:#7C766A;margin-bottom:10px">社群</div>
+          <div style="font-size:19px;font-weight:700;line-height:1.5">微信學員群，講師直接回覆</div>
+        </div>
+        <div style="background:#14120F;padding:28px 26px">
+          <div style="font-size:14px;color:#7C766A;margin-bottom:10px">主辦單位</div>
+          <div style="font-size:19px;font-weight:700;line-height:1.5">國際人脈商業有限公司</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="who" class="r-pad" style="max-width:1240px;margin:0 auto;padding:0 40px 104px">
+    <div class="r-row" style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:48px">
+      <div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">02 / 適用人群</span>
+        <h2 style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.32;margin:22px 0 0">四種人，來對地方了</h2>
+      </div>
+      <p style="font-size:16px;line-height:1.8;color:#7C766A;max-width:340px;margin:0">課程全方位系統教學，含 AI 工具和短影音經營策略，打造個人創意風格。</p>
+    </div>
+    <div class="r-cols-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div style="background:#14120F;border:1px solid rgba(245,240,230,0.1);border-top:2px solid #FFC24B;padding:34px 28px;display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A">A</span>
+        <h3 style="font-size:22px;font-weight:700;line-height:1.5;margin:0">從 0 開始的新手，想要擁有自己的特色</h3>
+        <div style="display:grid;gap:12px;font-size:16px;line-height:1.75;color:#A39C8E">
+          <span>只要會使用手機或電腦，都能輕鬆學習</span>
+          <span>無基礎也學得會，0 經驗也能擁有爆款作品</span>
+          <span>打造個人創意風格</span>
+        </div>
+      </div>
+      <div style="background:#14120F;border:1px solid rgba(245,240,230,0.1);border-top:2px solid #FFC24B;padding:34px 28px;display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A">B</span>
+        <h3 style="font-size:22px;font-weight:700;line-height:1.5;margin:0">影片創作者 &amp; 品牌行銷者</h3>
+        <div style="display:grid;gap:12px;font-size:16px;line-height:1.75;color:#A39C8E">
+          <span>已經嘗試做短影音但內容散亂、沒有體系</span>
+          <span>想系統學習 AI 短影音應用，提升製作效率</span>
+          <span>突破創作瓶頸，讓行銷更精準</span>
+        </div>
+      </div>
+      <div style="background:#14120F;border:1px solid rgba(245,240,230,0.1);border-top:2px solid #FFC24B;padding:34px 28px;display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A">C</span>
+        <h3 style="font-size:22px;font-weight:700;line-height:1.5;margin:0">經營個人品牌或企業品牌，想突破創新者</h3>
+        <div style="display:grid;gap:12px;font-size:16px;line-height:1.75;color:#A39C8E">
+          <span>AI 工具結合短影音，建立跨領域行銷策略</span>
+          <span>用 AI 力量系統化輸出精彩內容</span>
+          <span>高效打造個人品牌影響力</span>
+        </div>
+      </div>
+      <div style="background:#14120F;border:1px solid rgba(245,240,230,0.1);border-top:2px solid #FFC24B;padding:34px 28px;display:flex;flex-direction:column;gap:18px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A">D</span>
+        <h3 style="font-size:22px;font-weight:700;line-height:1.5;margin:0">想打造個人 IP，但不會選題、不會寫腳本的上班族與創業者</h3>
+        <div style="display:grid;gap:12px;font-size:16px;line-height:1.75;color:#A39C8E">
+          <span>突破 0 基礎技術，想轉型為短影音 IP</span>
+          <span>加快內容產出，擴大行銷廣度</span>
+          <span>提升教學及個人影響力</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="days" style="background:#100E0B;border-top:1px solid rgba(245,240,230,0.1);border-bottom:1px solid rgba(245,240,230,0.1)">
+    <div class="r-pad" style="max-width:1240px;margin:0 auto;padding:104px 40px">
+      <div class="r-row" style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:56px">
+        <div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">03 / 完整課綱</span>
+          <h2 style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.32;margin:22px 0 0">Day 1 到 Day 7，逐層遞進</h2>
+        </div>
+        <p style="font-size:16px;line-height:1.8;color:#7C766A;max-width:340px;margin:0">每節 2 小時，每天只聚焦 1–2 個技能點，當堂練透。前 60 分鐘教學示範、中間 40 分鐘現場實操、最後 20 分鐘即時答疑。</p>
+      </div>
+
+      <div class="r-day" style="border-top:1px solid rgba(245,240,230,0.14);padding:42px 0;display:grid;grid-template-columns:200px 1fr;gap:48px">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:66px;line-height:1;color:rgba(245,240,230,0.16)">01</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:#FFC24B;margin-top:12px">第一週 ・ 週二</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:clamp(25px,2.6vw,32px);font-weight:700;line-height:1.4;margin:0 0 12px">認知破冰：AI 短影音工具全景與賽道選擇</h3>
+          <p style="font-size:17px;color:#FFC24B;margin:0 0 26px">本節主題：建立 AI 短影音認知體系 ＋ 找到適合自己的內容賽道</p>
+          <div class="r-cols-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 1</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">AI 短影音工具全景圖</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>當前 AI 短影音工具生態梳理</span><span>每款工具的核心場景、使用成本（免費／付費）與上手難度</span><span>真實案例拆解：不同類型的 AI 短影音帳號</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 2</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">賽道選擇 —— 用 AI 幫你做帳號定位</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>主流賽道分析：知識分享、生活方式、劇情搞笑、技能教學、產品種草⋯⋯</span><span>用 AI 做自我分析與目標受眾分析</span><span>實操：輸入職業／興趣／專長／目標，生成 5 個帳號定位方案</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 3</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">對標帳號分析</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>用 AI 拆解別人的成功</span><span>生成一份完整的對標分析報告</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-day" style="border-top:1px solid rgba(245,240,230,0.14);padding:42px 0;display:grid;grid-template-columns:200px 1fr;gap:48px">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:66px;line-height:1;color:rgba(245,240,230,0.16)">02</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:#FFC24B;margin-top:12px">第一週 ・ 週三</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:clamp(25px,2.6vw,32px);font-weight:700;line-height:1.4;margin:0 0 12px">選題策劃：AI 驅動爆款選題批量生產</h3>
+          <p style="font-size:17px;color:#FFC24B;margin:0 0 26px">本節主題：解決「不知道發什麼、選題枯竭」的痛點</p>
+          <div class="r-cols-3" style="display:grid;grid-template-columns:repeat(2,1fr);gap:30px">
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 1</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">選題方法論 —— 什麼樣的選題容易爆？</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>爆款選題的 4 種底層邏輯：情緒共鳴、實用價值、好奇心、身份認同</span><span>選題的 3 個來源：蹭熱點、挖痛點、戳共鳴點</span><span>用 AI 挖掘熱點話題：即時熱點追蹤 ＋ 垂直領域熱點挖掘</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 2</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">AI 輔助批量選題實戰</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>提示詞公式：領域＋受眾＋選題類型＋數量要求＋風格</span><span>實操：用 DeepSeek 生成 30 天選題庫</span><span>實操：生成未來 3 個月行銷日曆（含節日、紀念日、產業事件）</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-day" style="border-top:1px solid rgba(245,240,230,0.14);padding:42px 0;display:grid;grid-template-columns:200px 1fr;gap:48px">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:66px;line-height:1;color:rgba(245,240,230,0.16)">03</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:#FFC24B;margin-top:12px">第一週 ・ 週四</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:clamp(25px,2.6vw,32px);font-weight:700;line-height:1.4;margin:0 0 12px">腳本撰寫：爆款腳本的結構與 AI 生成</h3>
+          <p style="font-size:17px;color:#FFC24B;margin:0 0 26px">本節主題：掌握爆款腳本的結構化寫法 ＋ AI 輔助快速生成</p>
+          <div class="r-cols-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 1</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">短影音腳本的黃金結構</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>黃金 3 秒開頭鉤子的 4 種寫法：提問式、反轉式、痛點式、利益式</span><span>正文展開（30–50 秒）的三種路徑</span><span>結尾引導（5–10 秒）：按讚、追蹤、留言、分享</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 2</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">AI 腳本生成實戰</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>提示詞公式：角色設定＋影片類型＋核心訊息＋目標受眾＋時長＋風格語氣＋輸出格式</span><span>實操：從選題庫選一個選題生成完整腳本</span><span>實操：同一選題生成 3 種版本（嚴肅專業／輕鬆口語／故事敘事）</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 3</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">腳本的修改與優化</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>口語化改造：讓文字「像人在說話」</span><span>節奏調整：哪裡該快、該慢、該留白</span><span>鉤子強化：開頭夠不夠吸引人？結尾有沒有互動引導？</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid rgba(245,240,230,0.14);padding:32px 0;display:flex;align-items:center;gap:20px;flex-wrap:wrap;background:rgba(255,194,75,0.06)">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:#FFC24B;padding-left:22px">空檔 ・ 週五至週日</span>
+        <span style="font-size:17px;line-height:1.7;color:#C9C2B4;padding-right:22px">三天完整時間完成作業：補齊三十天選題庫、完成五條腳本。這段不是休息，是交付物產出的主要時段 —— 社群開放提問，講師或助教每日固定時段回覆。</span>
+      </div>
+
+      <div class="r-day" style="border-top:1px solid rgba(245,240,230,0.14);padding:42px 0;display:grid;grid-template-columns:200px 1fr;gap:48px">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:66px;line-height:1;color:rgba(245,240,230,0.16)">04</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:#FFC24B;margin-top:12px">第二週 ・ 週二</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:clamp(25px,2.6vw,32px);font-weight:700;line-height:1.4;margin:0 0 12px">畫面構思：AI 輔助分鏡設計與視覺規劃</h3>
+          <p style="font-size:17px;color:#FFC24B;margin:0 0 26px">本節主題：解決「腳本寫完了，但不知道怎麼拍／怎麼生成畫面」的痛點</p>
+          <div class="r-cols-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 1 ・ 40MIN</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">從文字到畫面 —— 分鏡設計基礎</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>什麼是分鏡？為什麼腳本必須配分鏡？</span><span>核心要素：景別（遠／全／中／近／特）、角度、時長、畫面描述、台詞音效</span><span>口播型、敘事型、種草型的分鏡差異</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 2 ・ 40MIN</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">AI 輔助分鏡描述生成</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>用 AI 將腳本自動轉化為分鏡描述</span><span>提示詞技巧：場景＋主體＋動作＋景別＋情緒氛圍</span><span>實操：生成完整分鏡表，並優化到可直接生成影片</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 3 ・ 40MIN</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">用 AI 生成分鏡參考圖</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>用即夢 AI／Midjourney 將分鏡描述轉化為參考圖</span><span>實操：從分鏡表中選 3–5 個關鍵鏡頭生成參考畫面</span><span>技巧：角色一致性、場景一致性的保持方法</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-day" style="border-top:1px solid rgba(245,240,230,0.14);padding:42px 0;display:grid;grid-template-columns:200px 1fr;gap:48px">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:66px;line-height:1;color:rgba(245,240,230,0.16)">05</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:#FFC24B;margin-top:12px">第二週 ・ 週三</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:clamp(25px,2.6vw,32px);font-weight:700;line-height:1.4;margin:0 0 12px">素材生成（上）：AI 影片片段生成</h3>
+          <p style="font-size:17px;color:#FFC24B;margin:0 0 26px">本節主題：解決「有腳本有分鏡，但畫面怎麼來」的痛點</p>
+          <div class="r-cols-3" style="display:grid;grid-template-columns:repeat(2,1fr);gap:30px">
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 1</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">主流 AI 影片生成工具深度實操</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>文生影片：從文字描述生成影片片段</span><span>圖生影片：從參考圖生成動態影片</span><span>參數控制：時長、運動幅度、風格選擇</span><span>實操：用分鏡表中的描述生成對應片段</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 2</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">生成素材的品質控制及提示詞</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>常見問題：畫面崩壞、主體變形、動作怪異、風格不統一</span><span>提升成功率：描述詞結構化、參考圖的重要性、多次生成擇優</span><span>同場景多角度生成、人工微調與組合使用</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-day" style="border-top:1px solid rgba(245,240,230,0.14);padding:42px 0;display:grid;grid-template-columns:200px 1fr;gap:48px">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:66px;line-height:1;color:rgba(245,240,230,0.16)">06</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:#FFC24B;margin-top:12px">第二週 ・ 週四</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:clamp(25px,2.6vw,32px);font-weight:700;line-height:1.4;margin:0 0 12px">AI 輔助將素材拼接為完整影片</h3>
+          <p style="font-size:17px;color:#FFC24B;margin:0 0 26px">本節主題：解決「素材有了，怎麼拼成一條完整的影片」的痛點，並學會透過數據回饋優化內容</p>
+          <div class="r-cols-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 1</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">了解你的剪輯工具，完成「組裝」</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>無需成為剪輯專家，掌握基礎操作即可</span><span>剪輯工具選哪個？</span><span>主流工具比較與推薦：剪映（推薦）、CapCut、必剪、快影</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 2</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">實操：保留最精華的內容</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>配音、字幕與背景音樂</span><span>實操：為影片配上配音、字幕和背景音樂</span><span>封面製作與匯出設定</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 3</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">基礎數據學習與復盤</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>讓數據告訴你「下一步怎麼改」</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-day" style="border-top:1px solid rgba(245,240,230,0.14);padding:42px 0;display:grid;grid-template-columns:200px 1fr;gap:48px">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:66px;line-height:1;color:#FFC24B">07</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.16em;color:#FFC24B;margin-top:12px">第二週 ・ 週六</div>
+        </div>
+        <div>
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:clamp(25px,2.6vw,32px);font-weight:700;line-height:1.4;margin:0 0 12px">閉環復盤：從定位到成片，你的 AI 短影音創作系統</h3>
+          <p style="font-size:17px;color:#FFC24B;margin:0 0 26px">本節主題：系統復盤前 6 天所學，完成從「學會」到「會做」的最後一環</p>
+          <div class="r-cols-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 1</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">全流程串聯</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>從定位到成片的完整閉環</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 2</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">避坑指南</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>各環節常見問題與避坑指南</span></div></div>
+            <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7C766A;margin-bottom:10px">PART 3</div><h4 style="font-size:18px;font-weight:700;line-height:1.55;margin:0 0 10px">建立個人 SOP</h4><div style="display:grid;gap:10px;font-size:16px;line-height:1.75;color:#C9C2B4"><span>建立你自己的 AI 短影音創作 SOP</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="r-pad" style="max-width:1240px;margin:0 auto;padding:104px 40px">
+    <div class="r-row" style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:48px">
+      <div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">04 / 時間表</span>
+        <h2 style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.32;margin:22px 0 0">每週只佔用三個平日晚上</h2>
+      </div>
+      <p style="font-size:16px;line-height:1.8;color:#7C766A;max-width:340px;margin:0">刻意避開「連上四晚」的排法 —— 對有正職的人負擔太重。梯次日期【待填】。</p>
+    </div>
+
+    <div class="r-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div style="background:#14120F;border:1px solid rgba(245,240,230,0.1);padding:38px 34px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px">
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:26px;font-weight:700;margin:0">第一週｜策劃段</h3>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFC24B">20:00–22:00</span>
+        </div>
+        <p style="font-size:15px;color:#7C766A;margin:0 0 18px">純文字工作，不需要開工具做圖。</p>
+        <div style="border-top:1px solid rgba(245,240,230,0.12);padding:16px 0;display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:baseline">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C766A">週二</span>
+          <span style="font-size:17px;line-height:1.6">Day 1｜認知破冰：工具全景與賽道選擇</span>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.12);padding:16px 0;display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:baseline">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C766A">週三</span>
+          <span style="font-size:17px;line-height:1.6">Day 2｜選題策劃：批量生產選題庫</span>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.12);border-bottom:1px solid rgba(245,240,230,0.12);padding:16px 0;display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:baseline">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C766A">週四</span>
+          <span style="font-size:17px;line-height:1.6">Day 3｜腳本撰寫：結構與 AI 生成</span>
+        </div>
+        <div style="margin-top:22px;padding:20px 22px;background:rgba(255,194,75,0.08);border-left:2px solid #FFC24B">
+          <div style="font-size:15px;font-weight:700;margin-bottom:8px">週五至週日｜作業空檔</div>
+          <p style="font-size:15px;line-height:1.75;color:#A39C8E;margin:0">補齊三十天選題庫、完成五條腳本。社群開放提問，每日固定時段回覆。</p>
+        </div>
+      </div>
+
+      <div style="background:#14120F;border:1px solid rgba(245,240,230,0.1);padding:38px 34px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:24px">
+          <h3 style="font-family:'Noto Serif TC',serif;font-size:26px;font-weight:700;margin:0">第二週｜製作段</h3>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFC24B">20:00–22:00</span>
+        </div>
+        <p style="font-size:15px;color:#7C766A;margin:0 0 18px">工具操作，建議用電腦上課。</p>
+        <div style="border-top:1px solid rgba(245,240,230,0.12);padding:16px 0;display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:baseline">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C766A">週二</span>
+          <span style="font-size:17px;line-height:1.6">Day 4｜畫面構思：分鏡設計與參考圖</span>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.12);padding:16px 0;display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:baseline">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C766A">週三</span>
+          <span style="font-size:17px;line-height:1.6">Day 5｜素材生成：AI 影片片段</span>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.12);padding:16px 0;display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:baseline">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#7C766A">週四</span>
+          <span style="font-size:17px;line-height:1.6">Day 6｜素材拼接為完整影片</span>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.12);border-bottom:1px solid rgba(245,240,230,0.12);padding:16px 0;display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:baseline">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:#FFC24B">週六</span>
+          <span style="font-size:17px;line-height:1.6">Day 7｜閉環復盤與成果發表</span>
+        </div>
+        <div style="margin-top:22px;padding:20px 22px;background:rgba(245,240,230,0.04);border-left:2px solid rgba(245,240,230,0.2)">
+          <div style="font-size:15px;font-weight:700;margin-bottom:8px">Day 7 為什麼在週六</div>
+          <p style="font-size:15px;line-height:1.75;color:#A39C8E;margin:0">讓你有週五一整天完成成片，成果發表也安排在大家比較到得齊的週末。</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;background:#14120F;border:1px solid rgba(245,240,230,0.1);padding:42px 38px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:26px">
+        <h3 style="font-family:'Noto Serif TC',serif;font-size:26px;font-weight:700;margin:0">單堂 120 分鐘怎麼用</h3>
+        <span style="font-size:16px;color:#7C766A">重點在中間那四十分鐘</span>
+      </div>
+      <div style="display:grid;grid-template-columns:60fr 40fr 20fr;gap:4px;margin-bottom:18px">
+        <div style="height:14px;background:#FFC24B"></div>
+        <div style="height:14px;background:rgba(255,194,75,0.55)"></div>
+        <div style="height:14px;background:rgba(255,194,75,0.25)"></div>
+      </div>
+      <div class="r-cols-3" style="display:grid;grid-template-columns:60fr 40fr 20fr;gap:4px">
+        <div style="padding-right:24px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:#F5F0E6">60 分</div>
+          <div style="font-size:17px;font-weight:700;margin:10px 0 6px">教學與示範</div>
+          <p style="font-size:15px;line-height:1.75;color:#7C766A;margin:0">帶著你看每一步怎麼操作，示範當下版本的介面與提示詞。</p>
+        </div>
+        <div style="padding-right:24px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:#F5F0E6">40 分</div>
+          <div style="font-size:17px;font-weight:700;margin:10px 0 6px">現場實操，講師巡看</div>
+          <p style="font-size:15px;line-height:1.75;color:#7C766A;margin:0">你同步操作，講師一個一個看你的畫面。當天的產出在課堂上就完成。</p>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:#F5F0E6">20 分</div>
+          <div style="font-size:17px;font-weight:700;margin:10px 0 6px">即時答疑</div>
+          <p style="font-size:15px;line-height:1.75;color:#7C766A;margin:0">卡住的地方當場問完，不帶著問題回家。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="output" style="background:#100E0B;border-top:1px solid rgba(245,240,230,0.1);border-bottom:1px solid rgba(245,240,230,0.1)">
+    <div class="r-pad" style="max-width:1240px;margin:0 auto;padding:104px 40px">
+      <div class="r-stack" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:70px;align-items:start">
+        <div class="r-sticky" style="position:sticky;top:120px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">05 / 你會帶走什麼</span>
+          <h2 style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.32;margin:22px 0 22px">不是八份筆記，<br>是八樣你真的做出來的東西。</h2>
+          <p style="font-size:17px;line-height:1.85;color:#A39C8E;margin:0 0 32px">每一項都在課程中有明確的產出時點，做不完的部分有週末空檔與社群答疑補齊。</p>
+          <a href="#enroll" style="display:inline-block;padding:17px 34px;background:#FFC24B;color:#0C0B09;font-weight:700;font-size:17px;border-radius:2px">我要報名</a>
+        </div>
+        <div class="r-cols-2" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,240,230,0.14)">
+          <div style="background:#100E0B;padding:34px 30px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:44px;line-height:1;color:#FFC24B">1 份</div>
+            <h3 style="font-size:21px;font-weight:700;margin:18px 0 8px">帳號定位方案</h3>
+            <p style="font-size:15px;line-height:1.75;color:#7C766A;margin:0">Day 1｜五個方案收斂為一個</p>
+          </div>
+          <div style="background:#100E0B;padding:34px 30px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:44px;line-height:1;color:#FFC24B">3 份</div>
+            <h3 style="font-size:21px;font-weight:700;margin:18px 0 8px">對標帳號分析報告</h3>
+            <p style="font-size:15px;line-height:1.75;color:#7C766A;margin:0">Day 1｜用 AI 拆解三個對標帳號</p>
+          </div>
+          <div style="background:#100E0B;padding:34px 30px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:44px;line-height:1;color:#FFC24B">30 天</div>
+            <h3 style="font-size:21px;font-weight:700;margin:18px 0 8px">選題庫</h3>
+            <p style="font-size:15px;line-height:1.75;color:#7C766A;margin:0">Day 2 課堂初版 ＋ 週末補齊</p>
+          </div>
+          <div style="background:#100E0B;padding:34px 30px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:44px;line-height:1;color:#FFC24B">3 個月</div>
+            <h3 style="font-size:21px;font-weight:700;margin:18px 0 8px">行銷日曆</h3>
+            <p style="font-size:15px;line-height:1.75;color:#7C766A;margin:0">Day 2｜含節日與產業事件</p>
+          </div>
+          <div style="background:#100E0B;padding:34px 30px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:44px;line-height:1;color:#FFC24B">8 條</div>
+            <h3 style="font-size:21px;font-weight:700;margin:18px 0 8px">完整腳本</h3>
+            <p style="font-size:15px;line-height:1.75;color:#7C766A;margin:0">Day 3 課堂 3 條 ＋ 週末 5 條</p>
+          </div>
+          <div style="background:#100E0B;padding:34px 30px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:44px;line-height:1;color:#FFC24B">3 份</div>
+            <h3 style="font-size:21px;font-weight:700;margin:18px 0 8px">分鏡表</h3>
+            <p style="font-size:15px;line-height:1.75;color:#7C766A;margin:0">Day 4｜含關鍵鏡頭參考圖</p>
+          </div>
+          <div style="background:rgba(255,194,75,0.1);padding:34px 30px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:44px;line-height:1;color:#FFC24B">1 支</div>
+            <h3 style="font-size:21px;font-weight:700;margin:18px 0 8px">完整短影音成片</h3>
+            <p style="font-size:15px;line-height:1.75;color:#A39C8E;margin:0">Day 6｜可以直接發布</p>
+          </div>
+          <div style="background:rgba(255,194,75,0.1);padding:34px 30px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:44px;line-height:1;color:#FFC24B">1 套</div>
+            <h3 style="font-size:21px;font-weight:700;margin:18px 0 8px">個人 AI 短影音 SOP</h3>
+            <p style="font-size:15px;line-height:1.75;color:#A39C8E;margin:0">Day 7｜課後自己重複跑</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools" class="r-pad" style="max-width:1240px;margin:0 auto;padding:104px 40px">
+    <div class="r-stack" style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:76px">
+      <div>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">06 / 會用到哪些工具</span>
+        <h2 style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.32;margin:22px 0 22px">工具照課綱原樣教，<br>成本與難度課堂上一次講清楚。</h2>
+        <p style="font-size:17px;line-height:1.85;color:#A39C8E;margin:0">Day 1 會先把每款工具的核心場景、使用成本（免費／付費）與上手難度攤開來看，你再決定自己要配哪一套。需付費訂閱的工具屬進階選項，不影響你完成交付物。</p>
+      </div>
+      <div>
+        <div style="border-top:1px solid rgba(245,240,230,0.14);padding:26px 0;display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:start">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFC24B">DAY 1–3</span>
+          <div>
+            <h3 style="font-size:21px;font-weight:700;margin:0 0 8px">文字類：DeepSeek</h3>
+            <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">用於帳號定位、受眾分析、選題庫、行銷日曆與腳本生成，全程以提示詞公式帶著操作。</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.14);padding:26px 0;display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:start">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFC24B">DAY 4</span>
+          <div>
+            <h3 style="font-size:21px;font-weight:700;margin:0 0 8px">參考圖：即夢 AI／Midjourney</h3>
+            <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">把分鏡描述轉成關鍵鏡頭參考圖，並維持角色與場景的一致性。</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.14);padding:26px 0;display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:start">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFC24B">DAY 5</span>
+          <div>
+            <h3 style="font-size:21px;font-weight:700;margin:0 0 8px">影片生成：主流 AI 影片工具</h3>
+            <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">文生影片與圖生影片的深度實操，含參數控制與四類常見問題的現場排除。</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(245,240,230,0.14);border-bottom:1px solid rgba(245,240,230,0.14);padding:26px 0;display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:start">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#FFC24B">DAY 6</span>
+          <div>
+            <h3 style="font-size:21px;font-weight:700;margin:0 0 8px">剪輯：剪映（推薦）、CapCut、必剪、快影</h3>
+            <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">四款主流工具比較與推薦，只教組裝成片所需的基礎操作 —— 不需要成為剪輯專家。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:80px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#7C766A;margin-bottom:26px">課程特色</div>
+      <div class="r-cols-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px 52px">
+        <div style="border-top:2px solid #FFC24B;padding-top:22px">
+          <h3 style="font-size:22px;font-weight:700;margin:0 0 12px">只做策劃與素材</h3>
+          <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">專注「拍什麼、寫什麼、畫面怎麼來」。Day 6 只教組裝成片所需的剪輯基礎，不涉及發布與營運。</p>
+        </div>
+        <div style="border-top:2px solid #FFC24B;padding-top:22px">
+          <h3 style="font-size:22px;font-weight:700;margin:0 0 12px">每節 2 小時，節奏從容</h3>
+          <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">每天只聚焦 1–2 個技能點，當堂練透，不留課後債。</p>
+        </div>
+        <div style="border-top:2px solid #FFC24B;padding-top:22px">
+          <h3 style="font-size:22px;font-weight:700;margin:0 0 12px">100% 實操導向</h3>
+          <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">不講工具原理、不講模型、不寫程式，全部是可立即上手的操作。</p>
+        </div>
+        <div style="border-top:2px solid #FFC24B;padding-top:22px">
+          <h3 style="font-size:22px;font-weight:700;margin:0 0 12px">逐層遞進</h3>
+          <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">定位→選題→腳本→分鏡→素材，每天都是前一天的「下一步」，邏輯連貫。</p>
+        </div>
+        <div style="border-top:2px solid #FFC24B;padding-top:22px">
+          <h3 style="font-size:22px;font-weight:700;margin:0 0 12px">範本即戰力</h3>
+          <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">提供選題範本、腳本範本、分鏡範本、提示詞範本，開箱即用。</p>
+        </div>
+        <div style="border-top:2px solid #FFC24B;padding-top:22px">
+          <h3 style="font-size:22px;font-weight:700;margin:0 0 12px">產出清晰</h3>
+          <p style="font-size:16px;line-height:1.8;color:#A39C8E;margin:0">每一天結束都有明確、可量化的交付物，進度看得見。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#14120F;border-top:1px solid rgba(245,240,230,0.1);border-bottom:1px solid rgba(245,240,230,0.1)">
+    <div class="r-pad" style="max-width:1240px;margin:0 auto;padding:96px 40px">
+      <div class="r-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center">
+        <div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">07 / 首期共創梯次</span>
+          <h2 style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(30px,3.6vw,42px);line-height:1.34;margin:22px 0 22px">首期價格刻意壓低，<br>我們直說原因。</h2>
+          <p style="font-size:17px;line-height:1.9;color:#A39C8E;margin:0 0 18px">市場上支撐九千到三萬八千元的課程，靠的是講師知名度與可公開展示的學員成果。首期兩者都還沒有。</p>
+          <p style="font-size:17px;line-height:1.9;color:#F5F0E6;margin:0">所以首期的定位是「共創梯次」：以較低的價格，換取學員見證、實際作品與完課率數據。第二期起有作品可以展示，價格會回到應有的位置。</p>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#7C766A;margin-bottom:22px">每小時單價對照</div>
+          <div style="border-top:1px solid rgba(245,240,230,0.14);padding:20px 0;display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+            <span style="font-size:17px;color:#A39C8E">市場高價小班線上課（10 小時）</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#A39C8E">3,880 / 時</span>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,230,0.14);padding:20px 0;display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+            <span style="font-size:17px;color:#A39C8E">市場五小時實作班</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:22px;color:#A39C8E">約 2,000 / 時</span>
+          </div>
+          <div style="border-top:1px solid rgba(255,194,75,0.4);border-bottom:1px solid rgba(255,194,75,0.4);padding:24px 0;display:flex;align-items:baseline;justify-content:space-between;gap:20px;background:rgba(255,194,75,0.08)">
+            <span style="font-size:18px;font-weight:700;color:#F5F0E6">本課程（14 小時，早鳥 4,800）</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:30px;color:#FFC24B">343 / 時</span>
+          </div>
+          <p style="font-size:15px;line-height:1.8;color:#7C766A;margin:20px 0 0">台灣市場對照：一日實體工作坊約 3,980 至 10,000 元；名人親授型短影音實戰課約 9,500 元。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showFaq }}" hint-placeholder-val="{{ true }}">
+    <section class="r-pad" style="max-width:1240px;margin:0 auto;padding:104px 40px 88px">
+      <div class="r-stack" style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:76px">
+        <div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">08 / 常見問答</span>
+          <h2 style="font-family:'Noto Serif TC',serif;font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.32;margin:22px 0 0">報名前先問清楚</h2>
+        </div>
+        <div>
+          <div style="border-top:1px solid rgba(245,240,230,0.14);padding:26px 0">
+            <h3 style="font-size:20px;font-weight:700;margin:0 0 10px">我完全沒有剪輯經驗，可以嗎？</h3>
+            <p style="font-size:16px;line-height:1.85;color:#A39C8E;margin:0">可以。這門課的設計前提就是你沒有剪輯基礎。Day 6 只教到「把素材組裝成一支能發布的片」所需要的操作，不會要求你變成剪輯專家。報名表單有一欄問你的經驗，我們會依實際狀況調整課堂節奏。</p>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,230,0.14);padding:26px 0">
+            <h3 style="font-size:20px;font-weight:700;margin:0 0 10px">需要另外付費訂閱工具嗎？</h3>
+            <p style="font-size:16px;line-height:1.85;color:#A39C8E;margin:0">Day 1 就會把每款工具的核心場景、使用成本（免費／付費）與上手難度講清楚，你可以用免費方案跟著完成課程的實操。Midjourney 這類需付費訂閱的工具屬於進階選項，課程會說明適用時機，但不影響你完成交付物。</p>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,230,0.14);padding:26px 0">
+            <h3 style="font-size:20px;font-weight:700;margin:0 0 10px">某一堂時間搭不上怎麼辦？</h3>
+            <p style="font-size:16px;line-height:1.85;color:#A39C8E;margin:0">全程錄影，回放提供給已報名學員，觀看期限 14 天，可以補課。但建議你盡量出席 —— 這門課的價值在中間那四十分鐘的現場實操，講師會看著你的畫面告訴你問題在哪，這是回放給不了的。</p>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,230,0.14);padding:26px 0">
+            <h3 style="font-size:20px;font-weight:700;margin:0 0 10px">要露臉嗎？</h3>
+            <p style="font-size:16px;line-height:1.85;color:#A39C8E;margin:0">不用。課程教的是用 AI 生成影片素材，整支片可以完全不需要真人出鏡。如果你想做口播型的內容，課程也會涵蓋。</p>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,230,0.14);padding:26px 0">
+            <h3 style="font-size:20px;font-weight:700;margin:0 0 10px">兩週要上七堂課，會不會太密集？</h3>
+            <p style="font-size:16px;line-height:1.85;color:#A39C8E;margin:0">每週只佔用三個平日晚上，中間空出週五到週日整整三天做作業。我們刻意避開了「連上四晚」的排法，因為對有正職的人負擔太重。密集是刻意的 —— 訓練營賣的就是這股衝刺感，拉成七週你會掉隊。</p>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,230,0.14);padding:26px 0">
+            <h3 style="font-size:20px;font-weight:700;margin:0 0 10px">學員群為什麼是微信，不是 LINE？我沒有微信怎麼辦？</h3>
+            <p style="font-size:16px;line-height:1.85;color:#A39C8E;margin:0">因為講師在大陸，無法使用 LINE。改用微信之後，你的作業與問題是講師直接看、直接回，不是經過轉述。微信可以用台灣門號直接申辦，幾分鐘就完成；報名表單會請你填寫微信號以便核對入群。</p>
+          </div>
+          <div style="border-top:1px solid rgba(245,240,230,0.14);border-bottom:1px solid rgba(245,240,230,0.14);padding:26px 0">
+            <h3 style="font-size:20px;font-weight:700;margin:0 0 10px">可以開發票嗎？</h3>
+            <p style="font-size:16px;line-height:1.85;color:#A39C8E;margin:0">可以。報名表單填寫抬頭與統編即可，發票由國際人脈商業有限公司開立。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section id="enroll" style="background:#FFC24B;color:#0C0B09">
+    <div class="r-pad" style="max-width:1240px;margin:0 auto;padding:92px 40px">
+      <div class="r-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:70px">
+        <div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:rgba(12,11,9,0.6)">09 / 報名</span>
+          <h2 style="font-family:'Noto Serif TC',serif;font-weight:900;font-size:clamp(34px,5vw,56px);line-height:1.2;margin:22px 0 22px">十二天，二十人，<br>一支你真的做出來的片。</h2>
+          <sc-if value="{{ showPricing }}" hint-placeholder-val="{{ true }}">
+            <div style="border-top:1px solid rgba(12,11,9,0.25);padding-top:28px;display:grid;gap:16px;max-width:500px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+                <span style="font-size:18px;font-weight:700">早鳥價</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:40px">NT$ 4,800</span>
+              </div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+                <span style="font-size:16px;color:rgba(12,11,9,0.6)">定價</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:rgba(12,11,9,0.6)">NT$ 5,800</span>
+              </div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+                <span style="font-size:16px;color:rgba(12,11,9,0.6)">早鳥截止</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:17px">【待填】</span>
+              </div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+                <span style="font-size:16px;color:rgba(12,11,9,0.6)">開課日期</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:17px">【待填】</span>
+              </div>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px">
+                <span style="font-size:16px;color:rgba(12,11,9,0.6)">付款方式</span>
+                <span style="font-size:17px">銀行轉帳 或 信用卡</span>
+              </div>
+            </div>
+          </sc-if>
+          <div style="margin-top:34px;padding:24px 26px;background:#0C0B09;color:#F5F0E6;max-width:500px">
+            <div style="font-size:16px;font-weight:700;margin-bottom:10px">報名前請先確認：學員群使用微信</div>
+            <p style="font-size:15px;line-height:1.8;color:#A39C8E;margin:0">作業繳交與提問都在微信學員群，講師直接回覆。微信可用台灣門號申辦，請在開課前準備好，並在表單填寫微信號。</p>
+          </div>
+          <div style="margin-top:26px;max-width:500px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:rgba(12,11,9,0.6);margin-bottom:16px">報名之後怎麼進行</div>
+            <div style="display:grid;gap:10px;font-size:16px;line-height:1.7">
+              <span>1　填寫報名表單並勾選條款</span>
+              <span>2　完成繳費（轉帳者回填帳號後五碼）</span>
+              <span>3　收到報名確認信與上課時間表</span>
+              <span>4　開課前三日收到學員群 QR Code 與會議連結</span>
+            </div>
+            <p style="font-size:14px;line-height:1.75;color:rgba(12,11,9,0.6);margin:18px 0 0">最低開班人數 15 人，未達標時得順延並於開課日七日前通知，學員可選擇順延或全額退費。開課日前七日提出退費退還全額，七日內至第一堂課前退還八成，第一堂課開始後不予退費。</p>
+          </div>
+        </div>
+
+        <div class="r-panel" style="background:#0C0B09;color:#F5F0E6;padding:44px 40px">
+          <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+            <div style="min-height:520px;display:flex;flex-direction:column;justify-content:center;gap:18px">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.2em;color:#FFC24B">RECEIVED</div>
+              <h3 style="font-family:'Noto Serif TC',serif;font-size:32px;font-weight:700;line-height:1.4;margin:0">收到你的報名了</h3>
+              <p style="font-size:17px;line-height:1.85;color:#A39C8E;margin:0">我們會在 1–2 個工作日內用你留的聯絡方式跟你確認繳費方式與開課細節。名額依報名與繳費順序確認。</p>
+            </div>
+          </sc-if>
+          <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+            <form onSubmit="{{ onSubmit }}" style="display:grid;gap:20px">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#FFC24B">報名表單</div>
+              <div>
+                <label for="f-name" style="display:block;font-size:14px;color:#A39C8E;margin-bottom:8px">姓名</label>
+                <input id="f-name" name="姓名" required="required" style="width:100%;padding:13px 15px;background:#14120F;border:1px solid rgba(245,240,230,0.16);color:#F5F0E6;font-size:16px;border-radius:2px;outline:none" style-focus="border-color:#FFC24B" />
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+                <div>
+                  <label for="f-phone" style="display:block;font-size:14px;color:#A39C8E;margin-bottom:8px">手機</label>
+                  <input id="f-phone" name="手機" required="required" style="width:100%;padding:13px 15px;background:#14120F;border:1px solid rgba(245,240,230,0.16);color:#F5F0E6;font-size:16px;border-radius:2px;outline:none" style-focus="border-color:#FFC24B" />
+                </div>
+                <div>
+                  <label for="f-email" style="display:block;font-size:14px;color:#A39C8E;margin-bottom:8px">Email</label>
+                  <input id="f-email" name="Email" type="email" required="required" style="width:100%;padding:13px 15px;background:#14120F;border:1px solid rgba(245,240,230,0.16);color:#F5F0E6;font-size:16px;border-radius:2px;outline:none" style-focus="border-color:#FFC24B" />
+                </div>
+              </div>
+              <div>
+                <label for="f-wechat" style="display:block;font-size:14px;color:#A39C8E;margin-bottom:8px">微信號或微信暱稱（未申辦請填「無」）</label>
+                <input id="f-wechat" name="微信號" required="required" style="width:100%;padding:13px 15px;background:#14120F;border:1px solid rgba(245,240,230,0.16);color:#F5F0E6;font-size:16px;border-radius:2px;outline:none" style-focus="border-color:#FFC24B" />
+              </div>
+              <div>
+                <label for="f-stage" style="display:block;font-size:14px;color:#A39C8E;margin-bottom:8px">目前的內容經營狀況</label>
+                <select id="f-stage" name="經營狀況" style="width:100%;padding:13px 15px;background:#14120F;border:1px solid rgba(245,240,230,0.16);color:#F5F0E6;font-size:16px;border-radius:2px;outline:none">
+                  <option>尚未開始</option>
+                  <option>已有帳號在經營</option>
+                  <option>為公司或品牌經營</option>
+                </select>
+              </div>
+              <div>
+                <label for="f-field" style="display:block;font-size:14px;color:#A39C8E;margin-bottom:8px">你想經營的內容領域</label>
+                <input id="f-field" name="內容領域" style="width:100%;padding:13px 15px;background:#14120F;border:1px solid rgba(245,240,230,0.16);color:#F5F0E6;font-size:16px;border-radius:2px;outline:none" style-focus="border-color:#FFC24B" />
+              </div>
+              <div>
+                <label for="f-edit" style="display:block;font-size:14px;color:#A39C8E;margin-bottom:8px">剪輯經驗</label>
+                <select id="f-edit" name="剪輯經驗" style="width:100%;padding:13px 15px;background:#14120F;border:1px solid rgba(245,240,230,0.16);color:#F5F0E6;font-size:16px;border-radius:2px;outline:none">
+                  <option>無</option>
+                  <option>基礎</option>
+                  <option>熟練</option>
+                </select>
+              </div>
+              <div>
+                <label for="f-goal" style="display:block;font-size:14px;color:#A39C8E;margin-bottom:8px">你最想解決的一個問題</label>
+                <textarea id="f-goal" name="想解決的問題" rows="3" style="width:100%;padding:13px 15px;background:#14120F;border:1px solid rgba(245,240,230,0.16);color:#F5F0E6;font-size:16px;border-radius:2px;outline:none;resize:vertical"></textarea>
+              </div>
+              <div>
+                <label for="f-invoice" style="display:block;font-size:14px;color:#A39C8E;margin-bottom:8px">發票需求（需統編請填抬頭與統編）</label>
+                <input id="f-invoice" name="發票" placeholder="個人／公司抬頭＋統編" style="width:100%;padding:13px 15px;background:#14120F;border:1px solid rgba(245,240,230,0.16);color:#F5F0E6;font-size:16px;border-radius:2px;outline:none" style-focus="border-color:#FFC24B" />
+              </div>
+              <div style="border-top:1px solid rgba(245,240,230,0.14);padding-top:20px;display:grid;gap:14px">
+                <label for="c1" style="display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font-size:14px;line-height:1.7;color:#A39C8E">
+                  <input id="c1" name="條款一_開課退費" type="checkbox" required="required" style="width:18px;height:18px;margin-top:2px;accent-color:#FFC24B" />
+                  <span>我已閱讀並同意開課、順延與退費條款（最低開班 15 人；開課前七日全額退費、七日內至首堂課前退八成、首堂課後不予退費）。</span>
+                </label>
+                <label for="c2" style="display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font-size:14px;line-height:1.7;color:#A39C8E">
+                  <input id="c2" name="條款二_回放與教材" type="checkbox" required="required" style="width:18px;height:18px;margin-top:2px;accent-color:#FFC24B" />
+                  <span>我已知悉回放僅供個人學習、觀看期限 14 天，課程影像與教材著作權屬主辦單位，不得錄影、翻拍、轉載或商業使用。</span>
+                </label>
+                <label for="c3" style="display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font-size:14px;line-height:1.7;color:#A39C8E">
+                  <input id="c3" name="條款四_參與須知" type="checkbox" required="required" style="width:18px;height:18px;margin-top:2px;accent-color:#FFC24B" />
+                  <span>我已確認具備上課所需設備與網路（含現場實操，不建議僅以手機參與）。</span>
+                </label>
+                <label for="c4" style="display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font-size:14px;line-height:1.7;color:#A39C8E">
+                  <input id="c4" name="成果公開同意" type="checkbox" style="width:18px;height:18px;margin-top:2px;accent-color:#FFC24B" />
+                  <span>（選填）我同意主辦單位將我的課程作品、心得回饋與課堂截圖用於後續招生宣傳。不同意不影響上課權益。</span>
+                </label>
+              </div>
+              <button type="submit" disabled="{{ sending }}" style="width:100%;padding:18px;background:#FFC24B;color:#0C0B09;border:none;font-size:18px;font-weight:700;border-radius:2px;cursor:pointer" style-hover="background:#FFD98A">{{ submitLabel }}</button>
+              <p style="font-size:13px;line-height:1.7;color:#7C766A;margin:0">送出後由專人聯繫確認繳費方式，不會自動扣款。表單以 Formspree 收件，請把程式碼裡的 <span style="font-family:'JetBrains Mono',monospace;color:#A39C8E">FORMSPREE_ID</span> 換成你的表單 ID。</p>
+            </form>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0C0B09;border-top:1px solid rgba(245,240,230,0.1)">
+    <div class="r-pad r-row" style="max-width:1240px;margin:0 auto;padding:50px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px">
+      <div style="display:flex;align-items:baseline;gap:12px">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:#FFC24B">20 SEATS</span>
+        <span style="font-family:'Noto Serif TC',serif;font-size:16px;color:#A39C8E">AI 內容創作者訓練營</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:26px;font-size:14px;color:#7C766A;flex-wrap:wrap">
+        <span>主辦單位：國際人脈商業有限公司</span>
+        <span>聯絡窗口：【待填】</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPricing&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;版位&quot;},&quot;showFaq&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;版位&quot;}}">
+// 上線前替換：FORMSPREE_ID 換成你的 Formspree 表單 ID
+const FORMSPREE_ID = "FORMSPREE_ID";
+
+class Component extends DCLogic {
+  state = { submitted: false, sending: false };
+
+  async submit(e) {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    this.setState({ sending: true });
+    if (FORMSPREE_ID !== "FORMSPREE_ID") {
+      try {
+        await fetch("https://formspree.io/f/" + FORMSPREE_ID, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" }
+        });
+      } catch (err) { /* 網路失敗仍顯示已收到，另由專人聯繫 */ }
+    }
+    this.setState({ sending: false, submitted: true });
+  }
+
+  renderVals() {
+    return {
+      showPricing: this.props.showPricing ?? true,
+      showFaq: this.props.showFaq ?? true,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      sending: this.state.sending,
+      submitLabel: this.state.sending ? "送出中…" : "送出報名資訊",
+      onSubmit: (e) => this.submit(e)
+    };
+  }
+}
+</script>
+</body>
+</html>
