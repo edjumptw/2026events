@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F1F3F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1216" media="(prefers-color-scheme: dark)">
+<title>2026 華商經營與跨境市場趨勢研習（新加坡場）報名調查表｜台灣行銷人協會</title>
+<meta name="description" content="台灣行銷人協會 2026 華商經營與跨境市場趨勢研習（新加坡場）報名調查表，暫定 10/21–10/25。">
+<!-- 標題襯線字：僅載入標題用到的字。
+     ⚠ 若更改 H1 文字，下方 text= 參數必須一起更新，否則新字會掉回備援字體 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700&text=%20026%E5%8B%A2%E5%95%86%E5%A0%B4%E5%A2%83%E5%B8%82%E7%87%9F%E7%94%84%E7%A0%94%E7%B6%93%E7%BF%92%E8%88%87%E8%8F%AF%E8%B6%A8%E8%B7%A8%E9%81%B8&display=swap" rel="stylesheet">
+<style>
+  /* ── 色彩：南洋海灣（靛藍・柚金・赭紅），淺色／深色各一組 ── */
+  :root{
+    --bg:#F1F3F5; --surface:#FFFFFF; --fill:#E4E8EB; --fill-2:#EEF1F3; --seg-on:#FFFFFF;
+    --ink:#1A2126; --ink-2:#55606A; --ink-3:#808A91;
+    --sep:rgba(26,33,38,.13); --edge:rgba(26,33,38,.07);
+    --azure:#16607A; --on-azure:#FFFFFF;
+    --mala:#8C6626; --mala-tint:#F1EBDF;
+    --cinnabar:#B3412B;
+    --danger:#C0392B; --danger-tint:#FBEDEB;
+    --ok:#2C7349; --ok-tint:#E8F4EC;
+    --sky-1:#EDF1F4; --sky-2:#D7E3EA; --title:#153A50;
+    --m-back:#B6C9D4; --m-top:#2C6A8E; --m-mid:#3A7F94; --m-foot:#C0A56C; --m-front:#1B4F6B;
+    --bar:rgba(241,243,245,.74);
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0D1216; --surface:#171F24; --fill:#242E34; --fill-2:#222C32; --seg-on:#3A454B;
+      --ink:#E6EDF1; --ink-2:#A3AEB5; --ink-3:#76828A;
+      --sep:rgba(230,237,241,.13); --edge:rgba(0,0,0,.35);
+      --azure:#6FB6CE; --on-azure:#0D1216;
+      --mala:#D3B071; --mala-tint:#2B2418;
+      --cinnabar:#C9563F;
+      --danger:#FF8577; --danger-tint:#3A1F1C;
+      --ok:#7ACF98; --ok-tint:#18301F;
+      --sky-1:#0E1A21; --sky-2:#122731; --title:#EAF1F4;
+      --m-back:#1E343F; --m-top:#2B5F80; --m-mid:#2E6A7C; --m-foot:#6A5A36; --m-front:#0F2E40;
+      --bar:rgba(13,18,22,.74);
+    }
+  }
+  @media (prefers-contrast:more){
+    :root{--sep:rgba(26,33,38,.35);--ink-2:#3D474F;--ink-3:#5C666D}
+    .group,.days,.steps,details.legal{outline:1px solid var(--ink-3)}
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+    font-size:1.0625rem;line-height:1.7;color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;
+  }
+  a,button,label,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+  [hidden]{display:none!important}
+  :focus-visible{outline:2px solid var(--azure);outline-offset:2px}
+  .wrap{max-width:40rem;margin:0 auto;padding:0 1rem 4rem}
+
+  /* ── 頁首：全頁唯一的視覺重點 ── */
+  .hero{
+    position:relative;overflow:hidden;
+    background:linear-gradient(180deg,var(--sky-1) 0%,var(--sky-2) 100%);
+    --ridge-h:clamp(9.5rem,26.7vw,22rem);   /* 寬螢幕依比例長高，避免天際線被裁切 */
+    padding:2.75rem 1.25rem calc(var(--ridge-h) + 1rem);
+  }
+  .hero-inner{position:relative;z-index:1;max-width:40rem;margin:0 auto}
+  .series{font-size:.875rem;color:var(--ink-2);letter-spacing:.02em;margin-bottom:.75rem}
+  h1{
+    font-family:"Noto Serif TC","Songti TC",serif;font-weight:700;
+    font-size:clamp(1.75rem,6.6vw,2.5rem);line-height:1.3;letter-spacing:.01em;
+    color:var(--title);
+  }
+  .place{margin-top:.5rem;font-size:1.0625rem;font-weight:600;color:var(--ink-2);letter-spacing:.04em}
+  .facts{list-style:none;display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;margin-top:1.5rem}
+  .facts li{font-size:.9375rem;font-weight:600;line-height:1.4}
+  .facts span{display:block;font-size:.75rem;font-weight:400;color:var(--ink-2);letter-spacing:.03em}
+  .hero-cta{
+    display:inline-flex;align-items:center;min-height:2.875rem;margin-top:1.75rem;
+    padding:0 1.5rem;border-radius:999px;background:var(--azure);color:var(--on-azure);
+    font-weight:600;font-size:1rem;text-decoration:none;
+    transition:transform .1s ease-out;
+  }
+  .hero-cta:active{transform:scale(.97)}
+  .hero-note{display:block;margin-top:.6rem;font-size:.8125rem;color:var(--ink-2)}
+  /* 印章落在畫面一角，如同畫作的鈐印；四字依印文慣例由右至左、由上而下 */
+  .seal{
+    position:absolute;right:.25rem;bottom:-4.25rem;width:2.75rem;height:2.75rem;padding:.3rem;
+    display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;place-items:center;
+    background:var(--cinnabar);color:#FBF3EC;border-radius:3px;
+    font-family:"Noto Serif TC","Songti TC",serif;font-weight:700;font-size:.9rem;line-height:1;
+    transform:rotate(-4deg);user-select:none;
+  }
+  .ridges{position:absolute;left:0;bottom:0;width:100%;height:var(--ridge-h);display:block}
+  @media (min-width:40rem){.hero{padding-top:3.5rem}}
+
+  /* ── 分段導覽：半透明材質，內容從底下捲過 ── */
+  .bar{
+    position:sticky;top:0;z-index:10;padding:.5rem 1rem;
+    background:var(--bar);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);
+  }
+  .bar::after{
+    content:"";position:absolute;left:0;right:0;top:100%;height:.75rem;pointer-events:none;
+    background:linear-gradient(var(--edge),transparent);opacity:0;transition:opacity .2s ease;
+  }
+  .bar.stuck::after{opacity:1}
+  @media (prefers-reduced-transparency:reduce){
+    .bar{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+  }
+  .seg-nav{
+    position:relative;display:grid;grid-template-columns:repeat(4,1fr);
+    max-width:26rem;margin:0 auto;padding:2px;background:var(--fill);border-radius:9px;
+  }
+  .seg-nav a{
+    position:relative;z-index:1;display:flex;align-items:center;justify-content:center;
+    min-height:2.5rem;border-radius:7px;font-size:.9375rem;font-weight:500;
+    color:var(--ink);text-decoration:none;
+  }
+  .seg-nav a[aria-current]{font-weight:600}
+  .seg-thumb{
+    position:absolute;top:2px;bottom:2px;left:0;width:0;border-radius:7px;
+    background:var(--seg-on);box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.05);
+    will-change:transform;
+  }
+  .seg-nav.ready .seg-thumb{
+    transition:transform .32s cubic-bezier(.25,.8,.25,1),width .32s cubic-bezier(.25,.8,.25,1);
+  }
+
+  /* ── 區段與分組（iOS 分組清單） ── */
+  .sec{margin-top:2.5rem;scroll-margin-top:4.5rem}
+  .sec > h2{font-size:1.375rem;font-weight:700;line-height:1.3;margin:0 .25rem .75rem}
+  .lead{font-size:.9375rem;color:var(--ink-2);line-height:1.8;margin:0 .25rem 1rem}
+  .group-head{font-size:.8125rem;font-weight:500;color:var(--ink-2);letter-spacing:.02em;margin:1.75rem 1rem .4rem}
+  .group-foot{font-size:.8125rem;color:var(--ink-2);line-height:1.75;margin:.5rem 1rem 0}
+  .group{background:var(--surface);border-radius:12px;overflow:hidden}
+  .group > *{position:relative}
+  .group > * + *::before,
+  .days > li + li::before{
+    content:"";position:absolute;left:1rem;right:0;top:0;
+    border-top:1px solid var(--sep);
+  }
+  @media (min-resolution:2dppx){
+    .group > * + *::before,.days > li + li::before{border-top-width:.5px}
+  }
+
+  .kv{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.8rem 1rem;min-height:2.75rem}
+  .kv .k{font-size:.9375rem;color:var(--ink-2)}
+  .kv .v{font-size:1rem;font-weight:600;text-align:right}
+  .para{padding:.9rem 1rem}
+  .para h3{font-size:.9375rem;font-weight:600;margin-bottom:.2rem}
+  .para p{font-size:.9375rem;line-height:1.8}
+
+  /* 報名流程：真的是先後順序，所以用編號 */
+  .steps{list-style:none;counter-reset:s;background:var(--surface);border-radius:12px;padding:.5rem 1rem}
+  .steps li{
+    position:relative;display:flex;align-items:center;gap:.75rem;
+    min-height:2.625rem;font-size:.9375rem;counter-increment:s;
+  }
+  .steps li::before{
+    content:counter(s);flex:none;display:flex;align-items:center;justify-content:center;
+    width:1.5rem;height:1.5rem;border-radius:50%;
+    font-size:.75rem;font-weight:600;font-variant-numeric:tabular-nums;
+    background:var(--fill);color:var(--ink-2);
+  }
+  .steps li:not(:last-child)::after{
+    content:"";position:absolute;left:calc(.75rem - .5px);top:calc(50% + .75rem);
+    width:1px;height:calc(100% - 1.5rem);background:var(--sep);
+  }
+  .steps li.pay{font-weight:600;color:var(--azure)}
+  .steps li.pay::before{background:var(--azure);color:var(--on-azure)}
+
+  /* ── 日程 ── */
+  .days{list-style:none;background:var(--surface);border-radius:12px;overflow:hidden}
+  .days > li{position:relative;display:grid;grid-template-columns:1fr;gap:.5rem;padding:1rem}
+  .date{display:flex;align-items:baseline;gap:.5rem}
+  .date .md{font-size:1.375rem;font-weight:600;line-height:1.15;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+  .date .wd{font-size:.8125rem;color:var(--ink-2)}
+  @media (min-width:30rem){
+    .days > li{grid-template-columns:4rem 1fr;gap:0 1rem}
+    .date{display:block}
+    .date .md,.date .wd{display:block}
+    .date .wd{margin-top:.15rem}
+  }
+  .slot{display:flex;gap:.625rem;font-size:.9375rem;line-height:1.7}
+  .slot + .slot{margin-top:.625rem}
+  .slot .t{flex:none;min-width:2.25rem;padding-top:.1rem;font-size:.8125rem;font-weight:600;color:var(--mala)}
+  .obs{display:block;font-size:.8125rem;color:var(--ink-2);line-height:1.6}
+  .tag{
+    display:inline-block;margin-left:.3rem;padding:0 .4rem;border-radius:4px;
+    font-size:.75rem;font-weight:500;line-height:1.6;vertical-align:.08em;white-space:nowrap;
+  }
+  .tag.open{background:var(--mala-tint);color:var(--mala)}
+  .tag.tbd{background:var(--fill);color:var(--ink-2)}
+  .note{margin:.75rem 1rem 0;font-size:.8125rem;color:var(--ink-2);line-height:1.8}
+  .note p + p{margin-top:.35rem}
+
+  /* ── 表單列 ── */
+  .row{padding:.75rem 1rem}
+  .row::after{
+    content:"";position:absolute;left:0;top:.625rem;bottom:.625rem;width:3px;
+    border-radius:0 3px 3px 0;background:transparent;
+  }
+  .row.is-invalid::after{background:var(--danger)}
+  .lbl{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem;font-size:.875rem;font-weight:600;line-height:1.5}
+  .opt-mark{flex:none;font-size:.75rem;font-weight:400;color:var(--ink-3)}
+  .row.is-invalid .lbl{color:var(--danger)}
+  .hint{margin-top:.15rem;font-size:.8125rem;color:var(--ink-2);line-height:1.6}
+  .row input[type=text],.row input[type=email],.row input[type=tel],.row input[type=date],.row textarea{
+    display:block;width:100%;min-height:2.75rem;margin-top:.45rem;padding:.5rem .75rem;
+    font:inherit;font-size:1.0625rem;color:var(--ink);
+    background:var(--fill-2);border:1px solid transparent;border-radius:8px;outline:none;
+    -webkit-appearance:none;appearance:none;transition:border-color .15s ease,background .15s ease;
+  }
+  .row input:focus,.row textarea:focus{border-color:var(--azure);background:var(--surface)}
+  .row.is-invalid input:not(:focus),.row.is-invalid textarea:not(:focus){background:var(--danger-tint)}
+  .row input::placeholder,.row textarea::placeholder{color:var(--ink-3)}
+  .row input[type=date]::-webkit-date-and-time-value{text-align:left}
+  .row textarea{min-height:5.5rem;resize:vertical;line-height:1.65}
+  .err{display:none;margin-top:.2rem;font-size:.8125rem;color:var(--danger);line-height:1.5}
+  .row.is-invalid .err{display:block}
+
+  /* 二到三選一：分段控制 */
+  .seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;margin-top:.5rem;padding:2px;background:var(--fill);border-radius:9px}
+  .seg label{position:relative;display:block;cursor:pointer}
+  .seg input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+  .seg span{
+    display:flex;align-items:center;justify-content:center;min-height:2.5rem;border-radius:7px;
+    font-size:.9375rem;transition:transform .1s ease-out;
+  }
+  .seg input:checked + span{background:var(--seg-on);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.05)}
+  .seg input:focus-visible + span{outline:2px solid var(--azure);outline-offset:1px}
+  .seg label:active span{transform:scale(.97)}
+
+  /* 長句選項：左側選取圓點 */
+  .choices{margin-top:.35rem}
+  .choice{position:relative;display:flex;gap:.75rem;align-items:flex-start;padding:.65rem 0;cursor:pointer;font-size:.9375rem;line-height:1.65}
+  .choice + .choice{border-top:1px solid var(--sep)}
+  .choice input{position:absolute;opacity:0;width:1.375rem;height:1.375rem;margin:.1rem 0 0;cursor:pointer}
+  .mark{
+    position:relative;flex:none;width:1.375rem;height:1.375rem;margin-top:.1rem;
+    border:1.5px solid var(--ink-3);border-radius:50%;transition:transform .1s ease-out;
+  }
+  .choice.box .mark{border-radius:6px}
+  .choice input:checked + .mark{background:var(--azure);border-color:var(--azure)}
+  .choice input:checked + .mark::after{
+    content:"";position:absolute;left:.4rem;top:.18rem;width:.35rem;height:.65rem;
+    border:solid var(--on-azure);border-width:0 2px 2px 0;transform:rotate(45deg);
+  }
+  .choice input:focus-visible + .mark{outline:2px solid var(--azure);outline-offset:2px}
+  .choice:active .mark{transform:scale(.92)}
+
+  /* 送出 */
+  .submit-area{margin-top:1.5rem}
+  .progress{margin-bottom:.625rem;text-align:center;font-size:.8125rem;color:var(--ink-2)}
+  .progress.done{color:var(--ok)}
+  button.submit{
+    width:100%;min-height:3.25rem;border:0;border-radius:12px;cursor:pointer;
+    font:inherit;font-size:1.0625rem;font-weight:600;letter-spacing:.04em;
+    color:var(--on-azure);background:var(--azure);transition:transform .1s ease-out,opacity .15s ease;
+  }
+  button.submit:active{transform:scale(.98)}
+  button.submit:disabled{opacity:.5;cursor:default;transform:none}
+  @media (hover:hover){button.submit:not(:disabled):hover,.hero-cta:hover{filter:brightness(1.08)}}
+
+  .status{display:none;margin-top:1rem;padding:.875rem 1rem;border-radius:12px;font-size:.9375rem;line-height:1.8}
+  .status.ok{display:block;background:var(--ok-tint);color:var(--ok)}
+  .status.err{display:block;background:var(--danger-tint);color:var(--danger)}
+  .backup-text{
+    display:block;width:100%;min-height:9rem;margin-top:.75rem;padding:.7rem;resize:vertical;
+    font:.8125rem/1.7 ui-monospace,Menlo,monospace;color:var(--ink);
+    background:var(--surface);border:1px solid var(--sep);border-radius:10px;
+  }
+  .fallback-btn{
+    display:flex;align-items:center;justify-content:center;width:100%;min-height:2.875rem;margin-top:.625rem;
+    font:inherit;font-size:.9375rem;font-weight:600;text-decoration:none;cursor:pointer;
+    color:var(--danger);background:var(--surface);border:1px solid var(--sep);border-radius:10px;
+    transition:transform .1s ease-out;
+  }
+  .fallback-btn:active{transform:scale(.98)}
+  .fallback-btn:disabled{opacity:.6;cursor:default}
+  .fallback-btn.line{color:#fff;background:#06C755;border-color:#06C755}
+  .fallback-tip{margin-top:.75rem;font-size:.8125rem;line-height:1.8}
+
+  /* 聯絡 */
+  .line-btn{
+    display:flex;align-items:center;justify-content:center;min-height:3.25rem;border-radius:12px;
+    background:#06C755;color:#fff;font-weight:600;text-decoration:none;transition:transform .1s ease-out;
+  }
+  .line-btn:active{transform:scale(.98)}
+
+  /* 聲明 */
+  details.legal{margin-top:2.5rem;background:var(--surface);border-radius:12px;overflow:hidden}
+  details.legal summary{
+    display:flex;justify-content:space-between;align-items:center;gap:1rem;
+    min-height:2.75rem;padding:.8rem 1rem;list-style:none;cursor:pointer;
+    font-size:.9375rem;font-weight:600;
+  }
+  details.legal summary::-webkit-details-marker{display:none}
+  details.legal summary::after{
+    content:"";flex:none;width:.5rem;height:.5rem;margin-top:-.25rem;
+    border:solid var(--ink-3);border-width:0 2px 2px 0;transform:rotate(45deg);
+    transition:transform .2s ease;
+  }
+  details.legal[open] summary::after{transform:rotate(-135deg);margin-top:.25rem}
+  .legal-body{padding:0 1rem 1.1rem;font-size:.875rem;color:var(--ink-2);line-height:1.9}
+  .legal-body h3{margin-top:1rem;font-size:.875rem;font-weight:600;color:var(--ink)}
+  .legal-body p{margin-top:.3rem}
+  .legal-body p.end{margin-top:1rem}
+
+  footer{margin-top:2rem;text-align:center;font-size:.8125rem;color:var(--ink-3);letter-spacing:.04em}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{transition-duration:.01ms!important}
+    .hero-cta:active,.seg label:active span,.choice:active .mark,
+    button.submit:active,.fallback-btn:active,.line-btn:active{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="series">台灣行銷人協會 產業研習系列</p>
+    <h1>2026 華商經營與<br>跨境市場趨勢研習</h1>
+    <p class="place">新加坡場・報名調查表</p>
+    <ul class="facts">
+      <li><span>日期</span>暫定 10/21 – 10/25</li>
+      <li><span>天數</span>5 天 4 夜</li>
+      <li><span>地點</span>新加坡</li>
+      <li><span>日程</span>初步規劃</li>
+      <li><span>資格</span>限本會會員</li>
+    </ul>
+    <a class="hero-cta" href="#form">填寫報名調查表</a>
+    <span class="hero-note">送出時無須繳費，審查通過後才通知繳費。</span>
+    <div class="seal" aria-hidden="true"><span>甄</span><span>研</span><span>選</span><span>習</span></div>
+  </div>
+  <!-- 濱海灣天際線剪影（抽象化處理，非特定建物之寫實描繪） -->
+  <svg class="ridges" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="gMid" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:var(--m-top)"/>
+        <stop offset=".6" style="stop-color:var(--m-mid)"/>
+        <stop offset="1" style="stop-color:var(--m-foot)"/>
+      </linearGradient>
+      <linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:var(--m-front)"/>
+        <stop offset="1" style="stop-color:var(--m-mid)"/>
+      </linearGradient>
+    </defs>
+
+    <!-- 遠景樓群 -->
+    <g style="fill:var(--m-back)">
+      <rect x="16" y="198" width="54" height="88"/>
+      <rect x="84" y="170" width="40" height="116"/>
+      <rect x="138" y="212" width="62" height="74"/>
+      <rect x="214" y="182" width="46" height="104"/>
+      <rect x="274" y="202" width="70" height="84"/>
+      <rect x="358" y="158" width="38" height="128"/>
+      <rect x="410" y="194" width="58" height="92"/>
+      <rect x="482" y="178" width="66" height="108"/>
+      <rect x="562" y="206" width="44" height="80"/>
+      <rect x="620" y="186" width="72" height="100"/>
+      <rect x="706" y="164" width="50" height="122"/>
+      <rect x="770" y="200" width="60" height="86"/>
+      <rect x="844" y="176" width="46" height="110"/>
+      <rect x="904" y="196" width="68" height="90"/>
+      <rect x="986" y="168" width="52" height="118"/>
+      <rect x="1052" y="202" width="64" height="84"/>
+      <rect x="1130" y="188" width="54" height="98"/>
+    </g>
+
+    <!-- 中景：金融區高塔 -->
+    <g fill="url(#gMid)">
+      <rect x="150" y="126" width="62" height="160"/>
+      <rect x="226" y="150" width="46" height="136"/>
+      <rect x="286" y="110" width="54" height="176"/>
+      <rect x="354" y="146" width="40" height="140"/>
+      <path d="M286 110l27-26 27 26Z"/>
+    </g>
+
+    <!-- 觀景摩天輪 -->
+    <g style="fill:none;stroke:var(--m-mid);stroke-width:5">
+      <circle cx="1000" cy="188" r="56"/>
+      <circle cx="1000" cy="188" r="18"/>
+      <path d="M1000 132v112M944 188h112M960 148l80 80M1040 148l-80 80"/>
+      <path d="M1000 206l-26 80M1000 206l26 80"/>
+    </g>
+
+    <!-- 前景：三塔與空中平台 -->
+    <g fill="url(#gFront)">
+      <rect x="580" y="150" width="32" height="136"/>
+      <rect x="642" y="150" width="32" height="136"/>
+      <rect x="704" y="150" width="32" height="136"/>
+      <path d="M566 148q118-30 236 0v14q-118-26-236 0Z"/>
+    </g>
+
+    <!-- 前景：灣畔穹頂建物 -->
+    <g fill="url(#gFront)">
+      <ellipse cx="866" cy="268" rx="52" ry="26"/>
+      <ellipse cx="934" cy="272" rx="40" ry="20"/>
+    </g>
+
+    <!-- 水面 -->
+    <rect x="0" y="286" width="1200" height="34" style="fill:var(--m-front)"/>
+    <g style="fill:var(--m-back);opacity:.35">
+      <rect x="120" y="296" width="180" height="3"/>
+      <rect x="520" y="304" width="260" height="3"/>
+      <rect x="880" y="298" width="150" height="3"/>
+    </g>
+  </svg>
+</header>
+
+<nav class="bar" aria-label="頁面區段">
+  <div class="seg-nav" id="segNav">
+    <span class="seg-thumb" aria-hidden="true"></span>
+    <a href="#fee">費用</a>
+    <a href="#agenda">日程</a>
+    <a href="#form">報名</a>
+    <a href="#contact">聯絡</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- 費用說明 -->
+  <section class="sec" id="fee">
+    <h2>研習報名行政服務費</h2>
+
+    <div class="group">
+      <div class="kv"><span class="k">收費金額</span><span class="v">新台幣 NTD 3,000 元</span></div>
+      <div class="kv"><span class="k">繳費時點</span><span class="v">經審查錄取後通知繳費</span></div>
+    </div>
+
+    <h3 class="group-head">報名流程</h3>
+    <ol class="steps">
+      <li>送出報名表</li>
+      <li>本會資格審查</li>
+      <li>發出錄取通知</li>
+      <li class="pay">通知繳費</li>
+      <li>行前說明與行政聯繫</li>
+    </ol>
+    <p class="group-foot">本會報名作業採<strong>先審查、後繳費</strong>，送出報名表時無須繳費。經資格審查通過並發出錄取通知後，本會始通知繳費。</p>
+
+    <h3 class="group-head">費用與資格說明</h3>
+    <div class="group">
+      <div class="para">
+        <h3>參加資格</h3>
+        <p>本研習為<strong>本會會員專屬之會務活動</strong>，僅限台灣行銷人協會會員報名參加，不對外公開招攬。非會員如有意參加，請於本表單勾選「同時申請入會」，經理事會審核通過並完成入會程序後，始取得本研習之報名資格。甄選以<strong>產業別與現職職務</strong>為審查依據，名額有限，額滿為止。</p>
+      </div>
+      <div class="para">
+        <h3>收費單位</h3>
+        <p>台灣行銷人協會（本會自主辦理之會員研習專案，非受任何第三方委託代收）。</p>
+      </div>
+      <div class="para">
+        <h3>費用性質</h3>
+        <p>本費用為報名行政審查之定額服務費，用於資格甄選、名額管控、行前說明與行政聯繫等作業，係於上述審查作業完成後收取，其性質為已提供服務之對價。</p>
+      </div>
+      <div class="para">
+        <h3>不含項目</h3>
+        <p>往返機票、入境文件相關規費、個人保險與個人雜支，均<strong>不含</strong>於本費用內。日程中標示「當地公開活動」者，其報名費、票券或入場費用亦<strong>不含</strong>於本費用內，須由學員自行向該活動主辦單位辦理。相關安排須由學員<strong>自行</strong>向航空公司或合法立案之旅行業者洽訂並直接付款，本會不代訂、不代辦、不代收代付。</p>
+      </div>
+      <div class="para">
+        <h3>退費說明</h3>
+        <p>本會報名作業採<strong>先審查、後繳費</strong>，本費用係於資格審查完成、發出錄取通知後始行收取，故繳交後恕不退還。如遇特殊情由，<strong>須於活動開始前 7 天以書面提出</strong>，經本會審核同意者，得將費用折抵本會後續場次之報名行政服務費，不得折現；此為本會之恩惠性措施，非報名人之權利，本會保留准駁之權。本會因故未能辦理本場次者，已繳費用得依前項方式折抵後續場次。</p>
+      </div>
+    </div>
+
+    <h3 class="group-head">主辦單位</h3>
+    <div class="group">
+      <div class="kv"><span class="k">主辦單位</span><span class="v">台灣行銷人協會<br>Taiwan Marketing Association</span></div>
+      <div class="kv"><span class="k">內政部立案證號</span><span class="v">台內團字第1060000211號</span></div>
+      <div class="para"><p>本研習由本會依章程宗旨<strong>自主辦理</strong>，報名審查、行政聯繫及費用收退均由本會自行負責，未受任何第三方委託。</p></div>
+    </div>
+  </section>
+
+  <!-- 行程安排 -->
+  <section class="sec" id="agenda">
+    <h2>研習日程（初步規劃）</h2>
+    <p class="lead">以下為本會為學員規劃之研習日程草案，內容以華商企業經營、跨境市場布局與零售通路業態之觀察為主軸。其中標示「當地公開活動」者，係第三方單位自行對外舉辦之活動，<strong>本會非其主辦、協辦或籌備單位</strong>，僅就學員之出席時間予以編排。</p>
+
+    <ol class="days">
+      <li>
+        <div class="date"><span class="md">10/21</span><span class="wd">星期三</span></div>
+        <div>
+          <p class="slot"><span class="t">全日</span><span>抵達新加坡、辦理入住，報到註冊、行前編組</span></p>
+          <p class="slot"><span class="t">晚間</span><span>開訓說明、學員背景交流與研習議題設定</span></p>
+        </div>
+      </li>
+      <li>
+        <div class="date"><span class="md">10/22</span><span class="wd">星期四</span></div>
+        <div>
+          <p class="slot"><span class="t">全日</span><span>新加坡華商交流大會 第一天<span class="tag open">當地公開活動</span><span class="tag tbd">出席資格待確認</span><span class="obs">議程、地點與報名方式均由該大會主辦單位公布</span></span></p>
+        </div>
+      </li>
+      <li>
+        <div class="date"><span class="md">10/23</span><span class="wd">星期五</span></div>
+        <div>
+          <p class="slot"><span class="t">全日</span><span>新加坡華商交流大會 第二天<span class="tag open">當地公開活動</span><span class="tag tbd">出席資格待確認</span><span class="obs">議程、地點與報名方式均由該大會主辦單位公布</span></span></p>
+        </div>
+      </li>
+      <li>
+        <div class="date"><span class="md">10/24</span><span class="wd">星期六</span></div>
+        <div>
+          <p class="slot"><span class="t">上午</span><span>烏節路商圈<span class="obs">國際品牌旗艦業態與商場動線觀察</span></span></p>
+          <p class="slot"><span class="t">下午</span><span>甘榜格南、哈芝巷街區<span class="obs">獨立品牌與小型店舖業態觀察</span></span></p>
+        </div>
+      </li>
+      <li>
+        <div class="date"><span class="md">10/25</span><span class="wd">星期日</span></div>
+        <div>
+          <p class="slot"><span class="t">上午</span><span>學員觀察成果整理、講評與綜合討論</span></p>
+          <p class="slot"><span class="t">下午</span><span>賦歸，返程離星</span></p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="note">
+      <p>※ 本日程為初步規劃稿。實際場次、時間及參訪單位，得視受訪單位之接待安排、名額狀況或不可抗力因素調整，<strong>調整結果由本會另行通知學員，並以本會之最終公告為準</strong>。</p>
+      <p>※ 10月22日至23日之大會，係由該大會主辦單位自行對外舉辦，其議程、地點、入場資格、票務與報名方式均由該單位決定。本會非其主辦、協辦或籌備單位，亦未受其委託辦理報名或代收費用；學員如欲出席，須自行向該大會主辦單位確認並辦理。</p>
+      <p>※ 本研習係以產業環境觀察與專業知能交流為目的，行程中之場館與商圈參訪，均以產業型態、通路業態與品牌經營之觀察為主軸。</p>
+      <p>※ 學員之機票與入境文件，請自行洽訂或委由合法立案旅行業者辦理，並與該業者直接簽訂契約。</p>
+    </div>
+  </section>
+
+  <!-- 報名表 -->
+  <section class="sec" id="form">
+    <h2>報名資料</h2>
+    <p class="lead">除標示「選填」者外均為必填。資料僅供本次研習甄選與行政聯繫使用。<strong>送出本表時無須繳費</strong>，經本會審查通過並發出錄取通知後，將另行通知繳費方式。</p>
+
+    <!-- Formspree endpoint（無 JS 時瀏覽器仍會以一般 POST 送出，故 action 保留）
+         ⚠ 上線前必須換成本場次專用的 Formspree form ID，勿沿用其他場次 -->
+    <form id="regForm" action="https://formspree.io/f/REPLACE_WITH_SINGAPORE_OCT_FORM_ID" method="POST">
+      <input type="hidden" name="_subject" value="【2026 華商經營與跨境市場趨勢研習・新加坡場】新報名調查表">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_next" id="nextField" value="">
+
+      <h3 class="group-head">聯絡資料</h3>
+      <div class="group">
+        <div class="row" data-err="請填寫 Email">
+          <label class="lbl" for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" data-type-err="Email 格式不正確，請確認有「@」與網域">
+        </div>
+        <div class="row" data-err="請填寫中文姓名">
+          <label class="lbl" for="name">中文姓名</label>
+          <input type="text" id="name" name="中文姓名" required autocomplete="name">
+        </div>
+        <div class="row" data-err="請填寫手機號碼">
+          <label class="lbl" for="phone">手機聯繫方式</label>
+          <input type="tel" id="phone" name="手機" required autocomplete="tel" inputmode="tel">
+        </div>
+        <div class="row" data-err="請填寫 LINE 或微信帳號">
+          <label class="lbl" for="im">LINE 或微信聯繫帳號</label>
+          <p class="hint">供本會行前通知及研習期間之現場聯繫使用。</p>
+          <input type="text" id="im" name="LINE或微信帳號" required>
+        </div>
+      </div>
+
+      <h3 class="group-head">服務單位與產業</h3>
+      <div class="group">
+        <div class="row" data-err="請填寫單位名稱與職稱">
+          <label class="lbl" for="company">單位名稱／職稱</label>
+          <input type="text" id="company" name="單位名稱及職稱" required autocomplete="organization">
+        </div>
+        <div class="row" data-err="請填寫所屬產業別">
+          <label class="lbl" for="industry">所屬產業別</label>
+          <input type="text" id="industry" name="所屬產業別" required placeholder="例如：製造業、貿易、餐飲連鎖、專業服務">
+        </div>
+      </div>
+      <p class="group-foot">本研習以產業別與現職職務作為甄選依據，請具體填寫。</p>
+
+      <h3 class="group-head">證件資料</h3>
+      <div class="group">
+        <div class="row" data-err="請填寫護照英文姓名">
+          <label class="lbl" for="enname">護照英文姓名</label>
+          <p class="hint">請完全比照護照上之拼法，順序為姓在前、名在後。</p>
+          <input type="text" id="enname" name="護照英文姓名" required placeholder="例：CHEN, CHIEN-PU" autocomplete="off">
+        </div>
+        <div class="row" data-err="請填寫護照號碼">
+          <label class="lbl" for="passport">護照號碼</label>
+          <input type="text" id="passport" name="護照號碼" required autocomplete="off">
+        </div>
+        <div class="row" data-err="請選擇護照效期截止日">
+          <label class="lbl" for="ppexp">護照效期截止日</label>
+          <p class="hint">請確認效期足以涵蓋本次行程；實際效期要求以我國外交部及新加坡官方公告為準。</p>
+          <input type="date" id="ppexp" name="護照效期截止日" required>
+        </div>
+        <div class="row" data-err="請選擇出生日期">
+          <label class="lbl" for="dob">出生 年／月／日</label>
+          <input type="date" id="dob" name="出生日期" required autocomplete="bday">
+        </div>
+        <div class="row" data-err="請選擇一項">
+          <span class="lbl" id="lb-sex">性別</span>
+          <div class="seg" role="radiogroup" aria-labelledby="lb-sex">
+            <label><input type="radio" name="性別" value="生理男" required><span>生理男</span></label>
+            <label><input type="radio" name="性別" value="生理女"><span>生理女</span></label>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="group-head">行程與飲食</h3>
+      <div class="group">
+        <div class="row" data-err="請填寫常住城市">
+          <label class="lbl" for="city">常住台灣城市</label>
+          <input type="text" id="city" name="常住台灣城市" required autocomplete="address-level2">
+        </div>
+        <div class="row" data-err="請選擇一項">
+          <span class="lbl" id="lb-first-sg">是否首次來新加坡</span>
+          <div class="seg" role="radiogroup" aria-labelledby="lb-first-sg">
+            <label><input type="radio" name="是否首次來新加坡" value="是" required><span>是</span></label>
+            <label><input type="radio" name="是否首次來新加坡" value="否"><span>否</span></label>
+          </div>
+        </div>
+        <div class="row" data-err="請選擇一項">
+          <span class="lbl" id="lb-veg">飲食是否為素食</span>
+          <div class="seg" role="radiogroup" aria-labelledby="lb-veg">
+            <label><input type="radio" name="是否素食" value="素食" required><span>是</span></label>
+            <label><input type="radio" name="是否素食" value="否"><span>否</span></label>
+          </div>
+        </div>
+        <div class="row">
+          <label class="lbl" for="avoid">忌口說明<span class="opt-mark">選填</span></label>
+          <p class="hint">如有過敏原或不食用之食材，請於此說明。</p>
+          <input type="text" id="avoid" name="忌口說明">
+        </div>
+        <div class="row">
+          <label class="lbl" for="flightin">去程航班資訊<span class="opt-mark">選填</span></label>
+          <p class="hint">機票由學員自行洽訂，訂妥後填寫航班編號與抵達時間即可；尚未訂票可留空，日後再補。</p>
+          <input type="text" id="flightin" name="去程航班資訊" placeholder="例：SQ877　10/21　18:40 抵達樟宜機場">
+        </div>
+        <div class="row">
+          <label class="lbl" for="flightout">回程航班資訊<span class="opt-mark">選填</span></label>
+          <input type="text" id="flightout" name="回程航班資訊" placeholder="例：SQ878　10/25　16:20 離開樟宜機場">
+        </div>
+      </div>
+
+      <h3 class="group-head">當地公開大會與研習議題</h3>
+      <div class="group">
+        <div class="row" data-err="請選擇一項">
+          <span class="lbl" id="lb-conv">10月22至23日當地公開大會之出席意願</span>
+          <p class="hint">該大會由第三方單位自行舉辦，入場資格與票務由其決定，須由學員自行向該單位辦理。本欄僅供本會安排該兩日之研習編組與集合方式，非代為報名。</p>
+          <div class="choices" role="radiogroup" aria-labelledby="lb-conv">
+            <label class="choice"><input type="radio" name="10月22至23日公開大會出席意願" value="兩天皆有意自行出席" required><span class="mark"></span><span>兩天皆有意自行向該大會主辦單位洽詢並出席。</span></label>
+            <label class="choice"><input type="radio" name="10月22至23日公開大會出席意願" value="僅出席其中一天"><span class="mark"></span><span>僅出席其中一天（請於備註說明哪一天）。</span></label>
+            <label class="choice"><input type="radio" name="10月22至23日公開大會出席意願" value="不出席"><span class="mark"></span><span>不出席該公開大會，另行安排研習內容。</span></label>
+            <label class="choice"><input type="radio" name="10月22至23日公開大會出席意願" value="尚未決定"><span class="mark"></span><span>尚未決定，行前再確認。</span></label>
+          </div>
+        </div>
+        <div class="row">
+          <label class="lbl" for="topic">本次研習關注的議題<span class="opt-mark">選填</span></label>
+          <p class="hint">例如：華商企業的跨境布局、東協市場進入方式、AI 導入中小企業、家族企業接班與轉型……</p>
+          <textarea id="topic" name="關注議題" placeholder="協助我們安排交流座談之提問方向"></textarea>
+        </div>
+      </div>
+
+      <h3 class="group-head">會員身分與聲明</h3>
+      <div class="group">
+        <div class="row" data-err="請選擇會員身分">
+          <span class="lbl" id="lb-member">本會會員身分</span>
+          <p class="hint">本研習為會員專屬會務活動，非會員須先完成入會程序。</p>
+          <div class="choices" role="radiogroup" aria-labelledby="lb-member">
+            <label class="choice"><input type="radio" name="會員身分" value="現有會員" required><span class="mark"></span><span>本人為台灣行銷人協會現有會員。</span></label>
+            <label class="choice"><input type="radio" name="會員身分" value="同時申請入會"><span class="mark"></span><span>本人尚非會員，同時申請入會，並瞭解須經理事會審核通過後始取得報名資格。</span></label>
+          </div>
+        </div>
+        <div class="row" data-err="請填寫推薦人">
+          <label class="lbl" for="referrer">推薦人（入會介紹人）</label>
+          <input type="text" id="referrer" name="推薦人" required>
+        </div>
+        <div class="row" data-err="請選擇入境文件聲明">
+          <span class="lbl" id="lb-entry">入境文件聲明</span>
+          <p class="hint">入境新加坡所需之簽證、電子入境卡及護照效期，各國旅客規定不同，且得隨時調整。</p>
+          <div class="choices" role="radiogroup" aria-labelledby="lb-entry">
+            <label class="choice"><input type="radio" name="入境文件聲明" value="自行確認並辦理" required><span class="mark"></span><span>本人瞭解入境新加坡之簽證、電子入境卡及護照效期須由本人自行向官方管道確認並辦理，本會不代辦。</span></label>
+          </div>
+        </div>
+        <div class="row">
+          <label class="lbl" for="note">備註<span class="opt-mark">選填</span></label>
+          <textarea id="note" name="備註" placeholder="其他需本會知悉之事項，請於此說明"></textarea>
+        </div>
+      </div>
+
+      <h3 class="group-head">確認送出</h3>
+      <div class="group">
+        <div class="row" data-err="請勾選同意後再送出">
+          <label class="choice box" for="agree">
+            <input type="checkbox" id="agree" name="同意聲明" value="已閱讀並同意" required><span class="mark"></span>
+            <span>本人已閱讀並同意下方「重要聲明及個人資料蒐集告知事項」，並瞭解本費用之性質與退費規定。</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="submit-area">
+        <p class="progress" id="progress"></p>
+        <button type="submit" class="submit" id="submitBtn">送出調查表</button>
+        <div class="status" id="statusBox" role="status" aria-live="polite"></div>
+      </div>
+    </form>
+  </section>
+
+  <section class="sec" id="contact">
+    <h2>聯絡方式</h2>
+    <p class="lead">報名、入會或研習相關問題，請透過本會官方 LINE 洽詢，將由專人回覆：</p>
+    <a class="line-btn" href="https://lin.ee/aEaysh6l" target="_blank" rel="noopener">台灣行銷人協會官方 LINE（ID：@tma77）</a>
+  </section>
+
+  <details class="legal">
+    <summary>重要聲明及個人資料蒐集告知事項</summary>
+    <div class="legal-body">
+      <h3>一、活動性質</h3>
+      <p>本活動全名為「2026 華商經營與跨境市場趨勢研習（新加坡場）」，係台灣行銷人協會依本會章程所定宗旨，經理事會決議自主辦理之<strong>會員專屬會務活動</strong>，僅限本會會員參加，不對外公開招攬、不對非會員販售。內容聚焦華商企業經營、跨境市場布局與品牌零售業態之市場趨勢觀察，形式包含專題研習、產業現場參訪與同業交流座談。</p>
+
+      <h3>二、非旅行業務聲明</h3>
+      <p>本會非旅行業者，未經營《發展觀光條例》所定之旅行業業務。本研習係對特定會員辦理之內部會務活動，不具營業性與對外招攬性質，所收費用為會務行政成本之分攤，非旅遊價金。學員之機票及入境文件，均由學員自行安排，或自行委由合法立案之旅行業者辦理並與其直接簽約付款；本會不代訂、不代辦、不代收代付，亦不就上開事項負旅遊契約之責任。</p>
+
+      <h3>三、獨立性聲明</h3>
+      <p>本會為依《人民團體法》立案之獨立社會團體，非任何境外機關、法人、團體或其他機構在臺灣地區之分支機構、辦事處或代理人，亦未受其委託在臺灣地區從事業務活動、招募或代收費用。日程中標示「當地公開活動」者，係第三方單位自行對外舉辦之活動，本會非其主辦、協辦或籌備單位，亦未受其委託在臺灣地區為該等活動招募人員或代收費用；該大會所涉名稱、標識與議程內容，其權利均屬各該權利人所有。</p>
+
+      <h3>四、參加者責任</h3>
+      <p>學員之出入境、入境文件申辦及個人行為，應自行遵守我國及新加坡相關法令。學員如具依法受管制之身分，應自行確認並依規定向服務機關辦理應辦事項，未依規定辦理所生之責任由學員自負。</p>
+
+      <h3>五、議程變動</h3>
+      <p>研習日程為初步規劃，實際場次、時間及參訪單位，得視受訪單位之接待安排、當地情況或不可抗力因素調整。調整由本會決定並即時通知學員，以本會之最終公告為準。</p>
+
+      <h3>六、個人資料蒐集告知</h3>
+      <p>依《個人資料保護法》第 8 條，謹告知：<br>
+      ・蒐集者：台灣行銷人協會<br>
+      ・蒐集目的：研習學員甄選、名冊造具、行政聯繫、行前通知及活動保險投保（特定目的代號 040、069、181）<br>
+      ・個資類別：識別類（中文姓名、護照英文姓名、手機、Email、LINE 或微信帳號）、特徵類（出生年月日、性別）、證件類（護照號碼及效期）、社會情況類（服務單位、職稱、產業別、常住城市）、飲食需求、往返航班資訊<br>
+      ・利用期間：自蒐集之日起至本活動結束後 2 年止<br>
+      ・利用地區：臺灣地區。本表單透過表單服務商 Formspree（伺服器位於美國）傳輸與暫存，故填寫之資料將發生國際傳輸；另因參訪安排必要，證件基本資料得提供予承辦之旅行業者、保險公司及參訪接待單位辦理登記與入館核驗<br>
+      ・當事人得依同法第 3 條規定，請求查詢、閱覽、複製、補充、更正、停止蒐集處理利用或刪除；如不提供必要資料，將無法完成報名作業。</p>
+
+      <p class="end">填表即表示已閱讀並同意上述各項聲明。</p>
+    </div>
+  </details>
+
+  <footer>陳執董的商業洞察 × 台灣行銷人協會</footer>
+</main>
+
+<script>
+(() => {
+  const $  = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* ── 分段導覽：標示目前所在區段 ───────────────────────── */
+  const nav   = $('#segNav');
+  const thumb = $('.seg-thumb', nav);
+  const links = $$('a', nav);
+  let current = links[0];
+
+  function moveThumb(a){
+    if(!a) return;
+    current = a;
+    thumb.style.width = a.offsetWidth + 'px';
+    thumb.style.transform = 'translateX(' + a.offsetLeft + 'px)';
+    links.forEach(l => l === a ? l.setAttribute('aria-current', 'location') : l.removeAttribute('aria-current'));
+  }
+  moveThumb(current);
+  requestAnimationFrame(() => nav.classList.add('ready'));   // 首次定位不做動畫
+  links.forEach(a => a.addEventListener('click', () => moveThumb(a)));  // 按下即回應，不等捲動
+  addEventListener('resize', () => moveThumb(current));
+  if(document.fonts) document.fonts.ready.then(() => moveThumb(current));
+
+  const byId = new Map(links.map(a => [a.hash.slice(1), a]));
+  const secObserver = new IntersectionObserver(entries => {
+    entries.forEach(en => { if(en.isIntersecting) moveThumb(byId.get(en.target.id)); });
+  }, { rootMargin: '-35% 0px -60% 0px' });
+  byId.forEach((a, id) => { const s = document.getElementById(id); if(s) secObserver.observe(s); });
+
+  // 導覽列黏住頂端時，才顯示下緣的漸層分隔
+  const bar = $('.bar');
+  new IntersectionObserver(([en]) => bar.classList.toggle('stuck', !en.isIntersecting))
+    .observe($('.hero'));
+
+  /* ── 表單：即時驗證與必填進度 ──────────────────────────── */
+  const form     = $('#regForm');
+  const btn      = $('#submitBtn');
+  const box      = $('#statusBox');
+  const progress = $('#progress');
+
+  form.noValidate = true;   // 有 JS 時改用頁內提示；無 JS 時仍保留瀏覽器原生驗證
+
+  const rows = $$('.row[data-err]', form);
+  const fieldsOf = row => $$('input:not([type=hidden]),textarea,select', row).filter(el => !el.hidden && !el.disabled);
+  const firstBad = row => fieldsOf(row).find(el => !el.checkValidity());
+
+  rows.forEach((row, i) => {
+    const err = document.createElement('p');
+    err.className = 'err';
+    err.id = 'err-' + i;
+    row.appendChild(err);
+    const target = $('[role=radiogroup]', row) || fieldsOf(row)[0];
+    if(target) target.setAttribute('aria-describedby', err.id);
+  });
+
+  function errText(row){
+    const el = firstBad(row);
+    if(!el) return '';
+    if(el.validity.typeMismatch && el.dataset.typeErr) return el.dataset.typeErr;
+    return el.dataset.err || row.dataset.err;
+  }
+
+  function paint(row){
+    const bad = row.classList.contains('touched') && !!firstBad(row);
+    row.classList.toggle('is-invalid', bad);
+    $('.err', row).textContent = bad ? errText(row) : '';
+    const target = $('[role=radiogroup]', row) || fieldsOf(row)[0];
+    if(target) target.setAttribute('aria-invalid', bad ? 'true' : 'false');
+  }
+
+  function remaining(){
+    const seen = new Set();
+    let n = 0;
+    $$('[required]', form).forEach(el => {
+      if(el.hidden || el.disabled) return;
+      const key = el.type === 'radio' ? 'r:' + el.name : el;
+      if(seen.has(key)) return;
+      seen.add(key);
+      if(!el.checkValidity()) n++;
+    });
+    return n;
+  }
+
+  function refreshProgress(){
+    const n = remaining();
+    progress.textContent = n ? '還有 ' + n + ' 項必填未完成' : '必填項目皆已完成';
+    progress.classList.toggle('done', !n);
+  }
+
+  // 離開欄位才標示錯誤；已標示的欄位，一邊輸入一邊更新
+  form.addEventListener('focusout', e => {
+    const row = e.target.closest('.row[data-err]');
+    if(row && !row.contains(e.relatedTarget)){ row.classList.add('touched'); paint(row); }
+  });
+  form.addEventListener('input', e => {
+    const row = e.target.closest('.row[data-err]');
+    if(row && row.classList.contains('touched')) paint(row);
+    refreshProgress();
+  });
+  form.addEventListener('change', e => {
+    const row = e.target.closest('.row[data-err]');
+    if(row && (e.target.type === 'radio' || e.target.type === 'checkbox')){ row.classList.add('touched'); paint(row); }
+    refreshProgress();
+  });
+
+  refreshProgress();
+
+  /* ── 送出處理 ─────────────────────────────────────────── */
+  const nextField = $('#nextField');
+  const SUCCESS_TEXT = '✅ 調查表已送出，此階段無須繳費。本會將進行資格審查，審查通過後將發出錄取通知並告知繳費方式；如同時申請入會者，將另行通知入會程序。';
+
+  // 一般 POST 的回跳網址：送出後回到本頁並帶上 sent=1，不停留在 Formspree 頁面
+  nextField.value = location.origin + location.pathname + '?sent=1';
+
+  function showStatus(kind, text){
+    box.className = 'status ' + kind;
+    box.textContent = text;
+  }
+
+  function showSuccess(){
+    showStatus('ok', SUCCESS_TEXT);
+    form.reset();
+    rows.forEach(r => { r.classList.remove('touched', 'is-invalid'); $('.err', r).textContent = ''; });
+    progress.textContent = '';
+    btn.disabled = true;
+    btn.textContent = '已送出';
+  }
+
+  // 若由一般 POST 導回（?sent=1），直接顯示成功訊息
+  if(new URLSearchParams(location.search).get('sent') === '1'){
+    showSuccess();
+    box.scrollIntoView({ block: 'center' });
+  }
+
+  // 把已填內容整理成純文字，供備份／貼到 LINE
+  function buildPlainText(){
+    const fd = new FormData(form);
+    const lines = ['【2026 華商經營與跨境市場趨勢研習（新加坡場）報名資料】', ''];
+    for(const [k, v] of fd.entries()){
+      if(k.charAt(0) === '_') continue;
+      if(!String(v).trim()) continue;
+      lines.push((k === 'email' ? 'Email' : k) + '：' + v);
+    }
+    return lines.join('\n');
+  }
+
+  // 網路層失敗時的備援：先保住資料，再提供其他送出方式
+  function offerFallback(){
+    box.className = 'status err';
+    box.innerHTML = '<b>無法連線至表單服務，資料尚未送出。</b><br>'
+      + '這與您填寫的內容無關，通常是網路服務商或瀏覽器的安全防護擋住了表單服務的連線。<br><br>'
+      + '請<b>先按「複製報名內容」保存您填的資料</b>，再嘗試下列任一方式完成報名。';
+
+    const ta = document.createElement('textarea');
+    ta.className = 'backup-text';
+    ta.readOnly = true;
+    ta.value = buildPlainText();
+
+    const copyBtn = document.createElement('button');
+    copyBtn.type = 'button';
+    copyBtn.className = 'fallback-btn';
+    copyBtn.textContent = '① 複製報名內容';
+    copyBtn.addEventListener('click', async () => {
+      try{ await navigator.clipboard.writeText(ta.value); }
+      catch(_){ ta.select(); try{ document.execCommand('copy'); }catch(__){} }
+      copyBtn.textContent = '✓ 已複製，可直接貼到 LINE';
+    });
+
+    const lineBtn = document.createElement('a');
+    lineBtn.className = 'fallback-btn line';
+    lineBtn.href = 'https://lin.ee/aEaysh6l';
+    lineBtn.target = '_blank';
+    lineBtn.rel = 'noopener';
+    lineBtn.textContent = '② 貼到本會官方 LINE 完成報名';
+
+    const again = document.createElement('button');
+    again.type = 'button';
+    again.className = 'fallback-btn';
+    again.textContent = '③ 或改用一般方式再送出一次';
+    again.addEventListener('click', () => {
+      again.disabled = true;
+      again.textContent = '送出中…';
+      form.submit();   // 原生 POST，不觸發本處理常式
+    });
+
+    const tip = document.createElement('p');
+    tip.className = 'fallback-tip';
+    tip.textContent = '※ 若第 ③ 項也失敗，可改用行動網路（關閉 Wi-Fi），或改用 Safari、Edge 等其他瀏覽器開啟本頁再送一次。';
+
+    box.append(ta, copyBtn, lineBtn, again, tip);
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+
+    // 有未完成的必填：標出所有錯誤，帶到第一個未填項目
+    if(!form.checkValidity()){
+      rows.forEach(r => { r.classList.add('touched'); paint(r); });
+      const first = rows.find(r => firstBad(r));
+      if(first){
+        first.scrollIntoView({ block: 'center', behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+        const el = firstBad(first);
+        if(el) el.focus({ preventScroll: true });
+      }
+      showStatus('err', '還有 ' + remaining() + ' 項必填未完成，已帶您到第一個未填項目。');
+      return;
+    }
+
+    btn.disabled = true; btn.textContent = '送出中…';
+    box.className = 'status'; box.textContent = '';
+
+    let res;
+    try{
+      res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+    }catch(_){
+      // fetch 擲出例外＝請求根本沒送出去（被擋、離線、DNS 失敗）
+      offerFallback();
+      btn.disabled = false; btn.textContent = '送出調查表';
+      return;
+    }
+
+    if(res.ok){ showSuccess(); return; }
+
+    // Formspree 回傳的錯誤格式：{errors:[{field,message}]} 或 {error:"..."}
+    let msg = '';
+    try{
+      const data = await res.json();
+      if(Array.isArray(data.errors) && data.errors.length){
+        msg = data.errors.map(x => x.field ? x.field + '：' + x.message : x.message).join('；');
+      }else if(data.error){
+        msg = data.error;
+      }
+    }catch(_){}
+
+    showStatus('err', msg
+      ? '送出失敗：' + msg + '　如持續失敗，請透過官方 LINE 與我們聯繫。'
+      : '送出失敗（代碼 ' + res.status + '），資料尚未送出。請稍後重試，或透過官方 LINE 與我們聯繫。');
+    btn.disabled = false; btn.textContent = '送出調查表';
+  });
+})();
+</script>
+</body>
+</html>
