@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>7天職場AI實戰訓練營｜零基礎上班族專屬，7天用AI搞定文案、表格與簡報</title>
+<meta name="description" content="5堂核心實戰課 + 2天自主複盤，學完就能用AI處理文案、表格、簡報與辦公優化。">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F5F5F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<style>
+  /* 本頁重點色：靛藍 */
+  :root{--accent:#2F4FD0;--on-accent:#FFFFFF;--accent-tint:#ECEFFD}
+  @media (prefers-color-scheme:dark){
+    :root{--accent:#8AA2FF;--on-accent:#0A1440;--accent-tint:rgba(138,162,255,.15)}
+  }
+  /* ── 色彩：淺色為底、一個重點色（在各頁 :root 定義 --accent），其餘用灰階層級 ── */
+  :root{
+    color-scheme:light dark;
+    --bg:#F5F5F7; --surface:#FFFFFF; --fill:rgba(118,118,128,.12); --fill-2:rgba(118,118,128,.07); --seg-on:#FFFFFF;
+    --ink:#1D1D1F; --ink-2:#6E6E73; --ink-3:#8E8E93;
+    --sep:rgba(60,60,67,.16); --edge:rgba(0,0,0,.07);
+    --ok:#1F7A36; --ok-tint:#E8F5EC;
+    --warn:#8A5200; --warn-tint:#FFF4DE;
+    --danger:#C8001A; --danger-tint:#FFECEE;
+    --bar:rgba(245,245,247,.72);
+    --line:#06C755;
+    --r-lg:1.125rem; --r-md:.75rem;
+    --bar-h:6.25rem;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#000000; --surface:#1C1C1E; --fill:rgba(118,118,128,.24); --fill-2:rgba(118,118,128,.14); --seg-on:#48484A;
+      --ink:#F5F5F7; --ink-2:#A1A1A6; --ink-3:#6E6E73;
+      --sep:rgba(84,84,88,.6); --edge:rgba(0,0,0,.5);
+      --ok:#30D158; --ok-tint:rgba(48,209,88,.14);
+      --warn:#FFB340; --warn-tint:rgba(255,179,64,.13);
+      --danger:#FF6961; --danger-tint:rgba(255,105,97,.14);
+      --bar:rgba(22,22,24,.72);
+    }
+  }
+
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro TC","PingFang TC","Noto Sans TC",system-ui,sans-serif;
+    font-size:1.0625rem;line-height:1.7;letter-spacing:0;color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;font-optical-sizing:auto;
+  }
+  a,button,label,summary{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+  [hidden]{display:none!important}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* ── 頁首列：半透明材質，內容從底下捲過 ── */
+  .bar{
+    position:sticky;top:0;z-index:20;background:var(--bar);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);
+  }
+  .bar::after{
+    content:"";position:absolute;left:0;right:0;top:100%;height:.75rem;pointer-events:none;
+    background:linear-gradient(var(--edge),transparent);opacity:0;transition:opacity .2s ease;
+  }
+  .bar.stuck::after{opacity:1}
+  .bar-top{
+    max-width:42.5rem;margin:0 auto;padding:.625rem 1.25rem .25rem;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .back{
+    flex:none;display:inline-flex;align-items:center;gap:.3rem;min-height:2rem;padding-right:.25rem;
+    font-size:.9375rem;color:var(--accent);text-decoration:none;transition:transform .1s ease-out;
+  }
+  .back::before{content:"";width:.5rem;height:.5rem;border:solid currentColor;border-width:0 0 2px 2px;transform:rotate(45deg)}
+  .back:active{transform:scale(.96)}
+  .bar-top .brand{flex:1}
+  .brand{
+    min-width:0;font-size:.9375rem;font-weight:600;letter-spacing:-.01em;color:var(--ink);text-decoration:none;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .btn-sm{
+    flex:none;display:inline-flex;align-items:center;min-height:2rem;padding:0 .9rem;border-radius:999px;
+    background:var(--accent);color:var(--on-accent);font-size:.875rem;font-weight:600;text-decoration:none;
+    transition:transform .1s ease-out;
+  }
+  .btn-sm:active{transform:scale(.97)}
+
+  /* 區段導覽：可橫向捲動；目前位置用一顆跟著彈簧移動的底塊標示 */
+  .chips{
+    position:relative;max-width:42.5rem;margin:0 auto;padding:.375rem 1.25rem .625rem;
+    overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;
+  }
+  .chips::-webkit-scrollbar{display:none}
+  @media (min-width:48rem){.chips{max-width:none;text-align:center}}
+  .chip-track{position:relative;display:inline-flex;gap:.125rem;padding:2px;background:var(--fill);border-radius:999px}
+  .chip{
+    position:relative;z-index:1;display:flex;align-items:center;min-height:2rem;padding:0 .875rem;
+    border-radius:999px;font-size:.875rem;font-weight:500;letter-spacing:.005em;color:var(--ink);
+    text-decoration:none;white-space:nowrap;transition:transform .1s ease-out;
+  }
+  .chip[aria-current]{font-weight:600}
+  .chip:active{transform:scale(.96)}
+  .thumb{position:absolute;left:0;top:2px;background:var(--seg-on);pointer-events:none;will-change:transform}
+  .thumb-l,.thumb-r{border-radius:50%}
+  .thumb-m{width:1px;transform-origin:0 0}
+  .no-js .thumb{display:none}
+
+  /* ── 主視覺 ── */
+  .hero{max-width:42.5rem;margin:0 auto;padding:2.25rem 1.25rem 0}
+  .eyebrow{font-size:.875rem;font-weight:600;letter-spacing:.005em;color:var(--accent)}
+  h1{
+    margin-top:.625rem;font-size:clamp(2rem,7.4vw,2.875rem);line-height:1.12;letter-spacing:-.022em;
+    font-weight:700;text-wrap:balance;
+  }
+  h1 .sub{display:block;color:var(--ink-2)}
+  .hero .intro{margin-top:1rem;font-size:1.125rem;line-height:1.72;color:var(--ink-2)}
+  .hero .intro + .intro{margin-top:.75rem}
+  .hero .intro.strong{color:var(--ink);font-weight:500}
+  .hero-note{margin-top:.75rem;font-size:.875rem;line-height:1.6;color:var(--ink-2)}
+  .hero-note b{color:var(--accent);font-weight:600}
+  .cta-row{display:flex;flex-wrap:wrap;gap:.625rem;margin-top:1.75rem}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:0 1.375rem;
+    border:0;border-radius:999px;font:inherit;font-size:1rem;font-weight:600;letter-spacing:-.005em;
+    text-decoration:none;cursor:pointer;transition:transform .1s ease-out;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn-primary{background:var(--accent);color:var(--on-accent)}
+  .btn-plain{background:var(--fill);color:var(--accent)}
+  .btn-block{display:flex;width:100%}
+  @media (hover:hover){.btn:hover,.btn-sm:hover{filter:brightness(1.06)}}
+
+  .facts{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem 1rem;margin-top:2.25rem}
+  @media (min-width:36rem){.facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .facts b{display:block;font-size:1.875rem;line-height:1.05;letter-spacing:-.03em;font-weight:700;font-variant-numeric:tabular-nums}
+  .facts b small{margin-left:.2em;font-size:.9375rem;font-weight:600;letter-spacing:0}
+  .facts span{display:block;margin-top:.3rem;font-size:.8125rem;line-height:1.45;letter-spacing:.01em;color:var(--ink-2)}
+
+  /* ── 區段與分組 ── */
+  .wrap{max-width:42.5rem;margin:0 auto;padding:0 1.25rem}
+  .sec{margin-top:4.5rem;scroll-margin-top:calc(var(--bar-h) + .75rem)}
+  .kicker{font-size:.875rem;font-weight:600;letter-spacing:.005em;color:var(--accent)}
+  .sec h2{
+    margin-top:.375rem;font-size:clamp(1.5rem,5.4vw,1.9375rem);line-height:1.22;letter-spacing:-.02em;
+    font-weight:700;text-wrap:balance;
+  }
+  .lead{margin-top:.875rem;font-size:1.0625rem;line-height:1.78;color:var(--ink-2)}
+  .lead.ink{color:var(--ink)}
+  .group-head{
+    display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+    margin:2.25rem 1rem .5rem;font-size:.8125rem;font-weight:600;letter-spacing:.01em;color:var(--ink-2);
+  }
+  .group-head .aside{font-weight:500;font-variant-numeric:tabular-nums}
+  .group-foot{margin:.5rem 1rem 0;font-size:.8125rem;line-height:1.75;letter-spacing:.005em;color:var(--ink-2)}
+  .group{margin-top:1.5rem;background:var(--surface);border-radius:var(--r-lg);overflow:hidden;list-style:none}
+  .group-head + .group{margin-top:0}
+  .group > *{position:relative}
+  .group > * + *::before{content:"";position:absolute;left:1rem;right:0;top:0;border-top:1px solid var(--sep)}
+  @media (min-resolution:2dppx){.group > * + *::before{border-top-width:.5px}}
+
+  .kv{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;min-height:2.75rem;padding:.75rem 1rem}
+  .kv .k{flex:none;font-size:.9375rem;color:var(--ink-2)}
+  .kv .v{font-size:.9375rem;font-weight:600;text-align:right;line-height:1.55}
+  .kv.left{justify-content:flex-start}
+  .kv.left .k{width:2.5rem}
+  .kv.left .v{text-align:left;font-weight:500}
+  .kv.lead-row .v{font-size:1.75rem;line-height:1.1;letter-spacing:-.02em;font-weight:700}
+  .kv.lead-row .k{color:var(--ink);font-weight:600}
+  .kv.strike .v{font-weight:500;color:var(--ink-2);text-decoration:line-through}
+  .kv.hl{background:var(--accent-tint)}
+  .kv.hl .k{color:var(--ink);font-weight:600}
+  .kv.hl .v{color:var(--accent);font-size:1.125rem}
+
+  .para{padding:.95rem 1rem 1rem}
+  .para h3{font-size:1.0625rem;line-height:1.4;letter-spacing:-.008em;font-weight:600}
+  .para p{margin-top:.3rem;font-size:.9375rem;line-height:1.78;color:var(--ink-2)}
+  .para .tag{display:block;font-size:.75rem;font-weight:600;letter-spacing:.02em;color:var(--accent);margin-bottom:.2rem;font-variant-numeric:tabular-nums}
+  .para.tint{background:var(--accent-tint)}
+
+  ul.dots{list-style:none;margin-top:.4rem}
+  ul.dots li{position:relative;padding-left:.95rem;font-size:.9375rem;line-height:1.7}
+  ul.dots li + li{margin-top:.3rem}
+  ul.dots li::before{content:"";position:absolute;left:.15rem;top:.72em;width:.3rem;height:.3rem;border-radius:50%;background:var(--ink-3)}
+  ul.checks{list-style:none;margin-top:.55rem}
+  ul.checks li{position:relative;padding-left:1.5rem;font-size:.9375rem;line-height:1.65}
+  ul.checks li + li{margin-top:.25rem}
+  ul.checks li::before{
+    content:"";position:absolute;left:.3rem;top:.32em;width:.35rem;height:.7rem;
+    border:solid var(--accent);border-width:0 2px 2px 0;transform:rotate(45deg);
+  }
+
+  /* 有先後順序的流程才用編號 */
+  .steps{list-style:none;counter-reset:s;margin-top:0;padding:.5rem 1rem;background:var(--surface);border-radius:var(--r-lg)}
+  .steps li{
+    position:relative;display:flex;align-items:center;gap:.75rem;min-height:2.75rem;padding:.35rem 0;
+    font-size:.9375rem;line-height:1.5;counter-increment:s;
+  }
+  .steps li::before{
+    content:counter(s);flex:none;display:flex;align-items:center;justify-content:center;
+    width:1.5rem;height:1.5rem;border-radius:50%;font-size:.75rem;font-weight:600;font-variant-numeric:tabular-nums;
+    background:var(--fill);color:var(--ink-2);
+  }
+  .steps li:not(:last-child)::after{
+    content:"";position:absolute;left:calc(.75rem - .5px);top:calc(50% + .8rem);
+    width:1px;height:calc(100% - 1.6rem);background:var(--sep);
+  }
+
+  /* 提示框：狀態、完成、警告、錯誤 */
+  .callout{margin-top:1.5rem;padding:.9rem 1rem;border-radius:var(--r-lg);font-size:.9375rem;line-height:1.75}
+  .callout b{display:block;margin-bottom:.2rem;font-weight:600}
+  .callout.warn{background:var(--warn-tint)}
+  .callout.warn b{color:var(--warn)}
+  .callout.plain{background:var(--surface)}
+  .callout p{color:var(--ink-2)}
+
+  /* ── 展開列（課綱、問答、聲明）── */
+  .disc > summary{
+    display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:.875rem;align-items:center;
+    min-height:2.75rem;padding:.95rem 1rem;list-style:none;cursor:pointer;
+  }
+  .disc > summary::-webkit-details-marker{display:none}
+  .disc > summary:active{background:var(--fill-2)}
+  .disc > summary .s-main{min-width:0}
+  .chev{
+    flex:none;display:grid;place-items:center;width:1.625rem;height:1.625rem;border-radius:50%;
+    background:var(--fill);will-change:transform;
+  }
+  .chev::before{
+    content:"";width:.4rem;height:.4rem;margin-top:-.2rem;
+    border:solid var(--ink-2);border-width:0 2px 2px 0;transform:rotate(45deg);
+  }
+  .disc[open] > summary .chev{transform:rotate(180deg)}
+  .disc-body{padding:0 1rem 1.15rem;transform-origin:50% 0}
+  .q{font-size:1rem;line-height:1.5;font-weight:600;letter-spacing:-.005em}
+  .disc-body > p{font-size:.9375rem;line-height:1.8;color:var(--ink-2)}
+
+  /* ── 表單 ── */
+  .row{position:relative;padding:.8rem 1rem}
+  .row::after{
+    content:"";position:absolute;left:0;top:.625rem;bottom:.625rem;width:3px;
+    border-radius:0 3px 3px 0;background:transparent;
+  }
+  .row.is-invalid::after{background:var(--danger)}
+  .lbl{display:flex;justify-content:space-between;align-items:baseline;gap:.75rem;font-size:.875rem;font-weight:600;line-height:1.5}
+  .opt-mark{flex:none;font-size:.75rem;font-weight:400;color:var(--ink-3)}
+  .row.is-invalid .lbl{color:var(--danger)}
+  .hint{margin-top:.15rem;font-size:.8125rem;line-height:1.6;color:var(--ink-2)}
+  .row input[type=text],.row input[type=email],.row input[type=tel],.row textarea{
+    display:block;width:100%;min-height:2.75rem;margin-top:.45rem;padding:.5rem .75rem;
+    font:inherit;font-size:1.0625rem;color:var(--ink);background:var(--fill-2);
+    border:1px solid transparent;border-radius:.625rem;outline:none;-webkit-appearance:none;appearance:none;
+    transition:border-color .12s ease,background-color .12s ease;
+  }
+  .row input:focus,.row textarea:focus{border-color:var(--accent);background:var(--surface)}
+  .row.is-invalid input:not(:focus),.row.is-invalid textarea:not(:focus){background:var(--danger-tint)}
+  .row input::placeholder,.row textarea::placeholder{color:var(--ink-3)}
+  .row textarea{min-height:5.5rem;resize:vertical;line-height:1.65}
+  .err{display:none;margin-top:.25rem;font-size:.8125rem;line-height:1.5;color:var(--danger)}
+  .row.is-invalid .err{display:block}
+  .pair{display:grid;grid-template-columns:1fr}
+  .pair > .row + .row::before{content:"";position:absolute;left:1rem;right:0;top:0;border-top:1px solid var(--sep)}
+  @media (min-width:34rem){
+    .pair{grid-template-columns:1fr 1fr}
+    .pair > .row + .row::before{left:0;right:auto;top:.8rem;bottom:.8rem;border-top:0;border-left:1px solid var(--sep)}
+  }
+
+  .seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;margin-top:.5rem;padding:2px;background:var(--fill);border-radius:.5625rem}
+  .seg label{position:relative;display:block;cursor:pointer}
+  .seg input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+  .seg span{
+    display:flex;align-items:center;justify-content:center;min-height:2.375rem;padding:0 .25rem;border-radius:.4375rem;
+    font-size:.9375rem;text-align:center;line-height:1.3;transition:transform .1s ease-out;
+  }
+  .seg input:checked + span{background:var(--seg-on);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.04)}
+  .seg input:focus-visible + span{outline:2px solid var(--accent);outline-offset:1px}
+  .seg label:active span{transform:scale(.96)}
+
+  .choices{margin-top:.3rem}
+  .choice{position:relative;display:flex;gap:.75rem;align-items:flex-start;padding:.6rem 0;cursor:pointer;font-size:.9375rem;line-height:1.65}
+  .choice + .choice{border-top:1px solid var(--sep)}
+  .choice input{position:absolute;opacity:0;width:1.375rem;height:1.375rem;margin:.1rem 0 0;cursor:pointer}
+  .mark{
+    position:relative;flex:none;width:1.375rem;height:1.375rem;margin-top:.1rem;
+    border:1.5px solid var(--ink-3);border-radius:50%;transition:transform .1s ease-out;
+  }
+  .choice.box .mark{border-radius:.375rem}
+  .choice input:checked + .mark{background:var(--accent);border-color:var(--accent)}
+  .choice input:checked + .mark::after{
+    content:"";position:absolute;left:.4rem;top:.16rem;width:.35rem;height:.65rem;
+    border:solid var(--on-accent);border-width:0 2px 2px 0;transform:rotate(45deg);
+  }
+  .choice input:focus-visible + .mark{outline:2px solid var(--accent);outline-offset:2px}
+  .choice:active .mark{transform:scale(.9)}
+  .choice .muted{color:var(--ink-2)}
+
+  .legal-in{margin-top:1.5rem;background:var(--surface);border-radius:var(--r-lg);overflow:hidden}
+  .legal-in .disc-body{font-size:.875rem;line-height:1.9;color:var(--ink-2)}
+  .legal-in .disc-body p + p{margin-top:.5rem}
+
+  .submit-area{margin-top:1.5rem}
+  .progress{margin-bottom:.625rem;text-align:center;font-size:.8125rem;color:var(--ink-2)}
+  .progress.done{color:var(--ok)}
+  button.submit{
+    width:100%;min-height:3.25rem;border:0;border-radius:var(--r-md);cursor:pointer;
+    font:inherit;font-size:1.0625rem;font-weight:600;letter-spacing:.01em;
+    color:var(--on-accent);background:var(--accent);transition:transform .1s ease-out,opacity .15s ease;
+  }
+  button.submit:active{transform:scale(.97)}
+  button.submit:disabled{opacity:.55;cursor:default;transform:none}
+  .submit-note{margin-top:.625rem;text-align:center;font-size:.8125rem;line-height:1.7;color:var(--ink-2)}
+
+  .status{display:none;margin-top:1rem;padding:.875rem 1rem;border-radius:var(--r-md);font-size:.9375rem;line-height:1.8}
+  .status.info{display:block;background:var(--fill-2);color:var(--ink-2)}
+  .status.ok{display:block;background:var(--ok-tint);color:var(--ok)}
+  .status.warn{display:block;background:var(--warn-tint);color:var(--warn)}
+  .status.err{display:block;background:var(--danger-tint);color:var(--danger)}
+  .backup-text{
+    display:block;width:100%;min-height:9rem;margin-top:.75rem;padding:.7rem;resize:vertical;
+    font:.8125rem/1.7 ui-monospace,Menlo,monospace;color:var(--ink);
+    background:var(--surface);border:1px solid var(--sep);border-radius:.625rem;
+  }
+  .fallback-btn{
+    display:flex;align-items:center;justify-content:center;width:100%;min-height:2.875rem;margin-top:.625rem;
+    font:inherit;font-size:.9375rem;font-weight:600;text-decoration:none;cursor:pointer;
+    color:var(--ink);background:var(--surface);border:1px solid var(--sep);border-radius:.625rem;
+    transition:transform .1s ease-out;
+  }
+  .fallback-btn:active{transform:scale(.97)}
+  .fallback-btn:disabled{opacity:.6;cursor:default}
+  .fallback-btn.line{color:#fff;background:var(--line);border-color:var(--line)}
+  .fallback-tip{margin-top:.75rem;font-size:.8125rem;line-height:1.8}
+
+  /* 送出完成 */
+  .done{margin-top:1.5rem;padding:2.25rem 1.25rem;text-align:center;background:var(--surface);border-radius:var(--r-lg);transform-origin:50% 100%}
+  .done-mark{position:relative;width:3rem;height:3rem;margin:0 auto;border-radius:50%;background:var(--ok-tint)}
+  .done-mark::after{
+    content:"";position:absolute;left:1.13rem;top:.72rem;width:.7rem;height:1.25rem;
+    border:solid var(--ok);border-width:0 3px 3px 0;transform:rotate(45deg);
+  }
+  .done h3{margin-top:1rem;font-size:1.375rem;line-height:1.3;letter-spacing:-.015em;font-weight:700}
+  .done p{margin-top:.5rem;font-size:.9375rem;line-height:1.8;color:var(--ink-2)}
+
+  .line-btn{
+    display:flex;align-items:center;justify-content:center;min-height:3rem;padding:0 1rem;border-radius:var(--r-md);
+    background:var(--line);color:#fff;font-weight:600;font-size:.9375rem;text-decoration:none;text-align:center;
+    transition:transform .1s ease-out;
+  }
+  .line-btn:active{transform:scale(.97)}
+
+  .site-foot{max-width:42.5rem;margin:4.5rem auto 0;padding:1.5rem 1.25rem 3rem;font-size:.8125rem;line-height:1.85;color:var(--ink-2)}
+  .site-foot b{display:block;margin-bottom:.25rem;font-size:.9375rem;font-weight:600;color:var(--ink)}
+  .site-foot a{color:var(--accent);text-decoration:none}
+
+  /* ── 降級：透明度、對比、動態 ── */
+  @media (prefers-reduced-transparency:reduce){
+    .bar,.dock{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+  }
+  @media (prefers-contrast:more){
+    :root{--ink-2:#3A3A3C;--ink-3:#5A5A5E;--sep:rgba(0,0,0,.4)}
+    .bar,.dock{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 0 var(--ink-3)}
+    .group,.steps,.callout,.done,.legal-in,.tile,.cal,.price-card{outline:1px solid var(--ink-3)}
+    .chip-track,.seg{outline:1px solid var(--ink-3)}
+  }
+  @media (prefers-contrast:more) and (prefers-color-scheme:dark){
+    :root{--ink-2:#D1D1D6;--ink-3:#AEAEB2;--sep:rgba(255,255,255,.4)}
+  }
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{transition-duration:.01ms!important}
+    .btn:active,.btn-sm:active,.chip:active,.seg label:active span,.choice:active .mark,
+    button.submit:active,.fallback-btn:active,.line-btn:active,.cell:active,.strip a:active{transform:none}
+    .disc[open] > .disc-body,.done{animation:fadeIn .18s ease both}
+    .dock{transition:opacity .2s ease!important}
+  }
+  /* ── 本頁：七天課程條（主視覺）── */
+  .strip-wrap{margin-top:2.25rem;padding:1.125rem 1rem 1rem;background:var(--surface);border-radius:var(--r-lg)}
+  .strip-head{font-size:.9375rem;font-weight:600}
+  .strip{display:flex;gap:.375rem;margin-top:.875rem}
+  .strip a{
+    display:flex;flex-direction:column;justify-content:space-between;min-width:0;min-height:5.25rem;padding:.625rem .5rem;
+    border-radius:.75rem;background:var(--accent);color:var(--on-accent);text-decoration:none;
+    transition:transform .1s ease-out;
+  }
+  .strip a:nth-child(even){background:var(--accent-tint);color:var(--accent)}
+  .strip a:active{transform:scale(.95)}
+  .strip b{font-size:1.5rem;font-weight:700;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+  .strip span{font-size:.75rem;line-height:1.3;letter-spacing:.01em;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .strip-cap{margin-top:.625rem;font-size:.8125rem;line-height:1.6;color:var(--ink-2)}
+  .strip .w1{flex:1}
+  .strip .w2{flex:2}
+
+  /* 成效數字 */
+  .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.625rem;margin-top:1rem}
+  .tile{padding:1rem .875rem 1.125rem;background:var(--surface);border-radius:var(--r-lg)}
+  .tile b{display:block;font-size:1.75rem;line-height:1.05;letter-spacing:-.03em;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+  .tile p{margin-top:.375rem;font-size:.8125rem;line-height:1.5;color:var(--ink-2)}
+
+  /* 五大能力 */
+  .abilities{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;list-style:none}
+  .abilities li{padding:.4rem .875rem;border-radius:999px;background:var(--surface);font-size:.9375rem;font-weight:600}
+
+  /* 課程 */
+  .lessons > li{scroll-margin-top:calc(var(--bar-h) + .75rem)}
+  .l-meta{display:block;font-size:.8125rem;font-weight:600;letter-spacing:.01em;color:var(--accent);font-variant-numeric:tabular-nums}
+  .l-tools{margin-top:.5rem;font-size:.8125rem;line-height:1.6;color:var(--ink-2)}
+  .l-sub{margin-top:.625rem;padding:.625rem .75rem;border-radius:.625rem;background:var(--accent-tint);font-size:.875rem;line-height:1.7}
+  .l-sub b{display:block;font-weight:600;color:var(--accent)}
+
+  /* 價格卡 */
+  .price-card{margin-top:1.75rem;padding:.5rem 0 1.25rem;background:var(--surface);border-radius:var(--r-lg)}
+  .price-card .kv.lead-row .k{color:var(--accent)}
+  .price-card .kv.lead-row .v{font-size:2.5rem}
+  .price-card .btn{margin:1rem 1rem 0;width:calc(100% - 2rem)}
+  .price-card .submit-note{margin:.625rem 1rem 0}
+  .price-note{margin-top:.625rem;font-size:.8125rem;line-height:1.7;color:var(--ink-2)}
+  .price-note a{color:var(--accent)}
+
+  /* 諮詢 */
+  .qr{display:block;width:10rem;height:10rem;margin:1.25rem auto 0;padding:.625rem;border-radius:var(--r-md);background:#FFFFFF;image-rendering:pixelated}
+
+  /* 底部報名列：往下捲過主視覺才從下方滑出，捲到報名表時收回 */
+  .dock{
+    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    padding:.625rem 1rem calc(.625rem + env(safe-area-inset-bottom));
+    background:var(--bar);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);
+    box-shadow:0 -1px 0 var(--sep);transform:translate3d(0,110%,0);visibility:hidden;will-change:transform;
+  }
+  .dock-inner{max-width:42.5rem;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .dock-price{font-size:.875rem;color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .dock-price b{font-size:1.0625rem;font-weight:700;color:var(--ink)}
+  .dock-price s{margin-left:.375rem}
+  .dock .btn{min-height:2.625rem;padding:0 1.25rem;font-size:.9375rem}
+  .site-foot{padding-bottom:6rem}
+</style>
+</head>
+<body>
+
+<nav class="bar" aria-label="頁面區段">
+  <div class="bar-top">
+    <a class="back" href="https://edjumptw.github.io/2026events/">總覽</a>
+    <a class="brand" href="#top">7天職場AI實戰訓練營</a>
+    <a class="btn-sm" href="#signup">立即報名</a>
+  </div>
+  <div class="chips">
+    <div class="chip-track">
+      <span class="thumb thumb-l" aria-hidden="true"></span><span class="thumb thumb-m" aria-hidden="true"></span><span class="thumb thumb-r" aria-hidden="true"></span>
+      <a class="chip" href="#pain">職場難題</a>
+      <a class="chip" href="#outcomes">7天收穫</a>
+      <a class="chip" href="#curriculum">課程大綱</a>
+      <a class="chip" href="#pricing">費用</a>
+      <a class="chip" href="#faq">常見問題</a>
+      <a class="chip" href="#contact">諮詢</a>
+      <a class="chip" href="#signup">報名</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <p class="eyebrow">零基礎上班族專屬・錄播課程</p>
+  <h1>7天職場AI實戰訓練營<span class="sub">從0到1，擺脫AI小白</span></h1>
+  <p class="intro">5堂核心實戰課 + 2天自主複盤，零理論、100%職場落地。學完就能用AI搞定文案、表格、簡報與辦公優化，工作效率翻倍。</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="#signup">立即報名</a>
+    <a class="btn btn-plain" href="#curriculum">查看完整課綱</a>
+  </div>
+  <p class="hero-note">報名贈送價值 <b>NT$2,980</b> 的職場神秘必備工具包</p>
+  <ul class="facts">
+    <li><b>5<small>堂</small></b><span>錄播實戰課＋操作手冊</span></li>
+    <li><b>1<small>年</small></b><span>影片觀看期限</span></li>
+    <li><b>3<small>個月</small></b><span>課後群組答疑</span></li>
+    <li><b>7<small>天</small></b><span>建議學習節奏</span></li>
+  </ul>
+
+  <!-- 原設計此處有「課程宣傳圖／學員上課畫面」圖片位，素材到位後可放在課程條上方：
+  <img src="【待填】" alt="課程宣傳圖" style="display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin-top:2.25rem;border-radius:1.125rem"> -->
+
+  <div class="strip-wrap" role="group" aria-label="7天特訓營學習節奏">
+    <div class="strip-head">7天特訓營學習節奏</div>
+    <div class="strip">
+      <a class="w1" href="#lesson-1" aria-label="第1課 Day 1"><b>1</b><span>Day 1</span></a>
+      <a class="w2" href="#lesson-2" aria-label="第2課 Day 2-3"><b>2</b><span>Day 2-3</span></a>
+      <a class="w1" href="#lesson-3" aria-label="第3課 Day 4"><b>3</b><span>Day 4</span></a>
+      <a class="w1" href="#lesson-4" aria-label="第4課 Day 5"><b>4</b><span>Day 5</span></a>
+      <a class="w2" href="#lesson-5" aria-label="第5課 Day 6-7"><b>5</b><span>Day 6-7</span></a>
+    </div>
+    <p class="strip-cap">數字為第幾堂課，點選可跳到該堂內容。</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- 職場難題 -->
+  <section class="sec" id="pain">
+    <h2>這些職場AI難題，你中了幾個？</h2>
+    <p class="lead">別人早已用AI提效，別再讓自己一個人加班</p>
+    <ul class="group">
+      <li class="para"><h3>加班到深夜</h3><p>只因不會用AI提效，報表、文案手動寫到三更半夜</p></li>
+      <li class="para"><h3>看別人一鍵搞定</h3><p>同事用AI幾分鐘就搞定週報、簡報，自己卻無從下手</p></li>
+      <li class="para"><h3>教學看了一堆</h3><p>收藏了很多AI教學，卻依然不知道怎麼用在工作上</p></li>
+      <li class="para"><h3>想學又怕跟不上</h3><p>完全零基礎，擔心課程太難、工具太複雜</p></li>
+    </ul>
+  </section>
+
+  <!-- 7天收穫 -->
+  <section class="sec" id="outcomes">
+    <h2>7天後，你將獲得</h2>
+    <p class="lead">五大核心職場能力，獨立完成日常AI辦公全流程</p>
+    <ul class="abilities">
+      <li>文案撰寫</li>
+      <li>數據表格處理</li>
+      <li>工作簡報製作</li>
+      <li>專案梳理複盤</li>
+      <li>高效辦公優化</li>
+    </ul>
+    <div class="stats">
+      <div class="tile"><b>80%</b><p>AI取代重複性辦公工作</p></div>
+      <div class="tile"><b>50%+</b><p>辦公效率提升幅度</p></div>
+      <div class="tile"><b>5大</b><p>核心職場AI能力</p></div>
+    </div>
+  </section>
+
+  <!-- 課程大綱 -->
+  <section class="sec" id="curriculum">
+    <h2>完整課程大綱</h2>
+    <p class="lead">5堂核心實戰課，以錄播影片搭配操作手冊，配套實作作業、工具清單、案例範本</p>
+
+    <ol class="group lessons">
+      <li class="para" id="lesson-1">
+        <span class="l-meta">Day 1</span>
+        <h3>第1課｜AI職場入門：零基礎破冰，掌握AI辦公底層邏輯</h3>
+        <p>搞懂職場AI的核心用途，學會零基礎通用提問公式，完成第一次職場AI實作。</p>
+        <p class="l-tools">使用工具：DeepSeek</p>
+        <p class="l-sub"><b>職場資料安全＋AI結果驗證</b>哪些公司資料不建議上傳AI、AI產出的公式與數據怎麼核對、如何辨識AI幻覺，以及哪些工作可以交給AI、哪些仍需人工判斷。</p>
+        <ul class="checks"><li>職場自我介紹AI優化3套文案</li><li>零散工作筆記一鍵整理</li></ul>
+      </li>
+      <li class="para" id="lesson-2">
+        <span class="l-meta">Day 2-3</span>
+        <h3>第2課｜AI高效辦公：搞定90%基礎辦公文案，告別加班打字</h3>
+        <p>掌握職場高頻文案批次產出技巧，獨立完成通知、週報、總結等10+高頻文案。</p>
+        <p class="l-tools">使用工具：DeepSeek</p>
+        <ul class="checks"><li>一鍵產出週報+下週計畫</li><li>職務專屬工作總結範本</li></ul>
+      </li>
+      <li class="para" id="lesson-3">
+        <span class="l-meta">Day 4</span>
+        <h3>第3課｜AI數據與表格：零基礎搞定Excel，輕鬆處理職場數據</h3>
+        <p>不用背公式，用自然語言告訴AI需求，直接產出可開啟使用的表格檔，完成數據清洗、公式生成、統計分析與趨勢圖表。</p>
+        <p class="l-tools">使用工具：DeepSeek ＋ Office 文書軟體（Excel、WPS 皆可）</p>
+        <ul class="checks"><li>雜亂出勤／銷售數據一鍵清洗</li><li>月度業績表自動產出分析建議</li></ul>
+      </li>
+      <li class="para" id="lesson-4">
+        <span class="l-meta">Day 5</span>
+        <h3>第4課｜AI簡報與視覺化：快速搞定PPT、心智圖、工作簡報</h3>
+        <p>用AI搭建簡報邏輯、製作心智圖，直接產出一份可交付的PPT成品（字體與版面可再微調）。</p>
+        <p class="l-tools">使用工具：Gamma（PPT）＋ Xmind（心智圖）</p>
+        <ul class="checks"><li>述職簡報PPT成品一鍵產出</li><li>專案落地心智圖搭建</li></ul>
+      </li>
+      <li class="para" id="lesson-5">
+        <span class="l-meta">Day 6-7</span>
+        <h3>第5課｜AI職場進階+落地複盤：打造個人AI工作流程</h3>
+        <p>整合前4堂課所學，用 WorkBuddy 搭建專屬職務AI工作流程，設定定時任務、自動提醒與產出，完成7天學習複盤與能力固化。</p>
+        <p class="l-tools">使用工具：WorkBuddy（電腦版）</p>
+        <ul class="checks"><li>完整職場閉環實作演練</li><li>專屬每日／每週AI工作流程客製</li></ul>
+      </li>
+    </ol>
+
+    <h3 class="group-head">7天特訓營學習節奏</h3>
+    <div class="group">
+      <div class="kv left"><span class="k" style="width:4rem">Day 1</span><span class="v">入門破冰+基礎指令實作</span></div>
+      <div class="kv left"><span class="k" style="width:4rem">Day 2-3</span><span class="v">文案辦公實戰+作業落地</span></div>
+      <div class="kv left"><span class="k" style="width:4rem">Day 4</span><span class="v">數據表格實戰+零基礎練手</span></div>
+      <div class="kv left"><span class="k" style="width:4rem">Day 5</span><span class="v">簡報視覺化+PPT/心智圖實作</span></div>
+      <div class="kv left"><span class="k" style="width:4rem">Day 6-7</span><span class="v">工作流程搭建+全程複盤</span></div>
+    </div>
+
+    <h3 class="group-head">課前準備</h3>
+    <ol class="steps">
+      <li>準備一台筆電或桌機（手機僅能輔助）</li>
+      <li>註冊 DeepSeek</li>
+      <li>下載安裝 WorkBuddy 電腦版</li>
+      <li>準備 Office 文書軟體（Excel、WPS 皆可）</li>
+      <li>註冊 Gamma、Xmind</li>
+    </ol>
+    <p class="group-foot">報名完成後，會收到課前準備清單與職場神秘必備工具包，請在開始學習前完成下載與註冊。AI 工具更新快速，實際使用之工具與版本，以課前準備清單公告為準。</p>
+  </section>
+
+  <!-- 費用 -->
+  <section class="sec" id="pricing">
+    <h2>早鳥報名，直接省下近NT$4,000</h2>
+    <p class="lead">早鳥價至 2026/10/10（六）止，截止後恢復定價 NT$4,800</p>
+
+    <div class="price-card">
+      <div class="kv strike"><span class="k">定價</span><span class="v num">NT$4,800</span></div>
+      <div class="kv lead-row"><span class="k">早鳥價</span><span class="v num">NT$999</span></div>
+      <div class="kv"><span class="k">會員價</span><span class="v">BNC 會員買一送一<br>加贈一位親友名額</span></div>
+      <div class="kv hl"><span class="k">報名贈送</span><span class="v">價值 NT$2,980<br>職場神秘必備工具包</span></div>
+      <a class="btn btn-primary" href="#signup">立即報名</a>
+      <p class="submit-note">送出資料後課程顧問將於24小時內與你聯繫</p>
+    </div>
+    <p class="price-note">會員價適用 BNC 會員，資格由主辦單位認定，詳情請<a href="#contact">洽課程顧問</a></p>
+  </section>
+
+  <!-- 常見問題 -->
+  <section class="sec" id="faq">
+    <h2>常見問題</h2>
+    <div class="group">
+      <details class="disc">
+        <summary><span class="s-main q">我完全沒有AI基礎，能跟上嗎？</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="disc-body"><p>課程從0基礎設計，全程無枯燥理論，跟著實作案例操作即可上手，不需要任何先備知識。本課程需使用筆電或桌機學習，部分工具（如 WorkBuddy）在台灣僅能下載電腦版，手機可作為輔助，但不能只用手機或平板完成課程。</p></div>
+      </details>
+      <details class="disc">
+        <summary><span class="s-main q">課程用哪些AI工具？台灣學員能用嗎？要付費嗎？</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="disc-body"><p>課程以 DeepSeek 為主要示範工具，搭配 WorkBuddy、Office 文書軟體、Gamma、Xmind。報名完成後會提供課前準備清單，請在開始學習前完成下載與註冊。課程以各工具的免費方案示範；部分工具的免費額度依平台公告，若使用量超過，可能需要自行向平台購買額度，此費用由學員直接支付予平台，不包含在課程費用內。課程不教死記按鈕，而是教你怎麼下指令讓它聽話。</p></div>
+      </details>
+      <details class="disc">
+        <summary><span class="s-main q">工作太忙沒時間，能跟上進度嗎？</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="disc-body"><p>課程為錄播影片搭配操作手冊，影片觀看期限一年，可以依照自己的節奏學習、反覆觀看；課後三個月內都可以在學員群組提問。</p></div>
+      </details>
+      <details class="disc">
+        <summary><span class="s-main q">學完能用在哪些職務？</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="disc-body"><p>行政、業務、行銷、人資、文書等各類職場職務皆適用，課程內容以通用辦公情境為主。</p></div>
+      </details>
+      <details class="disc">
+        <summary><span class="s-main q">早鳥價什麼時候截止？</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="disc-body"><p>早鳥價 NT$999 至 2026/10/10（六）止，截止後恢復定價 NT$4,800。BNC 會員享買一送一，可加贈一位親友名額。</p></div>
+      </details>
+      <details class="disc">
+        <summary><span class="s-main q">每堂課到底能做出什麼？</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="disc-body"><p>7天結束你會帶走：一套 AI 工作流模板、一份 AI 處理數據的實操案例，以及一份 AI 生成的 PPT／心智圖成品——每堂課都有明確、可量化的產出，不是聽完就忘的理論課。</p></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 諮詢 -->
+  <section class="sec" id="contact">
+    <h2>還有疑問？掃碼諮詢課程顧問</h2>
+    <p class="lead">LINE掃一掃，1對1解答報名與課程問題</p>
+    <img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoAQAAAABSnlx4AAAIf0lEQVR42u1bwY7juBF9pIUW+2Qe+7ALC/MXe2krQD7E2C/I5tReYNeUMUDmI/bQt/2FPQRYOT+QfMFEWuTQQC5ykEVTA1mVA0mJtmVZ9nTPeNLNQ6stl+kSi1X1XrHMCCcMjlfpV+lXaU+aMcYYiw+IbBhjjJlpiagwd0fkjeI2TO/GCRGRMm9PiIgDsNK1P2HxvkqhlXfnwWpyb16S2lFBE3m3P1hpJ5V2qv1h+ymbGJF1Smu0X809fYtO6WJ77mp3lgPjvt86Yl+/Zrm3F7y4DbNqkrTLDYyJAk8xf8HHq67H5s5MVB/UiIiINDQAogwLIiJSjLoGzO0KIRGIMiuVgYhgRbKvRmpBlE0Iob0VEvFDRtkbyuptV1F2K20Xcqg32FliKx34xngiT4s+2outndmBaYhSu6AaXcapjaWJMrPeAIixqEeBkjFfk9+A33qk37ll3FavFAAF9pIo8DyyD6M96XvP4+u62b5E1pzOwYauYD1Yuv7oGJsOllbnWV4AnJtLEIMxbBst2HoVFgCrzEVjihopfa68w0DBai4OvLs/d12n7W5+zdzmTnvLueMBywMEVgF/6Yj/n1bvUi5BAqVcrmOglEfm1gvUHwC9KLKuBNqnie7xtPiz2JKfPDf3/s4ApnzLMwAQwvmTs/n23Fc3CViA4GZ5MwMC2SYM4eWGGpj05IYCWFAWEplvYP2MakzdlrfRXnJ3ObqCNaAJNYDH4+tde5Y/P0JkVro6x/JHAF5qpes+8MjwsJW5PaSkQ6KKkQ5B1Yj0FbMIyUNKLlXeM4QaGNUINWFUISzrFvaSm9vmfXRjNuUQnrN8znqfj7U5yUNffMgKijZulQJ5hESBYeNexR4aO+7z0fbcwTaCPjhmAPeml31w0M3NfAx3CLMbf/M5SXf8Cbx15EYhwPP67VlHzsOttGyXW0ACMZCAB4AAouarhQXudUvEuoZuET77uPrJeiryHyIAWJURjmQpFFl1Xz0AQPpLMcDnG6fX+vnj9+eXFsel5ZurmZGLcbPnoRdVCyOTxYijFMxQAOfz2ARYjzk2uzlN7Vne8/3qfFRwWZZXp1heNTiBx44DGnEhgCC4QMsDuUICYDUXyCOsFAAKVg0H5ACSeeSksxRKAWnasqoaqc8BAV28MCYQQykgjtuMwhE7JmD+Cnl5ll/NRZJPzK407D+fBCgl8q8DlJLnMbBu83wK5RCTx/61Lfw1taE+39F7vv/lR3u1zwH3PnVRli8jYOPQ0xJAPpdYx9b1BcoIuTIYgQMPBVA5ey0A3EOjyKzrV9APwD3Su5fk81L2iwixi6gDdycBMIOAtFCaB4AEZojfPX+EWEfIfxDL9SRYzXcfIY/NzoC5cKAAsr9iUaDuSNaZCfNetC+cN6TpkXz/Je8TeaRGKHzGqKeU1ZOVXoRZvYvv9YKoMjeraVN59ygfURUWU8oW2CeF+3orVFWR4f7X4U9Z9OHB1TeiqRXswrVEEccm8HPDsdGPB6uTrFOfJE3PuU8UwLxjmcCT5vvUMt1h6AGENB9iFaamIhhqv/7RRN0aI40wOyfax+9yiv4GiPyA6d8CwMb4vP7n99n3D7+Cqkz5ntusIv0IAP81Pl8UQAqlUO/4POMDV1BWp6y3qJ/PlgGpE6QPTQJI+Xv0x78nPxKfUU9tRkhL6rd8fkF6lE2A244yUM8efKLcAAB5tFOIAWDxoC0GNZbvG7ov2ifc1m+IiQF6k3Jx9cPzeHFwkjR/AlSwb3ngbpRNSN0OivanPuXbAED8h8742NaXR/ubLrsN07sxIyLSk21NunzxfZXqx5fJAQ9/MoC4brDBRTGB9YS7kz9L/uwk9kzAcsBSOjzop7C6brLro88BNXw82IUD6f8OD3bhQHbJHNAMiwqWBgC8LRXyTfTWoQKShhA0jSNUMzU1SFWHyCak7q7MuzUjPaJi7EcI9YVW/IaMNmMoQrxtWNGeAAc7cycAjwwHBESCCDHaU0MefKoq0UZiHSFXWK4jrOYS66lYzaNlHjsquPKkK40CyIBFAaTQpi/sQTmEmiFVu5rs4EH9IjoFxKF9EgjcRJgREhlh9tMN5Jt/z25+/lZGDmbF00uLEPmEr74R7kwgj5CYTJEoIP86SL4bc/tqm/0fjPovi/3bc9e4PRPYOWsMINgl5waLCpYGB7iGAXcmsBHJvIP9L5yta0A/NmcCVdWggpeFB13Fz/aFQVybvjAGBGdH+4Qxxpg6Ls0I7thuXAya+1/m3/+YNDAJUApuWJ+5mPTu6j7ZVoXFw4Od0T7u8oJDmhzpAt6RPtIFfMg6eoh0dZ7lbSdkT18Yo5Zss/oZ9uCUyG88PiK9a5ZSLgGs5tKiAu5QwW7PMFk8SETq7grZhIhqlk1ILai/Z7gbD/b2DO9JP0cX8JNJm76w62MdgebmzbcAZjc//1nOALCltKjgaM9wR62gZEwM1/vBVlZKgfXEVXpQSp5PRTK3VDBqToBb7yw8Kz4C7yvo3RPgFF2dAp+LA6aDpdUTaCL2cSFRGhIATAfb8hJzGgMMHtw0e3ktgU2QqIFzD+sR+dJRgdjngB4qiC0q8LdJ8Mn3iWX/S5DIy2i5XrjturLsf0sTy/4ZVSN1N2bZV65oqP40PqgJAS0e/HhPiy/C8jFO6Q6Kmg7Fhv3zIMZ1gjduA8TvpFvvAhgNifYW3NHz7+/Sf7BkLjg2QTI3ZwLfySNzGzyoh0X7p6gSVUMBnt8FPGzu6BDU7La8NU221697vdU0bnGVxWwHuoD3fP4fALAZVq+SWLMzLG9/gxQA4HmE1VzyfCocB7TRXmwjm4YJpPqR8L5yHPAsW14dXt8+veUQ6YZEzZ7Bd+yc9ju83wlcMyBwHNDxNOtf4SBOgjADADZgf7PX31y/Sr9KnyX9P70dl+cMrYIVAAAAAElFTkSuQmCC" width="360" height="360" alt="LINE 官方帳號「陳執董的商業洞察」條碼">
+    <a class="line-btn" style="margin-top:1rem" href="https://lin.ee/JzmztWR" target="_blank" rel="noopener">LINE：陳執董的商業洞察</a>
+  </section>
+
+  <!-- 報名 -->
+  <section class="sec" id="signup">
+    <h2>立即報名</h2>
+    <p class="lead">填寫資料，課程顧問將盡快與你聯繫</p>
+
+    <!-- 上線前：action 的 FORMSPREE_ID 換成實際表單 ID -->
+    <form id="regForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
+      <input type="hidden" name="_subject" value="【7天職場AI實戰訓練營】新報名">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_next" id="nextField" value="">
+
+      <div class="group">
+        <div class="pair">
+          <div class="row" data-err="請填寫姓名">
+            <label class="lbl" for="f-name">姓名</label>
+            <input type="text" id="f-name" name="姓名" autocomplete="name" placeholder="請輸入你的姓名" required>
+          </div>
+          <div class="row" data-err="請填寫手機號碼">
+            <label class="lbl" for="f-phone">手機號碼</label>
+            <input type="tel" id="f-phone" name="手機號碼" autocomplete="tel" inputmode="tel" placeholder="請輸入你的手機號碼" required>
+          </div>
+        </div>
+        <div class="pair">
+          <div class="row">
+            <label class="lbl" for="f-company">公司名稱<span class="opt-mark">選填</span></label>
+            <input type="text" id="f-company" name="公司名稱" autocomplete="organization" placeholder="請輸入公司名稱">
+          </div>
+          <div class="row">
+            <label class="lbl" for="f-industry">產業別<span class="opt-mark">選填</span></label>
+            <input type="text" id="f-industry" name="產業別" placeholder="例如：金融、零售、製造業">
+          </div>
+        </div>
+        <div class="pair">
+          <div class="row">
+            <label class="lbl" for="f-title">職稱<span class="opt-mark">選填</span></label>
+            <input type="text" id="f-title" name="職稱" autocomplete="organization-title" placeholder="例如：行政專員、業務經理">
+          </div>
+          <div class="row">
+            <label class="lbl" for="f-contact">LINE ID 或 Email<span class="opt-mark">選填</span></label>
+            <input type="text" id="f-contact" name="LINE ID 或 Email" autocapitalize="off" placeholder="方便我們與你聯繫">
+          </div>
+        </div>
+      </div>
+
+      <div class="group" style="margin-top:1.5rem">
+        <div class="row" data-err="請勾選確認後再送出">
+          <label class="choice box" for="c-device">
+            <input type="checkbox" id="c-device" name="設備與平台費用須知" value="已知悉" required><span class="mark"></span>
+            <span>我已知悉本課程需使用筆電或桌機學習，且 AI 工具之平台額度費用由學員自行負擔，不包含於課程費用。</span>
+          </label>
+        </div>
+      </div>
+
+      <h3 class="group-head">會員身分</h3>
+      <div class="group">
+        <div class="row">
+          <span class="lbl" id="lb-member">會員身分</span>
+          <div class="seg" role="radiogroup" aria-labelledby="lb-member">
+            <label><input type="radio" name="會員身分" value="非會員" checked><span>非會員</span></label>
+            <label><input type="radio" name="會員身分" value="BNC 會員"><span>BNC 會員</span></label>
+          </div>
+        </div>
+        <div class="row" id="friendRow" hidden>
+          <label class="lbl" for="f-friend">加贈名額之親友姓名與手機<span class="opt-mark">選填</span></label>
+          <p class="hint">BNC 會員買一送一，可先留下，也可之後再告訴課程顧問。</p>
+          <input type="text" id="f-friend" name="加贈親友姓名與手機">
+        </div>
+      </div>
+
+      <details class="disc legal-in">
+        <summary><span class="s-main q">個人資料蒐集告知事項</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="disc-body">
+          <p>依《個人資料保護法》第 8 條，謹告知：</p>
+          <p>蒐集者：國際人脈商業有限公司。</p>
+          <p>蒐集目的：課程報名受理、會員資格確認、課程聯繫與通知。</p>
+          <p>個資類別：識別類（姓名、手機號碼、LINE ID 或 Email）、社會情況類（公司名稱、產業別、職稱、會員身分），以及 BNC 會員所提供之加贈名額親友姓名與手機。</p>
+          <p>利用期間：自蒐集之日起至課程結束後【待確認】止。</p>
+          <p>利用地區：臺灣地區。本表單透過表單服務商 Formspree（伺服器位於美國）傳輸與暫存，填寫之資料將發生國際傳輸。</p>
+          <p>當事人權利：您得依同法第 3 條規定，請求查詢、閱覽、複製、補充、更正、停止蒐集處理利用或刪除，請洽 LINE 官方帳號「陳執董的商業洞察」。未提供必填資料者，將無法完成報名。</p>
+        </div>
+      </details>
+      <div class="group" style="margin-top:.625rem">
+        <div class="row" data-err="請勾選同意後再送出">
+          <label class="choice box" for="c-pdpa">
+            <input type="checkbox" id="c-pdpa" name="個資告知同意" value="已閱讀並同意" required><span class="mark"></span>
+            <span>我已閱讀並同意上方個人資料蒐集告知事項。</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="submit-area">
+        <p class="progress" id="progress" aria-live="polite"></p>
+        <button type="submit" class="submit" id="submitBtn">送出報名資料</button>
+        <p class="submit-note">早鳥價 NT$999・BNC 會員買一送一</p>
+        <div class="status" id="statusBox" role="status" aria-live="polite"></div>
+      </div>
+    </form>
+
+    <div class="done" id="donePanel" role="status" aria-live="polite" hidden>
+      <div class="done-mark" aria-hidden="true"></div>
+      <h3>報名資料已送出</h3>
+      <p>課程顧問將於24小時內與你聯繫，請留意來電</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <b>7天職場AI實戰訓練營</b>
+  主辦單位：國際人脈商業有限公司<br>
+  歡迎加入 LINE 官方帳號「陳執董的商業洞察」洽詢報名事宜<br>
+  © 2026 國際人脈商業有限公司。保留所有權利。<br>
+  <a href="https://edjumptw.github.io/2026events/">回到活動總覽</a>　<a href="#top">回到頁首</a>
+</footer>
+
+<div class="dock" aria-label="報名">
+  <div class="dock-inner">
+    <p class="dock-price">早鳥 <b>NT$999</b><s>NT$4,800</s></p>
+    <a class="btn btn-primary" href="#signup">立即報名</a>
+  </div>
+</div>
+
+<script>
+  window.PAGE = {
+    title: '7天職場AI實戰訓練營',
+    lineUrl: 'https://lin.ee/JzmztWR'   // 陳執董的商業洞察，送出失敗時的備援按鈕會用到
+  };
+</script>
+<script>
+(() => {
+  'use strict';
+  document.documentElement.classList.remove('no-js');
+
+  const $  = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+  const RM = matchMedia('(prefers-reduced-motion: reduce)');
+  const PAGE = window.PAGE || {};
+
+  // iOS Safari 需要有 touchstart 監聽，:active 才會在手指按下當下生效
+  addEventListener('touchstart', () => {}, { passive: true });
+
+  /* ── 彈簧：以 damping ratio 與 response 描述；隨時可改目標，速度延續、不跳 ── */
+  function Spring(value, opt) {
+    opt = opt || {};
+    this.value = value; this.velocity = 0; this.target = value;
+    this.precision = opt.precision || 0.01;
+    this.listeners = []; this.raf = 0; this.last = 0;
+    this.config(opt.response || 0.35, opt.damping == null ? 1 : opt.damping);
+    this._tick = this.tick.bind(this);
+  }
+  Spring.prototype.config = function (response, damping) {
+    this.stiffness = Math.pow(2 * Math.PI / response, 2);
+    this.damp = 4 * Math.PI * damping / response;
+  };
+  Spring.prototype.on = function (fn) { this.listeners.push(fn); return this; };
+  Spring.prototype.emit = function () { for (const fn of this.listeners) fn(this.value, this); };
+  Spring.prototype.to = function (target, opt) {
+    opt = opt || {};
+    this.target = target;
+    if (opt.immediate || RM.matches) {           // 降低動態：直接到位，交給 CSS 淡入
+      if (this.raf) cancelAnimationFrame(this.raf);
+      this.raf = 0; this.value = target; this.velocity = 0; this.emit();
+      return;
+    }
+    if (!this.raf) { this.last = performance.now(); this.raf = requestAnimationFrame(this._tick); }
+  };
+  Spring.prototype.tick = function (now) {
+    const dt = Math.min(Math.max((now - this.last) / 1000, 0), 1 / 20);
+    this.last = now;
+    const steps = Math.max(1, Math.ceil(dt / (1 / 240)));
+    const h = dt / steps;
+    for (let i = 0; i < steps; i++) {
+      const a = -this.stiffness * (this.value - this.target) - this.damp * this.velocity;
+      this.velocity += a * h;
+      this.value += this.velocity * h;
+    }
+    if (Math.abs(this.value - this.target) < this.precision && Math.abs(this.velocity) < this.precision * 10) {
+      this.value = this.target; this.velocity = 0; this.raf = 0; this.emit();
+      return;
+    }
+    this.emit();
+    this.raf = requestAnimationFrame(this._tick);
+  };
+
+  /* ── 頁首列：量高度、黏住時才出現下緣漸層 ── */
+  const bar = $('.bar');
+  function measureBar() {
+    if (bar) document.documentElement.style.setProperty('--bar-h', bar.offsetHeight + 'px');
+  }
+  measureBar();
+  addEventListener('resize', measureBar);
+
+  /* ── 區段導覽 ── */
+  const scroller = $('.chips');
+  let computeActive = () => {};
+  if (scroller) {
+    const track = $('.chip-track', scroller);
+    const chips = $$('.chip', track);
+    const capL = $('.thumb-l', track), mid = $('.thumb-m', track), capR = $('.thumb-r', track);
+    const sx = new Spring(0, { response: 0.36, damping: 1, precision: 0.1 });
+    const sw = new Spring(0, { response: 0.36, damping: 1, precision: 0.1 });
+    let H = 0, current = null, lockUntil = 0, touching = false;
+
+    function sizeThumb() {
+      H = chips[0].offsetHeight;
+      [capL, mid, capR].forEach(el => { el.style.height = H + 'px'; });
+      capL.style.width = capR.style.width = H + 'px';
+      [capL, mid, capR].forEach(el => { el.style.top = chips[0].offsetTop + 'px'; });
+    }
+    // 底塊拆成左右兩個圓頭與中段，只動 transform，寬度變化時圓角不變形
+    function render() {
+      const w = Math.max(sw.value, H), x = sx.value;
+      capL.style.transform = 'translate3d(' + x + 'px,0,0)';
+      capR.style.transform = 'translate3d(' + (x + w - H) + 'px,0,0)';
+      mid.style.transform  = 'translate3d(' + (x + H / 2) + 'px,0,0) scaleX(' + Math.max(w - H, 0) + ')';
+    }
+    sx.on(render); sw.on(render);
+
+    function reveal(chip) {
+      if (touching) return;
+      const left = track.offsetLeft + chip.offsetLeft - (scroller.clientWidth - chip.offsetWidth) / 2;
+      scroller.scrollTo({ left: Math.max(0, left), behavior: RM.matches ? 'auto' : 'smooth' });
+    }
+    function select(chip, immediate) {
+      if (!chip || (chip === current && !immediate)) return;
+      current = chip;
+      chips.forEach(c => c === chip ? c.setAttribute('aria-current', 'location') : c.removeAttribute('aria-current'));
+      const o = immediate ? { immediate: true } : null;
+      sx.to(chip.offsetLeft, o);
+      sw.to(chip.offsetWidth, o);
+      reveal(chip);
+    }
+
+    const secs = chips.map(c => document.getElementById(c.hash.slice(1)));
+    computeActive = function () {
+      if (performance.now() < lockUntil) return;
+      const line = innerHeight * 0.32;
+      let idx = 0;
+      secs.forEach((s, i) => { if (s && s.getBoundingClientRect().top <= line) idx = i; });
+      select(chips[idx]);
+    };
+
+    chips.forEach(c => c.addEventListener('click', () => {
+      select(c);                                   // 按下即回應，不等頁面捲完
+      lockUntil = performance.now() + 1200;
+    }));
+    scroller.addEventListener('pointerdown', () => { touching = true; });
+    addEventListener('pointerup', () => { touching = false; });
+    addEventListener('pointercancel', () => { touching = false; });
+
+    sizeThumb();
+    select(chips[0], true);
+    addEventListener('resize', () => { sizeThumb(); select(current, true); });
+    if (document.fonts) document.fonts.ready.then(() => { measureBar(); sizeThumb(); select(current, true); });
+    addEventListener('scrollend', () => { lockUntil = 0; computeActive(); });
+  }
+
+  let ticking = false;
+  addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      if (bar) bar.classList.toggle('stuck', scrollY > 4);
+      computeActive();
+    });
+  }, { passive: true });
+
+  /* ── 展開列：開合用彈簧，收合途中再點可立刻反向 ── */
+  function enhanceDisclosure(d) {
+    const sum = $(':scope > summary', d), body = $(':scope > .disc-body', d), chev = $('.chev', sum);
+    if (!sum || !body) return;
+    const sp = new Spring(d.open ? 1 : 0, { response: 0.32, damping: 1, precision: 0.002 });
+    function paint(v) {
+      if (RM.matches) { body.style.opacity = ''; body.style.transform = ''; }
+      else {
+        body.style.opacity = v;
+        body.style.transform = 'translate3d(0,' + ((v - 1) * 8) + 'px,0)';
+      }
+      if (chev) chev.style.transform = 'rotate(' + (v * 180) + 'deg)';
+    }
+    sp.on(v => {
+      paint(v);
+      if (v === 0 && sp.target === 0 && d.open) d.open = false;
+    });
+    function set(open) {
+      if (open) {
+        if (!d.open) { paint(sp.value); d.open = true; }
+        sp.to(1);
+      } else {
+        sp.to(0);
+      }
+    }
+    sum.addEventListener('click', e => { e.preventDefault(); set(sp.target === 0); });
+    d.addEventListener('toggle', () => { if (d.open && sp.target === 0) set(true); });   // 頁內搜尋等原生展開
+    d._set = set;
+  }
+  $$('details.disc').forEach(enhanceDisclosure);
+
+  // 從其他位置（日曆、課程條）直接打開某一天
+  function openAt(hash, smooth) {
+    const target = hash && document.getElementById(hash.slice(1));
+    if (!target) return false;
+    const d = target.matches('details') ? target : $('details.disc', target);
+    if (d && d._set) d._set(true);
+    target.scrollIntoView({ block: 'start', behavior: smooth && !RM.matches ? 'smooth' : 'auto' });
+    return true;
+  }
+  $$('a[data-open]').forEach(a => a.addEventListener('click', e => {
+    if (openAt(a.getAttribute('href'), true)) {
+      e.preventDefault();
+      history.replaceState(null, '', a.getAttribute('href'));
+    }
+  }));
+  if (/^#(day|lesson)-/.test(location.hash)) requestAnimationFrame(() => openAt(location.hash, false));
+
+  /* ── 底部報名列（有 .dock 的頁面才啟用）── */
+  const dock = $('.dock');
+  if (dock) {
+    const hero = $('.hero'), signup = $('#signup');
+    const sp = new Spring(1, { response: 0.4, damping: 1, precision: 0.002 });   // 1 = 收在畫面下方
+    sp.on(v => {
+      if (RM.matches) { dock.style.transform = 'none'; dock.style.opacity = v >= 0.5 ? '0' : '1'; }
+      else { dock.style.opacity = ''; dock.style.transform = 'translate3d(0,' + (v * 110) + '%,0)'; }
+      dock.style.visibility = v >= 0.999 ? 'hidden' : 'visible';
+    });
+    sp.emit();
+    let heroOut = false, signupIn = false;
+    const update = () => sp.to(heroOut && !signupIn ? 0 : 1);
+    new IntersectionObserver(([en]) => { heroOut = !en.isIntersecting; update(); }).observe(hero);
+    if (signup) new IntersectionObserver(([en]) => { signupIn = en.isIntersecting; update(); }).observe(signup);
+  }
+
+  /* ── 報名表單 ── */
+  const form = $('#regForm');
+  if (!form) return;
+  const btn = $('#submitBtn'), box = $('#statusBox'), progress = $('#progress'), done = $('#donePanel');
+  const submitLabel = btn.textContent;
+  const lineUrl = /^https?:\/\//.test(PAGE.lineUrl || '') ? PAGE.lineUrl : '';
+
+  form.noValidate = true;   // 有 JS 時用頁內提示；無 JS 時保留瀏覽器原生驗證
+
+  const rows = $$('.row[data-err]', form);
+  const fieldsOf = row => $$('input:not([type=hidden]),textarea,select', row).filter(el => !el.hidden && !el.disabled);
+  const firstBad = row => fieldsOf(row).find(el => !el.checkValidity());
+
+  rows.forEach((row, i) => {
+    const err = document.createElement('p');
+    err.className = 'err'; err.id = 'err-' + i;
+    row.appendChild(err);
+    const t = $('[role=radiogroup]', row) || fieldsOf(row)[0];
+    if (t) t.setAttribute('aria-describedby', err.id);
+  });
+
+  function errText(row) {
+    const el = firstBad(row);
+    if (!el) return '';
+    if (el.validity.typeMismatch && el.dataset.typeErr) return el.dataset.typeErr;
+    return el.dataset.err || row.dataset.err;
+  }
+  function paintRow(row) {
+    const bad = row.classList.contains('touched') && !!firstBad(row);
+    row.classList.toggle('is-invalid', bad);
+    $('.err', row).textContent = bad ? errText(row) : '';
+    const t = $('[role=radiogroup]', row) || fieldsOf(row)[0];
+    if (t) t.setAttribute('aria-invalid', bad ? 'true' : 'false');
+  }
+  function remaining() {
+    const seen = new Set(); let n = 0;
+    $$('[required]', form).forEach(el => {
+      const key = el.type === 'radio' ? 'r:' + el.name : el;
+      if (seen.has(key)) return;
+      seen.add(key);
+      if (!el.checkValidity()) n++;
+    });
+    return n;
+  }
+  function refreshProgress() {
+    const n = remaining();
+    progress.textContent = n ? '還有 ' + n + ' 項必填未完成' : '必填項目皆已完成';
+    progress.classList.toggle('done', !n);
+  }
+
+  // 離開欄位才標錯；已標錯的欄位邊打邊更新
+  form.addEventListener('focusout', e => {
+    const row = e.target.closest('.row[data-err]');
+    if (row && !row.contains(e.relatedTarget)) { row.classList.add('touched'); paintRow(row); }
+  });
+  form.addEventListener('input', e => {
+    const row = e.target.closest('.row[data-err]');
+    if (row && row.classList.contains('touched')) paintRow(row);
+    refreshProgress();
+  });
+  form.addEventListener('change', e => {
+    const row = e.target.closest('.row[data-err]');
+    if (row && (e.target.type === 'radio' || e.target.type === 'checkbox')) { row.classList.add('touched'); paintRow(row); }
+    refreshProgress();
+  });
+  refreshProgress();
+
+  $('#nextField').value = location.origin + location.pathname + '?sent=1#' + (form.closest('section') || {}).id;
+
+  function showStatus(kind, text) { box.className = 'status ' + kind; box.textContent = text; }
+
+  const doneSp = new Spring(0, { response: 0.4, damping: 1, precision: 0.002 });
+  doneSp.on(v => {
+    if (RM.matches) { done.style.opacity = ''; done.style.transform = ''; return; }
+    done.style.opacity = v;
+    done.style.transform = 'scale(' + (0.97 + v * 0.03) + ')';
+  });
+  function showSuccess(immediate) {
+    form.hidden = true;
+    done.hidden = false;
+    doneSp.to(1, immediate ? { immediate: true } : null);
+  }
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    showSuccess(true);
+    requestAnimationFrame(() => done.scrollIntoView({ block: 'center' }));
+  }
+
+  function buildPlainText() {
+    const lines = ['【' + (PAGE.title || document.title) + '｜報名資料】', ''];
+    for (const [k, v] of new FormData(form).entries()) {
+      if (k.charAt(0) === '_' || !String(v).trim()) continue;
+      lines.push((k === 'email' ? 'Email' : k) + '：' + v);
+    }
+    return lines.join('\n');
+  }
+
+  // 請求根本沒送出去（被擋、離線、DNS）時：先保住資料，再給其他送出方式
+  function offerFallback() {
+    box.className = 'status err';
+    box.innerHTML = '<b>無法連線至表單服務，資料尚未送出。</b><br>'
+      + '這與你填寫的內容無關，通常是網路服務商或瀏覽器的防護擋住了表單服務。<br>'
+      + '請先按「複製報名內容」保存資料，再用下列任一方式完成報名。';
+
+    const ta = document.createElement('textarea');
+    ta.className = 'backup-text'; ta.readOnly = true; ta.value = buildPlainText();
+
+    const copyBtn = document.createElement('button');
+    copyBtn.type = 'button'; copyBtn.className = 'fallback-btn'; copyBtn.textContent = '複製報名內容';
+    copyBtn.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(ta.value); }
+      catch (_) { ta.select(); try { document.execCommand('copy'); } catch (__) {} }
+      copyBtn.textContent = '已複製，可直接貼到 LINE';
+    });
+    box.append(ta, copyBtn);
+
+    if (lineUrl) {
+      const lineBtn = document.createElement('a');
+      lineBtn.className = 'fallback-btn line'; lineBtn.href = lineUrl; lineBtn.target = '_blank'; lineBtn.rel = 'noopener';
+      lineBtn.textContent = '貼到官方 LINE 完成報名';
+      box.append(lineBtn);
+    }
+
+    const again = document.createElement('button');
+    again.type = 'button'; again.className = 'fallback-btn'; again.textContent = '改用一般方式再送出一次';
+    again.addEventListener('click', () => { again.disabled = true; again.textContent = '送出中…'; form.submit(); });
+
+    const tip = document.createElement('p');
+    tip.className = 'fallback-tip';
+    tip.textContent = '若仍失敗，可改用行動網路（關閉 Wi-Fi），或換 Safari、Edge 等其他瀏覽器開啟本頁再送一次。';
+    box.append(again, tip);
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      rows.forEach(r => { r.classList.add('touched'); paintRow(r); });
+      const first = rows.find(r => firstBad(r));
+      if (first) {
+        first.scrollIntoView({ block: 'center', behavior: RM.matches ? 'auto' : 'smooth' });
+        const el = firstBad(first);
+        if (el) el.focus({ preventScroll: true });
+      }
+      showStatus('warn', '還有 ' + remaining() + ' 項必填未完成，已帶你到第一個未填的欄位。');
+      return;
+    }
+
+    btn.disabled = true; btn.textContent = '送出中…';
+    showStatus('info', '正在送出報名資料，請稍候。');
+
+    let res;
+    try {
+      res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+    } catch (_) {
+      offerFallback();
+      btn.disabled = false; btn.textContent = submitLabel;
+      return;
+    }
+
+    if (res.ok) { box.className = 'status'; box.textContent = ''; showSuccess(false); return; }
+
+    let msg = '';
+    try {
+      const data = await res.json();
+      if (Array.isArray(data.errors) && data.errors.length) {
+        msg = data.errors.map(x => x.field ? x.field + '：' + x.message : x.message).join('；');
+      } else if (data.error) {
+        msg = data.error;
+      }
+    } catch (_) {}
+    showStatus('err', msg
+      ? '送出失敗：' + msg + '。資料尚未送出，請修正後再試。'
+      : '送出失敗（代碼 ' + res.status + '），資料尚未送出。請稍後再試，或透過官方 LINE 與我們聯繫。');
+    btn.disabled = false; btn.textContent = submitLabel;
+  });
+})();
+</script>
+<script>
+  // BNC 會員才顯示「加贈親友」欄位
+  (() => {
+    const row = document.getElementById('friendRow');
+    const input = document.getElementById('f-friend');
+    document.querySelectorAll('input[name="會員身分"]').forEach(r => r.addEventListener('change', () => {
+      const on = r.checked && r.value === 'BNC 會員';
+      if (r.checked) { row.hidden = !on; if (!on) input.value = ''; }
+    }));
+  })();
+</script>
+</body>
+</html>
